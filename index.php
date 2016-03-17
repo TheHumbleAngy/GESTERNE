@@ -16,7 +16,7 @@ error_reporting(0);
 
     <link rel="shortcut icon" href="img/icone_ncare.ico"/>
 
-    <title>NCA Re | Gestion Interne</title>
+    <title>NCA Re | Gesterne</title>
 
 </head>
 <body class="arriere_plan">
@@ -50,7 +50,7 @@ error_reporting(0);
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="position: inherit">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
-                                <strong>Oups!</strong> Vous êtes déjà connecté sur un autre navigateur! Veuillez vous en déconnecter avant de continuer.
+                                <strong>Oups!</strong> Vous êtes déjà connecté à partir d\'un autre navigateur! Veuillez vous en déconnecter avant de continuer.
                               </div>';
                 }
             }
@@ -59,16 +59,16 @@ error_reporting(0);
                 <table border="0" style="border-collapse: separate; border-spacing: 5px">
                     <tbody>
                     <tr class="champ">
-                        <td style="width: 30%; margin: auto">Identifiant :</td>
-                        <td style="width: 70%; text-align: center">
+                        <td style="width: 25%; margin: auto">Identifiant :</td>
+                        <td style="width: 75%; text-align: center">
                             <input type="email" name="email"
                                    class="form-control" placeholder="Adresse e-mail"
                                    required size="35">
                         </td>
                     </tr>
                     <tr class="champ">
-                        <td style="width: 30%; margin: auto">Mot de passe :</td>
-                        <td style="width: 70%; text-align: center">
+                        <td style="width: 25%; margin: auto">Mot de passe :</td>
+                        <td style="width: 75%; text-align: center">
                             <input type="password" name="password"
                                    class="form-control" placeholder="Mot de passe"
                                    required size="35">

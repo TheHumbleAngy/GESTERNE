@@ -2,8 +2,8 @@
     /**
      * Created by PhpStorm.
      * User: Ange KOUAKOU
-     * Date: 29/02/2016
-     * Time: 12:59
+     * Date: 17/03/2016
+     * Time: 17:39
      */
 
     require_once "../fpdf/fpdf.php";
@@ -21,17 +21,16 @@
             $this->Image('../img/logo2.png', 10, 6, 30);
             $this->SetFont('Arial', 'B', 15);
             $this->Cell(120, 20);
-            $this->Cell(30, 10, 'LISTE DES FOURNISSEURS', 0, 0, 'C');
+            $this->Cell(30, 10, 'LISTE DES ARTICLES', 0, 0, 'C');
             $this->Ln(15);
             $this->SetFont('Arial', 'B', 11);
             $this->SetFillColor(228, 228, 228);
             $this->Rect(10, 25, 277, 8, 'DF');
-            $this->Cell(25, 8, "NUMERO", 1);
-            $this->Cell(70, 8, "RAISON SOCIALE", 1);
-            $this->Cell(82, 8, "CONTACT", 1);
-            $this->Cell(60, 8, "ADRESSE", 1);
-            $this->Cell(40, 8, "ACTIVITE", 1);
-//            $this->Cell(30, 8, "NOTES", 1);
+            $this->Cell(85, 8, "DESIGNATION", 1);
+            $this->Cell(62, 8, "GROUPE", 1);
+            $this->Cell(70, 8, "DETAILS", 1);
+            $this->Cell(60, 8, "DESCRIPTION", 1);
+//            $this->Cell(32, 8, "CONTACT", 1);
             $this->Ln(8);
         }
 
@@ -43,8 +42,8 @@
             // Arial italic 8
             $this->SetFont('Arial', 'I', 8);
             // Page number
-            /*
-            $this->Image('logo1.png');
+
+            /*$this->Image('logo1.png');
             $this->SetLeftMargin(84);
             $this->Cell(22, 0, $this->Image('logo1.png') . '', 0, 0, 'C');
             $this->Ln(1);*/
@@ -161,17 +160,26 @@
 
     $pdf = new PDF_MC_Table('L');
     $pdf->AddPage();
-    $pdf->SetTitle("Gesterne | Liste des Fournisseurs", TRUE);
+    $pdf->SetTitle("Gesterne | Liste des Articles", TRUE);
     $pdf->SetFont('Arial', '', 10);
-    $pdf->SetWidths(array(25, 70, 82, 60, 40));
+    $pdf->SetWidths(array(85, 62, 70, 60));
+
+    /*for ($i = 0; $i < 5; $i++)
+        $pdf->Row(array("A", "B", "C", "D", "E"));*/
 
     //DETAILS DE LA DEMANDE
-    $sql = "SELECT code_four, nom_four, telephonepro_four, fax_four, email_four, adresse_four, activite_four FROM fournisseurs ORDER BY nom_four";
+    $sql = "SELECT code_grp, designation_art, description_art, niveau_reappro_art, niveau_cible_art, stock_art FROM articles ORDER BY designation_art";
     if ($valeur = $connexion->query($sql)) {
         $ligne = $valeur->fetch_all(MYSQL_ASSOC);
         $i = 1;
         foreach ($ligne as $list) {
-            $pdf->Row(array($list['code_four'], $list['nom_four'], "Tel: " . $list['telephonepro_four'] . "\nFax: " . $list['fax_four'] . "\nE-mail: " . $list['email_four'], $list['adresse_four'], $list['activite_four']) , 50);
+            $req = "SELECT designation_grp FROM groupe_articles WHERE code_grp = '" . $list['code_grp'] . "'";
+            if ($val = $connexion->query($req)) {
+                $row = $val->fetch_all(MYSQL_ASSOC);
+                foreach ($row as $data) {
+                    $pdf->Row(array($list['designation_art'], $data['designation_grp'], "Stock Actuel : " . $list['stock_art']  . "\nNiveau Reappro : " . $list['niveau_reappro_art'] . "\nNiveau Cible : " . $list['niveau_cible_art'], $list['description_art']), 50);
+                }
+            }
         }
     }
 

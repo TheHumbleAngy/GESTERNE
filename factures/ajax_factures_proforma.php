@@ -38,7 +38,7 @@ if (isset($_POST["proforma"])) {
             <tr>
                 <td class="champlabel">Fournisseur :</td>
                 <td>
-                    <label>
+                    <label class="nomargin_tb">
                         <input type="text" class="form-control fournisseur" name="nom_four" readonly value="' . stripslashes($lignes[0]['nom_four']) . '" style="font-weight: normal">
                         <input type="hidden" name="code_four" value="'. stripslashes($lignes[0]['code_four']) .'">
                     </label>

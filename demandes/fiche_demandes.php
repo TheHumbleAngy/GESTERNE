@@ -48,7 +48,6 @@
         $ligne = $valeur->fetch_all(MYSQL_ASSOC);
         foreach ($ligne as $list) {
             $nom_emp = $list['nom_emp'] . " " . $list['prenoms_emp'];
-//            $prenoms_emp = $list['prenoms_emp'];
             $departement_emp = $list['departement_emp'];
         }
     }
@@ -59,6 +58,7 @@
     $pdf->SetMargins(10, 20);
     $pdf->AliasNbPages();
     $pdf->AddPage();
+    $pdf->SetTitle("Gesterne | " . $id, TRUE);
     $pdf->SetFont('Arial', 'B', 11);
     $pdf->SetFillColor(228, 228, 228);
     $pdf->Rect(10, 35, 70, 8, 'DF');

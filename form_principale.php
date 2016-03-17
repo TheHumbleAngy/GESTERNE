@@ -118,14 +118,12 @@
                                         <span>Imprimer</span>
                                     </a>
                                     <ul>
-                                        <li><a href="utilisateurs/impression_utilisateur.php"
-                                               target="_blank">Liste des Utilisateurs</a></li>
-                                        <li><a href="employes/fiche_employe.php" target="_blank">Liste des Employés</a>
+                                        <li><a href="employes/fiche_employes.php" target="_blank">Liste des Employés</a>
                                         </li>
                                         <li><a href="fournisseurs/fiche_fournisseurs.php" target="_blank">Liste
                                                 des Fournisseurs</a>
                                         </li>
-                                        <li><a href="" target="_blank">Liste des Articles</a>
+                                        <li><a href="articles/fiche_articles.php" target="_blank">Liste des Articles</a>
                                         </li>
                                     </ul>
                                 </li>

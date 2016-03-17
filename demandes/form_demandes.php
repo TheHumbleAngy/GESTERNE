@@ -43,7 +43,7 @@
                                         <td></td>
                                         <td></td>
                                         <td rowspan="3" style="padding-right: 0">
-                                            <a href="demandes/fiche_demande.php?id=<?php echo stripslashes($data['code_dbs']); ?>"
+                                            <a href="demandes/fiche_demandes.php?id=<?php echo stripslashes($data['code_dbs']); ?>"
                                                target="_blank" title="Imprimer">
                                                 <img src="img/Icons8/demande-100.png">
                                             </a>
@@ -74,8 +74,8 @@
                                         <td class="champlabel" rowspan="2">Objet :</td>
                                         <td rowspan="2">
                                             <label>
-                                    <textarea id="objets_dbs" name="objets_dbs" rows="3" class="form-control" readonly
-                                              style="resize: none"><?php echo stripslashes($data['objets_dbs']); ?></textarea>
+                                                <textarea id="objets_dbs" name="objets_dbs" rows="3" class="form-control" readonly
+                                                          style="resize: none"><?php echo stripslashes($data['objets_dbs']); ?></textarea>
                                             </label>
                                         </td>
                                     </tr>

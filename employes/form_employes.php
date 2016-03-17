@@ -57,6 +57,7 @@
                             <label>
                                 <select name="departement_emp" required class="form-control">
                                     <option disabled selected></option>
+                                    <option value="PRODUCTION">PRODUCTION</option>
                                     <option value="FINANCE ET COMPTABILITE">FINANCE ET COMPTABILITE</option>
                                     <option value="INFORMATIQUE">INFORMATIQUE</option>
                                     <option value="MOYENS GENEREAUX">MOYENS GENEREAUX</option>

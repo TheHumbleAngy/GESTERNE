@@ -22,7 +22,6 @@
             $this->SetFont('Arial', 'B', 15);
             $this->Cell(120, 20);
             $this->Cell(30, 10, 'LISTE DES EMPLOYES', 0, 0, 'C');
-//        $this->MultiCell(30, 6, "Liste des employés", 'LRT');
             $this->Ln(15);
             $this->SetFont('Arial', 'B', 11);
             $this->SetFillColor(228, 228, 228);
@@ -48,7 +47,7 @@
             $this->SetLeftMargin(84);
             $this->Cell(22, 0, $this->Image('logo1.png') . '', 0, 0, 'C');
             $this->Ln(1);*/
-            $this->Cell(10, 0, $this->PageNo() . '/{nb}', 0, 0, 'R');
+            $this->Cell(10, 0, $this->PageNo(), 0, 0, 'R');
         }
 
         function SetWidths($w)
@@ -161,6 +160,7 @@
 
     $pdf = new PDF_MC_Table('L');
     $pdf->AddPage();
+    $pdf->SetTitle("Gesterne | Liste des Employés", TRUE);
     $pdf->SetFont('Arial', '', 10);
     $pdf->SetWidths(array(25, 70, 40, 60, 82));
 
@@ -168,7 +168,7 @@
         $pdf->Row(array("A", "B", "C", "D", "E"));*/
 
     //DETAILS DE LA DEMANDE
-    $sql = "SELECT code_emp, titre_emp, nom_emp, prenoms_emp, fonction_emp, departement_emp, email_emp, tel_emp FROM employes";
+    $sql = "SELECT code_emp, titre_emp, nom_emp, prenoms_emp, fonction_emp, departement_emp, email_emp, tel_emp FROM employes ORDER BY nom_emp";
     if ($valeur = $connexion->query($sql)) {
         $ligne = $valeur->fetch_all(MYSQL_ASSOC);
         $i = 1;
