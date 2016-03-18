@@ -7,20 +7,28 @@
  */
 ?>
 
-<!--<head>
-    <meta charset="UTF-8"/>
-</head>
-<body>-->
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8" style="margin-left: 16.665%">
     <div class="panel panel-default">
         <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-            A Propos
+            Gesterne
+            <a href='form_principale.php?page=accueil' type='button'
+               class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                <span aria-hidden='true'>&times;</span>
+            </a>
         </div>
         <div class="panel-body" style="overflow: auto">
-        <p>Gestion Interne </p>
+        <!--<p>Gestion Interne </p>
             <p> Gestion Interne est une application réalisée en PHP (Hypertext Preprocessor).
             Cete application permet au personnel de la NCA Re d'effectuer des demandes de biens ou de services.
-            </p>
+            </p>-->
+            <table border="0" width="100%">
+                <tr>
+                    <td style="text-align: center">
+                        <img src="img/Icons8/under_construction_100.png">
+                        <h3 style="color: #01ADDD">En construction...</h3>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

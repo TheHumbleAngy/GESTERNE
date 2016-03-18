@@ -38,8 +38,10 @@
         // Page footer
         function Footer()
         {
-            // Position at 1.5 cm from bottom
-            $this->SetY(-30);
+            // Position at 10px from bottom
+            $this->SetY(-10);
+            // Position at 138px from left, that is approximately the center bottom of the page
+            $this->SetX(138);
             // Arial italic 8
             $this->SetFont('Arial', 'I', 8);
             // Page number
@@ -170,6 +172,9 @@
     if ($valeur = $connexion->query($sql)) {
         $ligne = $valeur->fetch_all(MYSQL_ASSOC);
         $i = 1;
+        foreach ($ligne as $list) {
+            $pdf->Row(array($list['code_four'], $list['nom_four'], "Tel: " . $list['telephonepro_four'] . "\nFax: " . $list['fax_four'] . "\nE-mail: " . $list['email_four'], $list['adresse_four'], $list['activite_four']) , 50);
+        }
         foreach ($ligne as $list) {
             $pdf->Row(array($list['code_four'], $list['nom_four'], "Tel: " . $list['telephonepro_four'] . "\nFax: " . $list['fax_four'] . "\nE-mail: " . $list['email_four'], $list['adresse_four'], $list['activite_four']) , 50);
         }

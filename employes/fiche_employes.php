@@ -37,8 +37,10 @@
         // Page footer
         function Footer()
         {
-            // Position at 1.5 cm from bottom
-            $this->SetY(-30);
+            // Position at 10px from bottom
+            $this->SetY(-10);
+            // Position at 138px from left, that is approximately the center bottom of the page
+            $this->SetX(138);
             // Arial italic 8
             $this->SetFont('Arial', 'I', 8);
             // Page number
@@ -120,7 +122,7 @@
             return $nl;
         }
 
-        function Row($data, $value) //$value est la valeur limite pour la lageur de la cellule
+        function Row($data) //$value est la valeur limite pour la lageur de la cellule
         {
             //Calculate the height of the row
             $nb = 0;
@@ -173,7 +175,7 @@
         $ligne = $valeur->fetch_all(MYSQL_ASSOC);
         $i = 1;
         foreach ($ligne as $list) {
-            $pdf->Row(array($list['code_emp'], $list['titre_emp'] . " " . $list['nom_emp'] . " " . $list['prenoms_emp'], $list['fonction_emp'], $list['departement_emp'], "Tel: " . $list['tel_emp'] . "\nE-mail: " . $list['email_emp']), 50);
+            $pdf->Row(array($list['code_emp'], $list['titre_emp'] . " " . $list['nom_emp'] . " " . $list['prenoms_emp'], $list['fonction_emp'], $list['departement_emp'], "Tel: " . $list['tel_emp'] . "\nE-mail: " . $list['email_emp']));
         }
     }
 

@@ -37,8 +37,10 @@
         // Page footer
         function Footer()
         {
-            // Position at 1.5 cm from bottom
-            $this->SetY(-30);
+            // Position at 10px from bottom
+            $this->SetY(-10);
+            // Position at 138px from left, that is approximately the center bottom of the page
+            $this->SetX(138);
             // Arial italic 8
             $this->SetFont('Arial', 'I', 8);
             // Page number
@@ -120,7 +122,7 @@
             return $nl;
         }
 
-        function Row($data, $value) //$value est la valeur limite pour la lageur de la cellule
+        function Row($data) //$value est la valeur limite pour la lageur de la cellule
         {
             //Calculate the height of the row
             $nb = 0;
@@ -177,7 +179,7 @@
             if ($val = $connexion->query($req)) {
                 $row = $val->fetch_all(MYSQL_ASSOC);
                 foreach ($row as $data) {
-                    $pdf->Row(array($list['designation_art'], $data['designation_grp'], "Stock Actuel : " . $list['stock_art']  . "\nNiveau Reappro : " . $list['niveau_reappro_art'] . "\nNiveau Cible : " . $list['niveau_cible_art'], $list['description_art']), 50);
+                    $pdf->Row(array($list['designation_art'], $data['designation_grp'], "Stock Actuel : " . $list['stock_art']  . "\nNiveau Reappro : " . $list['niveau_reappro_art'] . "\nNiveau Cible : " . $list['niveau_cible_art'], $list['description_art']));
                 }
             }
         }

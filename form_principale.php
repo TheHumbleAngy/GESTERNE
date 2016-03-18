@@ -42,11 +42,11 @@
                 <script src="css_js/bootstrap-table-master/src/bootstrap-table.js"></script>
                 <script src="css_js/menu_vertical.js"></script>
                 <script src="css_js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-                <script src="css_js/bootstrap3-editable/js/bootstrap-editable.js"></script>
+<!--                <script src="css_js/bootstrap3-editable/js/bootstrap-editable.js"></script>-->
 
                 <link rel="shortcut icon" href="img/icone_ncare.ico"/>
 
-                <title>Gestion de Stock</title>
+                <title>.:NCARe | GESTERNE:.</title>
             </head>
             <html>
         <body class="arriere_plan">
@@ -133,13 +133,13 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="form_principale.php?page=">Etats Periodiques</a>
+                                            <a href="form_principale.php?page=apropos">Etats Periodiques</a>
                                         </li>
                                         <li>
-                                            <a href="form_principale.php?page=">Utilisation/Employé</a>
+                                            <a href="form_principale.php?page=apropos">Utilisation/Employé</a>
                                         </li>
                                         <li>
-                                            <a href="form_principale.php?page=">Interaction/Fournisseur</a>
+                                            <a href="form_principale.php?page=apropos">Interaction/Fournisseur</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -172,9 +172,17 @@
                                     </ul>
                                 </li>
                                 <li class="ic-a_propos">
-                                    <a href="form_principale.php?page=a_propos">
-                                        <span>A propos</span>
+                                    <a>
+                                        <span>Info.</span>
                                     </a>
+                                    <ul>
+                                        <li>
+                                            <a href="form_principale.php?page=apropos">A Propos</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://192.168.1.190:8087/NCARE_WEBSITE/" target="_blank">Notre Site Web</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -240,20 +248,6 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a>Gestion des Sorties</a>
-                                <ul>
-                                    <li>
-                                        <a href="">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="">3</a>
-                                    </li>
-                                </ul>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -262,7 +256,6 @@
                     <div style="margin-bottom: 10px"></div>
 
                     <?php include($page); ?>
-
 
                 </div>
                 <!-- Widget -->

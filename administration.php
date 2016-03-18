@@ -1,16 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ange KOUAKOU
- * Date: 22-Oct-15
- * Time: 11:21 AM
- */
-$source = $_GET['source'];
+    /**
+     * Created by PhpStorm.
+     * User: Ange KOUAKOU
+     * Date: 22-Oct-15
+     * Time: 11:21 AM
+     */
+    $source = $_GET['source'];
 //    echo $source;
 ?>
 
 <?php if ($source == 'employes') : ?>
-
     <!--suppress ALL -->
     <div class="col-md-9" style="padding-top: 5%; margin-left: 12.66%">
         <div class="panel panel-default">
@@ -76,7 +75,6 @@ $source = $_GET['source'];
     </div>
 
 <?php elseif ($source == 'fournisseurs') : ?>
-
     <div class="col-md-9" style="padding-top: 5%; margin-left: 12.66%">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -140,9 +138,7 @@ $source = $_GET['source'];
         </div>
     </div>
 
-
 <?php elseif ($source == 'utilisateurs') : ?>
-
     <div class="col-md-9" style="padding-top: 5%; margin-left: 12.66%">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -191,8 +187,9 @@ $source = $_GET['source'];
                 </table>
             </div>
         </div>
+
+        <div class="feedback"></div>
     </div>
-    <div class="feedback"></div>
 
 
 <?php endif ?>
@@ -238,115 +235,114 @@ $source = $_GET['source'];
             })
         }
 
-        /*function rechercher() {
-         $.ajax({
-         type: "GET",
-         url: "form_actions.php",
-         data: {
-         action: "rechercher",
-         source: "utilisateurs"
-         },
-         success: function (resultat) {
-         $(".feedback").html("<p>Hello</p>");
-         }
-         })
-         }*/
+        function rechercher() {
+            $.ajax({
+                type: "POST",
+                url: "utilisateurs/form_utilisateurs.php",
+                data: {
+                    action: "rechercher",
+                },
+                success: function (resultat) {
+                    $(".feedback").html(resultat);
+                }
+            })
+        }
     </script>
 
 <?php //echo sizeof($_POST);
-if (sizeof($_POST) > 0) { //echo $_POST['validation']; //echo "test";
+    if (sizeof($_POST) > 0) { //echo $_POST['validation']; //echo "test";
 
-    if (isset($_POST['validation'])) {
-        if ($_POST['validation'] == "valider ajout") {
-            $req = "SELECT code_droit FROM droits ORDER BY code_droit DESC LIMIT 1";
-            $resultat = $connexion->query($req); //print_r($req); echo '<br>'; print_r($resultat); echo '<br>';
+        if (isset($_POST['validation'])) {
+            if ($_POST['validation'] == "valider ajout") {
+                $req = "SELECT code_droit FROM droits ORDER BY code_droit DESC LIMIT 1";
+                $resultat = $connexion->query($req); //print_r($req); echo '<br>'; print_r($resultat); echo '<br>';
 
-            if ($resultat->num_rows > 0) {
-                $ligne = $resultat->fetch_all(MYSQL_ASSOC);
+                if ($resultat->num_rows > 0) {
+                    $ligne = $resultat->fetch_all(MYSQL_ASSOC);
 
-                //reccuperation du code
-                $code = "";
-                foreach ($ligne as $data) {
-                    $code = stripslashes($data['code_droit']);
-                }
+                    //reccuperation du code
+                    $code = "";
+                    foreach ($ligne as $data) {
+                        $code = stripslashes($data['code_droit']);
+                    }
 
-                //extraction des 4 derniers chiffres
-                $code = substr($code, -4);
+                    //extraction des 4 derniers chiffres
+                    $code = substr($code, -4);
 
-                //incrementation du nombre
-                $code += 1;
-            } else
-                $code = 1;
+                    //incrementation du nombre
+                    $code += 1;
+                } else
+                    $code = 1;
 
-            $b = "DRT";
-            $dat = date("Y");
-            $dat = substr($dat, -2);
-            $format = '%04d';
-            $resultat = $dat . "" . $b . "" . sprintf($format, $code);
+                $b = "DRT";
+                $dat = date("Y");
+                $dat = substr($dat, -2);
+                $format = '%04d';
+                $resultat = $dat . "" . $b . "" . sprintf($format, $code);
 
-            $code = $resultat; //print_r($code);
-            $code_emp = $_POST['emp'];
-            $type = $_POST['compte'];
+                $code = $resultat; //print_r($code);
+                $code_emp = $_POST['emp'];
+                $type = $_POST['compte'];
 
-            $sql = "INSERT INTO droits VALUES ('$code', '$code_emp', '$type')"; //print_r($sql);
+                $sql = "INSERT INTO droits VALUES ('$code', '$code_emp', '$type')"; //print_r($sql);
 
-            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
 
-            //header('Location: form_principale.php?page=utilisateurs\form_utilisateurs&action=ajout');
+                //header('Location: form_principale.php?page=utilisateurs\form_utilisateurs&action=ajout');
 
-        } elseif ($_POST['validation'] == "valider modification") {
+            } elseif ($_POST['validation'] == "valider modification") {
 
-            $code_emp = $_POST['emp'];
-            $type = $_POST['compte'];
-            $sql = "UPDATE droits SET libelle_droit = '" . $type . "' WHERE code_emp = '" . $code_emp . "'"; //print_r($sql);
-            $requete = mysqli_query($connexion, $sql);
+                $code_emp = $_POST['emp'];
+                $type = $_POST['compte'];
+                $sql = "UPDATE droits SET libelle_droit = '" . $type . "' WHERE code_emp = '" . $code_emp . "'"; //print_r($sql);
+                $requete = mysqli_query($connexion, $sql);
+            }
         }
-    }
 
-    if (isset($_POST['element'])) {
-        $sql = "SELECT e.code_emp, e.nom_emp, e.prenoms_emp, d.libelle_droit
+        if (isset($_POST['element'])) {
+            $sql = "SELECT e.code_emp, e.nom_emp, e.prenoms_emp, d.libelle_droit
                 FROM employes AS e
                 INNER JOIN droits AS d
                 ON e.code_emp = d.code_emp
                 WHERE e.code_emp LIKE '%" . $_POST['element'] . "%' AND e.code_emp IN (SELECT code_emp FROM droits) ORDER BY e.nom_emp ASC ";
 
-        if ($resultat = $connexion->query($sql)) {
-            ?>
-            <div class="col-md-7 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-                        Utilisateurs
-                        <a href='form_principale.php?page=administration&source=utilisateurs' type='button'
-                           class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
-                            <span aria-hidden='true'>&times;</span>
-                        </a>
-                    </div>
-                    <div class="panel-body" style="overflow: auto">
-                        <table border="0" class="table table-hover table-bordered ">
-                            <thead>
-                            <tr>
-                                <td class="entete" style="text-align: center">Matricule</td>
-                                <td class="entete" style="text-align: center">Utilisateur</td>
-                                <td class="entete" style="text-align: center">Droit</td>
-                            </tr>
-                            </thead>
-                            <?php
-                            $ligne = $resultat->fetch_all(MYSQL_ASSOC);
-                            foreach ($ligne as $list) {
-                                ?>
+            if ($resultat = $connexion->query($sql)) {
+                ?>
+                <div class="col-md-7 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
+                            Utilisateurs
+                            <a href='form_principale.php?page=administration&source=utilisateurs' type='button'
+                               class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                                <span aria-hidden='true'>&times;</span>
+                            </a>
+                        </div>
+                        <div class="panel-body" style="overflow: auto">
+                            <table border="0" class="table table-hover table-bordered ">
+                                <thead>
                                 <tr>
-                                    <td><?php echo stripslashes($list['code_emp']); ?></td>
-                                    <td><?php echo stripslashes($list['prenoms_emp']) . ' ' . stripslashes($list['nom_emp']); ?></td>
-                                    <td><?php echo stripslashes($list['libelle_droit']); ?></td>
+                                    <td class="entete" style="text-align: center">Matricule</td>
+                                    <td class="entete" style="text-align: center">Utilisateur</td>
+                                    <td class="entete" style="text-align: center">Droit</td>
                                 </tr>
+                                </thead>
                                 <?php
-                            } ?>
-                        </table>
+                                    $ligne = $resultat->fetch_all(MYSQL_ASSOC);
+                                    foreach ($ligne as $list) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo stripslashes($list['code_emp']); ?></td>
+                                            <td><?php echo stripslashes($list['prenoms_emp']) . ' ' . stripslashes($list['nom_emp']); ?></td>
+                                            <td><?php echo stripslashes($list['libelle_droit']); ?></td>
+                                        </tr>
+                                        <?php
+                                    } ?>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php
+                <?php
+            }
         }
     }
-}
 ?>
