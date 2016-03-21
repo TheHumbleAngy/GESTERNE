@@ -36,7 +36,17 @@
             echo '<tr>
                 <td style="vertical-align: middle">
                     <label style="width: 100%" class="nomargin_tb">
-                        <input type="text" class="form-control" id="test" name="libelle[]" required style="font-weight: lighter" onblur="this.value = this.value.toUpperCase();">
+                        <select name="libelle[]" required class="form-control">
+                            <option disabled selected>--- Sélectionner un article ---</option>';
+
+            $sql = "SELECT designation_art FROM articles ORDER BY designation_art ASC ";
+            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+            while ($data = mysqli_fetch_array($res)) {
+                echo '<option value="' . $data['designation_art'] . '" >' . $data['designation_art'] . '</option>';
+            }
+
+            echo '
+                        </select>
                     </label>
                 </td>
                 <td style="text-align: center; vertical-align: middle">

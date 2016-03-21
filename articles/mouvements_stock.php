@@ -54,6 +54,7 @@
         </div>
 
         <script>
+            //Ce script permet d'afficher la liste des articles à saisir
             var articles = ["a", "b"],
                 nbr_art = $('input[type=number]#nbr_articles');
 
@@ -73,7 +74,8 @@
                 });
             });
 
-            nbr_art.bind('blur', function () {
+            //Ce script permet de générer la liste sélectionnable des articles dans les différents textbox
+            /*nbr_art.bind('blur', function () {
                 $.ajax({
                     url: "articles/libelles_articles.php",
                     dataType: "json",
@@ -88,7 +90,7 @@
                         });
                     }
                 })
-            });
+            });*/
         </script>
 
         <?php
@@ -156,6 +158,7 @@
         </div>
 
         <script>
+            //Ce script permet d'afficher la liste des articles à saisir
             var articles = ["a", "b"],
                 nbr_art = $('input[type=number]#nbr_articles');
 
@@ -175,7 +178,8 @@
                 });
             });
 
-            nbr_art.bind('blur', function () {
+            //Ce script permet de générer la liste sélectionnable des articles dans les différents textbox
+            /*nbr_art.bind('blur', function () {
                 $.ajax({
                     url: "articles/libelles_articles.php",
                     dataType: "json",
@@ -190,7 +194,7 @@
                         });
                     }
                 })
-            });
+            });*/
         </script>
 
         <?php
