@@ -28,10 +28,19 @@
                             <input type="hidden" name="code_art" value="<?php echo $data['code_art']; ?>">
                             <input type="hidden" name="action" value="supprimer">
 
-                            <div class="jumbotron"
-                                 style="width: 70%; padding: 30px 30px 20px 30px; background-color: rgba(1, 139, 178, 0.1); margin-left: auto; margin-right: auto">
-                                <p style="color: red; font-size: small">Voulez-vous vraiment supprimer l'article
-                                    <strong><?php echo $data['code_art']; ?></strong>?</p>
+                            <div class="jumbotron info">
+                                <table border="0">
+                                    <tr>
+                                        <td>
+                                            <p style="color: #f81616; font-size: small">Vous êtes sur le point de supprimer l'article
+                                                <strong><?php echo $data['code_art']; ?></strong>. Êtes-vous sûr de vouloir continuer cette action?</p>
+                                        </td>
+                                        <td style="padding-left: 10px; vertical-align: top">
+                                            <img src="img/Icons8/roadblock_52.png" height="40" width="40">
+                                        </td>
+                                    </tr>
+                                </table>
+
                             </div>
                             <table class="formulaire"
                                    style="margin-left: auto; margin-right: auto; border-spacing: 8px"

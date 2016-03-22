@@ -18,8 +18,8 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
-                        <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-                            Modification Article
+                        <div class="panel-heading">
+                            <span class="icons8-clipboard"> Modification d'un Article</span>
                             <a href='form_principale.php?page=form_actions&source=articles&action=modifier'
                                type='button'
                                class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -27,10 +27,18 @@
                             </a>
                         </div>
                         <div class="panel-body">
-                            <div class="jumbotron"
-                                 style="width: 70%; padding: 30px 30px 20px 30px; background-color: rgba(1, 139, 178, 0.1); margin-left: auto; margin-right: auto">
-                                <p style="color: grey; font-size: small">Les champs précédés de "*" sont impératifs.
-                                    Veuillez donc les renseigner.</p>
+                            <div class="jumbotron info">
+                                <table border="0">
+                                    <tr>
+                                        <td>
+                                            <p style="color: grey; font-size: small">Les champs précédés de "*" sont impératifs.
+                                                Veuillez donc les renseigner.</p>
+                                        </td>
+                                        <td style="padding-left: 10px; vertical-align: top">
+                                            <img src="img/Icons8/About_1.png" height="30" width="30">
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                             <form method="post" action="form_principale.php?page=articles/maj_articles">
                                 <input type="hidden" name="code_art" value="<?php echo $data['code_art']; ?>">

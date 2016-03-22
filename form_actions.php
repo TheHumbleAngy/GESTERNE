@@ -524,7 +524,7 @@ $action = $_GET['action'];
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Supprimer > Article</span>
+                    <span class="icons8-clipboard"> Suppression d'un Article</span>
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -556,7 +556,7 @@ $action = $_GET['action'];
                                             $sql = "SELECT * FROM articles ORDER BY designation_art ASC ";
                                             $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
                                             while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_art'] . '" >' . $data['designation_art'] . '</option>';
+                                                echo '<option value="' . $data['code_art'] . '" >' . $data['code_art'] . " | " . $data['designation_art'] . '</option>';
                                             }
                                             ?>
                                         </select>
@@ -580,7 +580,7 @@ $action = $_GET['action'];
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Modifier > Article</span>
+                    <span class="icons8-clipboard"> Modification d'un Article</span>
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -610,10 +610,10 @@ $action = $_GET['action'];
                                         <select name="code" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
-                                            $sql = "SELECT * FROM articles ORDER BY designation_art ASC ";
+                                            $sql = "SELECT code_art, designation_art FROM articles ORDER BY designation_art ASC ";
                                             $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
                                             while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_art'] . '" >' . $data['designation_art'] . '</option>';
+                                                echo '<option value="' . $data['code_art'] . '" >' . $data['code_art'] . " | " . $data['designation_art'] . '</option>';
                                             }
                                             ?>
                                         </select>
