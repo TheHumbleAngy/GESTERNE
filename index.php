@@ -50,13 +50,13 @@ error_reporting(0);
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="position: inherit">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
-                                <strong>Oups!</strong> Vous êtes déjà connecté à partir d\'un autre navigateur! Veuillez vous en déconnecter avant de continuer.
+                                <strong>Oups!</strong><br/> Vous êtes déjà connecté à partir d\'un autre navigateur! Veuillez vous en déconnecter avant de continuer.
                               </div>';
                 }
             }
             ?>
             <form action="processing.php" method="post" id="myForm">
-                <table border="0" style="border-collapse: separate; border-spacing: 5px">
+                <table border="0" style="border-collapse: separate; border-spacing: 8px">
                     <tbody>
                     <tr class="champ">
                         <td style="width: 25%; margin: auto">Identifiant :</td>

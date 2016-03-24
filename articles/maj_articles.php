@@ -26,7 +26,7 @@
                            data-dismiss='alert' aria-label='Close' style='position: inherit'>
                             <span aria-hidden='true'>&times;</span>
                     </a>
-                    <strong>Succès!</strong> Les informations sur l'article " . $code . " ont été mises a jour.
+                    <strong>Succès!</strong><br/> Les informations sur l'article " . $code . " ont été mises a jour.
                 </div>
             </div>
             ";
@@ -40,7 +40,7 @@
                            data-dismiss='alert' aria-label='Close' style='position: inherit'>
                             <span aria-hidden='true'>&times;</span>
                         </a>
-                    <strong>Succès!</strong> L'article " . $code . " a été supprimé de la base.
+                    <strong>Succès!</strong><br/> L'article " . $code . " a été supprimé de la base.
                 </div>
             </div>
             ";

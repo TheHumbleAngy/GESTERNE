@@ -19,7 +19,7 @@
         <div class="panel-body" style="overflow: auto">
         <!--<p>Gestion Interne </p>
             <p> Gestion Interne est une application réalisée en PHP (Hypertext Preprocessor).
-            Cete application permet au personnel de la NCA Re d'effectuer des demandes de biens ou de services.
+            Cette application permet au personnel de la NCA Re d'effectuer des demandes de biens ou de services.
             </p>-->
             <table border="0" width="100%">
                 <tr>

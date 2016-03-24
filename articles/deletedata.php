@@ -24,7 +24,7 @@
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Succès!</strong> L'article " . $id . " a été suprimé.
+                <strong>Succès!</strong><br/> L'article " . $id . " a été suprimé.
             </div>
             ";
         } else {
@@ -33,7 +33,7 @@
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Erreur!</strong><br>Une erreur s'est produite lors de la tentative de suppression de l'article " . $id . ". Veuillez contacter l'administrateur.
+                <strong>Erreur!</strong><br/><br>Une erreur s'est produite lors de la tentative de suppression de l'article " . $id . ". Veuillez contacter l'administrateur.
             </div>
             ";
         }
@@ -43,7 +43,7 @@
             <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                 <span aria-hidden='true'>&times;</span>
             </button>
-            <strong>Erreur!</strong><br>Une erreur s'est produite. Veuillez contacter l'administrateur.
+            <strong>Erreur!</strong><br/><br>Une erreur s'est produite. Veuillez contacter l'administrateur.
         </div>
     ";
     }

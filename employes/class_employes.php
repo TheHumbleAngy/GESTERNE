@@ -29,7 +29,7 @@
     class employes extends class_employes
     {
         /**
-         * Initialisation d'un objet sans paramètres
+         * Initialisation d'un objet sans paramï¿½tres
          */
 
         function __construct()
@@ -47,7 +47,7 @@
         }
 
         /**
-         * Initialisation d'un objet à partir de plusieurs paramètres
+         * Initialisation d'un objet ï¿½ partir de plusieurs paramï¿½tres
          *
          * @param $code_emp
          * @param $nom_emp
@@ -107,7 +107,7 @@
             if ($connexion->connect_error)
                 die($connexion->connect_error);
 
-            //On vérifie s'il y a un en registrement dans la base de données
+            //On vï¿½rifie s'il y a un en registrement dans la base de donnï¿½es
             $req = "SELECT code_emp FROM employes ORDER BY code_emp DESC LIMIT 1";
             $resultat = $connexion->query($req);
 
@@ -127,7 +127,7 @@
                 $code_emp += 1;
                 //echo $resultat;
             } else {
-                //s'il n'existe pas d'enregistrements dans la base de données
+                //s'il n'existe pas d'enregistrements dans la base de donnï¿½es
                 $code_emp = 1;
             }
             $b = "EMP";
@@ -142,7 +142,7 @@
             $sql = "INSERT INTO employes (code_emp, titre_emp, nom_emp, prenoms_emp, fonction_emp, departement_emp, email_emp, mdp, tel_emp)
                     VALUES ('$this->code_emp', '$this->titre_emp', '$this->nom_emp', '$this->prenoms_emp', '$this->fonction_emp', '$this->departement_emp', '$this->email_emp', '$this->mdp', '$this->tel_emp')";
 
-            //exécution de la requête SQL:
+            //exï¿½cution de la requï¿½te SQL:
 //            $result = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
             if ($result = mysqli_query($connexion, $sql)) {
                 return TRUE;
@@ -164,11 +164,8 @@
             departement_emp ='" . $this->departement_emp . "',
             email_emp ='" . $this->email_emp . "',
             tel_emp ='" . $this->tel_emp . "'
-            WHERE code_emp ='" . $code . "'";
+            WHERE code_emp = '" . $code . "'";
 
-//            print_r($sql);
-            //exécution de la requête SQL:
-//            $result = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
             if ($result = mysqli_query($connexion, $sql))
                 return TRUE;
             else
@@ -181,7 +178,7 @@
             if ($connexion->connect_error)
                 die($connexion->connect_error);
 
-            $sql = "DELETE FROM employes WHERE code_emp = '" . $code . "'";
+            $sql = "DELETE FROM employes WHERE code_emp = '" . $code . "'"; //print_r($sql);
 
             if ($result = mysqli_query($connexion, $sql))
                 return TRUE;

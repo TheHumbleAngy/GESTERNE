@@ -134,7 +134,7 @@ if (isset($_POST['opt'])) {
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Acitivité :</td>
+                                                            <td>Acitivitï¿½ :</td>
                                                             <td>
                                                                 <label>
                                                                     <input type="text" size="60" class="form-control"
@@ -233,7 +233,7 @@ if (isset($_POST['opt'])) {
                            data-dismiss='alert' aria-label='Close' style='position: inherit'>
                             <span aria-hidden='true'>&times;</span>
                         </a>
-                    <strong>Desole!</strong> La recherche n'a retourne aucun resultat.
+                    <strong>Desole!</strong><br/> La recherche n'a retourne aucun resultat.
                 </div>
             </div>
             ";

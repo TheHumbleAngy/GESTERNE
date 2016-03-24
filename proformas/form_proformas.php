@@ -476,7 +476,7 @@
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Succes!</strong> La proforma a bien ete saisie.
+                <strong>Succes!</strong><br/> La proforma a bien ete saisie.
             </div>
             ";
         } else {

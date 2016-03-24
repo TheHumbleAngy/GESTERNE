@@ -5,17 +5,18 @@
  * Date: 29/10/2015
  * Time: 10:01
  */
+
 if (isset($_POST['code'])) {
     $code = $_POST['code'];
 
     $sql = "SELECT * FROM employes WHERE code_emp = '" . $code . "'";
     $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
     while ($data = mysqli_fetch_array($res)) :?>
-
+        <!--suppress ALL -->
         <div class="col-md-9" style="margin-left: 12.66%">
             <div class="panel panel-default">
-                <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-                    Suppression Employe
+                <div class="panel-heading">
+                    Suppression Employé
                     <a href='form_principale.php?page=form_actions&source=employes&action=supprimer' type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
                     </a>
@@ -24,9 +25,17 @@ if (isset($_POST['code'])) {
                     <form action="form_principale.php?page=employes/maj_employes" method="POST">
                         <input type="hidden" name="code_emp" value="<?php echo $data['code_emp']; ?>">
                         <input type="hidden" name="action" value="supprimer">
-                        <div class="jumbotron"
-                             style="width: 70%; padding: 30px 30px 20px 30px; background-color: rgba(1, 139, 178, 0.1); margin-left: auto; margin-right: auto">
-                            <p style="color: red; font-size: small">Voulez-vous vraiment supprimer l'employe <strong><?php echo $data['code_emp']; ?></strong>?</p>
+                        <div class="jumbotron info">
+                            <table border="0">
+                                <tr>
+                                    <td>
+                                        <p style="color: #f81616; font-size: small">Voulez-vous vraiment supprimer l'employé <strong><?php echo $data['code_emp']; ?></strong>?</p>
+                                    </td>
+                                    <td style="padding-left: 10px; vertical-align: top">
+                                        <img src="img/Icons8/roadblock_52.png" height="40" width="40" style="margin-bottom: 15px">
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                         <table class="formulaire"
                                style="width= 100%; margin-right: auto; margin-left: auto"
@@ -98,7 +107,7 @@ if (isset($_POST['code'])) {
                                 Oui
                             </button>
 
-                            <a class="btn btn-default" href="form_principale.php?page=administration&source=employes" role="button" style="width: 150px">Non</a>
+                            <a class="btn btn-default" href="form_principale.php?page=form_actions&source=employes&action=supprimer" role="button" style="width: 150px">Non</a>
                         </div>
                     </form>
                 </div>

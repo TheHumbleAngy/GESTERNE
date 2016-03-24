@@ -19,7 +19,7 @@ if (isset($_POST['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Succès!</strong> La demande " . $id . " a été supprimée.
+                <strong>Succï¿½s!</strong><br/> La demande " . $id . " a ï¿½tï¿½ supprimï¿½e.
             </div>
             ";
     } else {
@@ -28,7 +28,7 @@ if (isset($_POST['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Erreur!</strong> Une erreur s'est produite lors de la tentative de suppression de la demande " . $id . ". Veuillez contacter l'administrateur.
+                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de suppression de la demande " . $id . ". Veuillez contacter l'administrateur.
             </div>
             ";
     }
@@ -38,7 +38,7 @@ if (isset($_POST['id'])) {
             <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
             </button>
-            <strong>Erreur!</strong> Une erreur s'est produite. Veuillez contacter l'administrateur.
+            <strong>Erreur!</strong><br/> Une erreur s'est produite. Veuillez contacter l'administrateur.
         </div>
     ";
 }

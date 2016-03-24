@@ -10,6 +10,7 @@
     {
         public $code_art;
         public $designation_art;
+        public $date_art;
         public $code_grp;
         public $description_art;
         public $stock_art;
@@ -32,6 +33,7 @@
             $this->code_art = htmlspecialchars($_POST['code_art'], ENT_QUOTES);
             $this->stock_art = htmlspecialchars($_POST['stock_art'], ENT_QUOTES);
             $this->designation_art = htmlspecialchars($_POST['designation_art'], ENT_QUOTES);
+            $this->date_art = date("Y/m/d");
             $this->code_grp = htmlspecialchars($_POST['code_grp'], ENT_QUOTES);
             $this->description_art = htmlspecialchars($_POST['description_art'], ENT_QUOTES);
             $this->niveau_cible_art = htmlspecialchars($_POST['niveau_cible_art'], ENT_QUOTES);
@@ -54,8 +56,8 @@
             $this->designation_art = mysqli_real_escape_string($connexion, $this->designation_art);
             $this->designation_art = utf8_decode($this->designation_art);
 
-            $sql = "INSERT INTO articles (code_art, code_grp, designation_art, description_art, niveau_reappro_art, niveau_cible_art, stock_art)
-                     VALUES ('$this->code_art', '$this->code_grp', '$this->designation_art', '$this->description_art', '$this->niveau_reappro_art', '$this->niveau_cible_art', '$this->stock_art')";
+            $sql = "INSERT INTO articles (code_art, code_grp, designation_art, date_art, description_art, niveau_reappro_art, niveau_cible_art, stock_art)
+                     VALUES ('$this->code_art', '$this->code_grp', '$this->designation_art', '$this->date_art', '$this->description_art', '$this->niveau_reappro_art', '$this->niveau_cible_art', '$this->stock_art')";
 
 //            print_r($sql);
             if ($result = mysqli_query($connexion, $sql))
@@ -148,7 +150,7 @@
                 //incrementation du nombre
                 $num_entr += 1;
             } else {
-                //s'il n'existe pas d'enregistrements dans la base de donn�es
+                //s'il n'existe pas d'enregistrements dans la base de données
                 $num_entr = 1;
             }
 
@@ -166,7 +168,7 @@
 
             if ($result = mysqli_query($connexion, $sql)) {
 
-                //Saisie des d�tails
+                //Saisie des détails
                 $nbr = $_POST['nbr']; //echo $nbr;
                 for ($i = 0; $i < $nbr; $i++) {
                     $req = "SELECT num_dentr FROM details_entree ORDER BY num_dentr DESC LIMIT 1"; //print_r($req); echo $i . '<br>';
@@ -187,7 +189,7 @@
                         //incrementation du nombre
                         $code_de += 1;
                     } else {
-                        //s'il n'existe pas d'enregistrements dans la base de donn�es
+                        //s'il n'existe pas d'enregistrements dans la base de données
                         $code_de = 1;
                     }
 
@@ -227,7 +229,7 @@
                     /*$result = mysqli_query($connexion, $sql);
                     print_r($result);*/
                     if ($result = mysqli_query($connexion, $sql)) {
-                        //Mise � jour de la quantit� de l'article en cours
+                        //Mise à jour de la quantité de l'article en cours
                         $sql = "UPDATE articles SET stock_art = $stock_art WHERE code_art = '" . $code_art . "'";
                         mysqli_query($connexion, $sql);
                     }
@@ -289,7 +291,7 @@
                 //incrementation du nombre
                 $num_sort += 1;
             } else {
-                //s'il n'existe pas d'enregistrements dans la base de donn�es
+                //s'il n'existe pas d'enregistrements dans la base de données
                 $num_sort = 1;
             }
 
@@ -307,7 +309,7 @@
 
             if ($result = mysqli_query($connexion, $sql)) {
 
-                //Saisie des d�tails
+                //Saisie des détails
                 $nbr = $_POST['nbr']; //echo $nbr;
 
                 for ($i = 0; $i < $nbr; $i++) {
@@ -329,7 +331,7 @@
                         //incrementation du nombre
                         $code_ds += 1;
                     } else {
-                        //s'il n'existe pas d'enregistrements dans la base de donn�es
+                        //s'il n'existe pas d'enregistrements dans la base de données
                         $code_ds = 1;
                     }
 
@@ -369,7 +371,7 @@
                     /*$result = mysqli_query($connexion, $sql);
                     print_r($result);*/
                     if ($result = mysqli_query($connexion, $sql)) {
-                        //Mise � jour de la quantit� de l'article en cours
+                        //Mise à jour de la quantité de l'article en cours
                         $sql = "UPDATE articles SET stock_art = $stock_art WHERE code_art = '" . $code_art . "'";
                         mysqli_query($connexion, $sql);
                     }

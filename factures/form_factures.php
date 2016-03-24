@@ -234,7 +234,7 @@ if (sizeof($_POST) > 0) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Succes!</strong> La facture a bien ete enregistree. La facture a bien été enregistree sous le numéro $num_fact
+                <strong>Succes!</strong><br/> La facture a bien ete enregistree. La facture a bien été enregistree sous le numéro $num_fact
             </div>
             ";
     } else {
