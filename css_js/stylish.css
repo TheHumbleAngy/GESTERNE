@@ -161,7 +161,7 @@ body.outer {
 
 table.formulaire {
     border-collapse: separate;
-    border-spacing: 5px;
+    border-spacing: 8px;
 }
 
 table.formulaire tr td label {
@@ -568,9 +568,17 @@ table.table tr td {
 }
 
 .jumbotron.info { !important;
-    width: 70%;
-    padding: 30px 30px 20px 30px;
+    width: 75%;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 20px;
     background-color: rgba(1, 139, 178, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jumbotron.info > table {
     margin-left: auto;
     margin-right: auto;
 }
@@ -592,3 +600,7 @@ input[type="number"].form-control {
     padding-bottom: 4px;
     padding-top: 4px;
 }
+
+/*.form-control:not([type=textarea]) {
+    height: 29px !important;
+}*/

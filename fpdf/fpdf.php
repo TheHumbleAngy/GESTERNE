@@ -7,6 +7,8 @@
      * Author:  Olivier PLATHEY                                                     *
      *******************************************************************************/
 
+    /*TODO: Se référer aux fichiers changelog.htm et FAQ.htm pour une aide*/
+
     define('FPDF_VERSION', '1.8');
 
     class FPDF

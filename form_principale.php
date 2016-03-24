@@ -33,7 +33,6 @@
                 <link type="text/css" href="css_js/menu_nav.css" rel="stylesheet"/>
                 <link type="text/css" href="css_js/stylish.css" rel="stylesheet">
                 <link type="text/css" href="css_js/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet">
-                <link type="text/css" href="css_js/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
                 <link type="text/css" href="css_js/windows-10-icons-1.0.0/windows-10-icons-1.0.0/font/styles.min.css"
                       rel="stylesheet">
 

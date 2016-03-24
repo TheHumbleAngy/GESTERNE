@@ -354,7 +354,7 @@ if (isset($_GET['action']) && $_GET['action'] == "consultation") : ?>
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Succes!</strong> Le bon de commande a bien ete saisi.
+                <strong>Succes!</strong><br/> Le bon de commande a bien ete saisi.
             </div>
             ";
 //            rediriger('form_principale.php?page=bons/bons_commande/form_bon_commande');

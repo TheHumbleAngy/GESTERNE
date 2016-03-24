@@ -108,7 +108,7 @@
                     <div class="container">
                         <table id="table"
                                data-toggle="table"
-                               data-url="articles/articles.php"
+                               data-url="articles/infos_articles.php"
                                data-height="288"
                                data-pagination="true"
                                data-page-size="4"
@@ -148,12 +148,11 @@
 
         $('#designation_art').bind('blur', function () {
             if (articles.indexOf(this.value) > -1) {
-                alert("Cet article existe deja.");
+                alert("Cet article existe déjà dans la base.");
                 this.value = "";
             }
         });
     </script>
-
 
 <?php
     if (isset($_POST['code_art']) && isset($_POST['designation_art']) && $_POST['designation_art'] != "") {

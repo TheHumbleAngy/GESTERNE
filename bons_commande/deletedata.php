@@ -25,7 +25,7 @@ if (isset($_POST['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Succes!</strong> Le bon de commande " . $id . " a ete supprime. Cliquez <a href='form_principale.php?page=form_actions&source=bons_commande&action=rechercher'>ici</a> pour continuer.
+                <strong>Succes!</strong><br/> Le bon de commande " . $id . " a ete supprime. Cliquez <a href='form_principale.php?page=form_actions&source=bons_commande&action=rechercher'>ici</a> pour continuer.
             </div>
             ";
         } else {
@@ -34,7 +34,7 @@ if (isset($_POST['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Erreur!</strong> Une erreur s'est produite lors de la tentative de suppression du bon de commande " . $id . ". Veuillez contacter l'administrateur.
+                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de suppression du bon de commande " . $id . ". Veuillez contacter l'administrateur.
             </div>
             ";
         }
@@ -44,7 +44,7 @@ if (isset($_POST['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Erreur!</strong> Une erreur s'est produite lors de la tentative de suppression des articles du bon de commande " . $id . ". Veuillez contacter l'administrateur.
+                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de suppression des articles du bon de commande " . $id . ". Veuillez contacter l'administrateur.
             </div>
             ";
     }

@@ -14,7 +14,7 @@
     <div class="col-md-9" style="padding-top: 5%; margin-left: 12.66%">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <span class="icons8-clipboard"> Employes</span>
+                <span class="icons8-clipboard"> Administration - Employés</span>
                 <a href='form_principale.php?page=accueil' type='button' class='close'
                    data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
@@ -190,7 +190,6 @@
 
         <div class="feedback"></div>
     </div>
-
 
 <?php endif ?>
 

@@ -34,7 +34,7 @@ if (isset($_POST["proforma"])) {
             </button>
         </div>
     <div class="col-md-12">
-        <table style="border-collapse: separate; border-spacing: 5px" border="0">
+        <table style="border-collapse: separate; border-spacing: 8px" border="0">
             <tr>
                 <td class="champlabel">Fournisseur :</td>
                 <td>

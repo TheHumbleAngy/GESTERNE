@@ -14,11 +14,11 @@ if (isset($_POST['bon_cmd'])) {
 
     $n = 0;
 
-    //On verifie si le bon de commande selectionne n'est pas deja lie � un bon de livraison
+    //On verifie si le bon de commande selectionne n'est pas déjà lie � un bon de livraison
     $sql = "SELECT num_bc FROM bons_livraison WHERE num_bc = '" . $bon_cmd . "'";
     if ($resultat = $connexion->query($sql)) {
         $n = $resultat->num_rows;
-        //Si la requete retourne au moins une ligne, on a deja un bon de commande lie � un bon de livraison
+        //Si la requete retourne au moins une ligne, on a déjà un bon de commande lie � un bon de livraison
         if ($n > 0) {
             //On reccupere le dernier bon de livraison enregistre relatif au bon de commande
             /*$sql = "SELECT details_bon_livraison.code_bl, qte_restante
@@ -97,7 +97,7 @@ if (isset($_POST['bon_cmd'])) {
 </div>';
                 }
                 /*else {
-                    echo "<h4 style='color: #01ADDD'>Cette commande a deja ete satisfaite. Veuillez en selectionner une autre.</h4>";
+                    echo "<h4 style='color: #01ADDD'>Cette commande a déjà ete satisfaite. Veuillez en selectionner une autre.</h4>";
                 }*/
             }
 

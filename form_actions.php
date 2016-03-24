@@ -1,12 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ange KOUAKOU
- * Date: 22-Oct-15
- * Time: 2:59 PM
- */
-$source = $_GET['source'];
-$action = $_GET['action'];
+    /**
+     * Created by PhpStorm.
+     * User: Ange KOUAKOU
+     * Date: 22-Oct-15
+     * Time: 2:59 PM
+     */
+    $source = $_GET['source'];
+    $action = $_GET['action'];
 //    echo $action;
 ?>
 
@@ -16,7 +16,7 @@ $action = $_GET['action'];
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Modifier > Employe</span>
+                    Modif. Employé
                     <a href='form_principale.php?page=administration&source=employes' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -27,8 +27,8 @@ $action = $_GET['action'];
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner l'employe a modifier a l'aide de
-                                        la liste deroulante puis cliquez sur le boutton en face pour proceder.</p>
+                                    <p style="font-size: small">Veuillez sélectionner l'employé à modifier à l'aide de
+                                        la liste déroulante puis cliquez sur le boutton en face pour procéder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
                                     <img src="img/Icons8/About_1.png">
@@ -45,11 +45,11 @@ $action = $_GET['action'];
                                         <select name="code" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
-                                            $sql = "SELECT code_emp, prenoms_emp, nom_emp FROM employes ORDER BY nom_emp ASC ";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_emp'] . '" >' . $data['prenoms_emp'] . " " . $data['nom_emp'] . '</option>';
-                                            }
+                                                $sql = "SELECT code_emp, prenoms_emp, nom_emp FROM employes ORDER BY nom_emp ASC ";
+                                                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                                                while ($data = mysqli_fetch_array($res)) {
+                                                    echo '<option value="' . $data['code_emp'] . '" >' . $data['prenoms_emp'] . " " . $data['nom_emp'] . '</option>';
+                                                }
                                             ?>
                                         </select>
                                     </label>
@@ -84,10 +84,10 @@ $action = $_GET['action'];
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner le critere de recherche a l'aide
-                                        de la liste deroulante. Entrez ensuite le texte a rechercher ou tapez quelques
-                                        carateres qui, selon vous, existent dans l'element a rechercher. Puis, cliquez
-                                        sur le boutton en face pour proceder.</p>
+                                    <p style="font-size: small">Veuillez sélectionner le critère de recherche à l'aide
+                                        de la liste déroulante. Entrez ensuite le texte a rechercher ou tapez quelques
+                                        carateres qui, selon vous, existent dans l'élément a rechercher. Puis, cliquez
+                                        sur le boutton en face pour procéder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
                                     <img src="img/Icons8/About_1.png">
@@ -141,7 +141,7 @@ $action = $_GET['action'];
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Supprimer > Employe</span>
+                    Suppr. Employé
                     <a href='form_principale.php?page=administration&source=employes' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -152,8 +152,8 @@ $action = $_GET['action'];
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner l'employe a supprimer a l'aide de
-                                        la liste deroulante puis cliquez sur le boutton en face pour proceder.</p>
+                                    <p style="font-size: small">Veuillez sélectionner l'employé à supprimer à l'aide de
+                                        la liste deroulante puis cliquez sur le boutton en face pour procéder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
                                     <img src="img/Icons8/About_1.png">
@@ -170,11 +170,11 @@ $action = $_GET['action'];
                                         <select name="code" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
-                                            $sql = "SELECT code_emp, prenoms_emp, nom_emp FROM employes ORDER BY nom_emp ASC ";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_emp'] . '" >' . $data['prenoms_emp'] . " " . $data['nom_emp'] . '</option>';
-                                            }
+                                                $sql = "SELECT code_emp, prenoms_emp, nom_emp FROM employes ORDER BY nom_emp ASC ";
+                                                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                                                while ($data = mysqli_fetch_array($res)) {
+                                                    echo '<option value="' . $data['code_emp'] . '" >' . $data['prenoms_emp'] . " " . $data['nom_emp'] . '</option>';
+                                                }
                                             ?>
                                         </select>
                                     </label>
@@ -199,7 +199,7 @@ $action = $_GET['action'];
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Modifier > Fournisseur</span>
+                    Modif. Fournisseur
                     <a href='form_principale.php?page=administration&source=fournisseurs' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -210,8 +210,8 @@ $action = $_GET['action'];
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner le fournisseur a modifier a l'aide
-                                        de la liste deroulante puis cliquez sur le boutton en face pour proceder.</p>
+                                    <p style="font-size: small">Veuillez sélectionner le fournisseur à modifier à l'aide
+                                        de la liste déroulante puis cliquez sur le boutton en face pour procéder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
                                     <img src="img/Icons8/About_1.png">
@@ -228,11 +228,11 @@ $action = $_GET['action'];
                                         <select name="code" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
-                                            $sql = "SELECT code_four, nom_four FROM fournisseurs ORDER BY nom_four ASC";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_four'] . '" >' . $data['nom_four'] . '</option>';
-                                            }
+                                                $sql = "SELECT code_four, nom_four FROM fournisseurs ORDER BY nom_four ASC";
+                                                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                                                while ($data = mysqli_fetch_array($res)) {
+                                                    echo '<option value="' . $data['code_four'] . '" >' . $data['nom_four'] . '</option>';
+                                                }
                                             ?>
                                         </select>
                                     </label>
@@ -267,10 +267,10 @@ $action = $_GET['action'];
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner le critere de recherche a l'aide
-                                        de la liste deroulante. Entrez ensuite le texte a rechercher ou tapez quelques
-                                        carateres qui, selon vous, existent dans l'element a rechercher. Puis, cliquez
-                                        sur le boutton en face pour proceder.</p>
+                                    <p style="font-size: small">Veuillez sélectionner le critère de recherche à l'aide
+                                        de la liste déroulante. Entrez ensuite le texte a rechercher ou tapez quelques
+                                        carateres qui, selon vous, existent dans l'élément a rechercher. Puis, cliquez
+                                        sur le boutton en face pour procéder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
                                     <img src="img/Icons8/About_1.png">
@@ -325,7 +325,7 @@ $action = $_GET['action'];
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Supprimer > Fournisseur</span>
+                    Suppr. Fournisseur
                     <a href='form_principale.php?page=administration&source=fournisseurs' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -336,7 +336,8 @@ $action = $_GET['action'];
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner le fournisseur a supprimer a l'aide de la
+                                    <p style="font-size: small">Veuillez selectionner le fournisseur a supprimer a
+                                        l'aide de la
                                         liste deroulante puis cliquez sur le boutton en face pour proceder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
@@ -355,11 +356,11 @@ $action = $_GET['action'];
                                         <select name="code" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
-                                            $sql = "SELECT code_four, nom_four FROM fournisseurs ORDER BY nom_four ASC ";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_four'] . '" >' . $data['nom_four'] . '</option>';
-                                            }
+                                                $sql = "SELECT code_four, nom_four FROM fournisseurs ORDER BY nom_four ASC ";
+                                                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                                                while ($data = mysqli_fetch_array($res)) {
+                                                    echo '<option value="' . $data['code_four'] . '" >' . $data['nom_four'] . '</option>';
+                                                }
                                             ?>
                                         </select>
                                     </label>
@@ -535,7 +536,8 @@ $action = $_GET['action'];
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner l'article a supprimer a l'aide de la liste
+                                    <p style="font-size: small">Veuillez selectionner l'article a supprimer a l'aide de
+                                        la liste
                                         deroulante puis cliquez sur le boutton en face pour proceder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
@@ -553,11 +555,11 @@ $action = $_GET['action'];
                                         <select name="code" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
-                                            $sql = "SELECT * FROM articles ORDER BY designation_art ASC ";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_art'] . '" >' . $data['code_art'] . " | " . $data['designation_art'] . '</option>';
-                                            }
+                                                $sql = "SELECT * FROM articles ORDER BY designation_art ASC ";
+                                                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                                                while ($data = mysqli_fetch_array($res)) {
+                                                    echo '<option value="' . $data['code_art'] . '" >' . $data['code_art'] . " | " . $data['designation_art'] . '</option>';
+                                                }
                                             ?>
                                         </select>
                                     </label>
@@ -591,7 +593,8 @@ $action = $_GET['action'];
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner l'article a modifier a l'aide de la liste
+                                    <p style="font-size: small">Veuillez selectionner l'article a modifier a l'aide de
+                                        la liste
                                         deroulante puis cliquez sur le boutton en face pour proceder a la modification.
                                     </p>
                                 </td>
@@ -610,11 +613,11 @@ $action = $_GET['action'];
                                         <select name="code" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
-                                            $sql = "SELECT code_art, designation_art FROM articles ORDER BY designation_art ASC ";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_art'] . '" >' . $data['code_art'] . " | " . $data['designation_art'] . '</option>';
-                                            }
+                                                $sql = "SELECT code_art, designation_art FROM articles ORDER BY designation_art ASC ";
+                                                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                                                while ($data = mysqli_fetch_array($res)) {
+                                                    echo '<option value="' . $data['code_art'] . '" >' . $data['code_art'] . " | " . $data['designation_art'] . '</option>';
+                                                }
                                             ?>
                                         </select>
                                     </label>
@@ -650,7 +653,7 @@ $action = $_GET['action'];
                     <form action="form_principale.php?page=proformas/rech_proformas"
                           method="post">
                         <table class="formulaire"
-                               style="border-collapse: separate; border-spacing: 5px"
+                               style="border-collapse: separate; border-spacing: 8px"
                                border="0">
                             <tr>
                                 <td class="champlabel">
@@ -708,7 +711,7 @@ $action = $_GET['action'];
                     <form action="form_principale.php?page=bons_commande/rech_bons_commande"
                           method="post">
                         <table class="formulaire"
-                               style="border-collapse: separate; border-spacing: 5px"
+                               style="border-collapse: separate; border-spacing: 8px"
                                border="0">
                             <tr>
                                 <td class="champlabel">

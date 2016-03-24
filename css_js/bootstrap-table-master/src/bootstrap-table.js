@@ -437,7 +437,7 @@
         },
         formatRefresh: function () {
             //return 'Refresh';
-            return 'Rafraichir';
+            return 'Actualiser';
         },
         formatToggle: function () {
             return 'Toggle';
@@ -1055,7 +1055,7 @@
 
         /** TODO:
         *   15/01/2016
-        *   Modifié par rapport au text affiché dans le champ de recherche
+        *   Modifiï¿½ par rapport au text affichï¿½ dans le champ de recherche
         ***/
         if (this.options.search) {
             html = [];

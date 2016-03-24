@@ -34,7 +34,7 @@ if (isset($_GET['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Succès!</strong> Les informations sur le fournisseur " . $id . " ont été mises à jour.
+                <strong>Succï¿½s!</strong><br/> Les informations sur le fournisseur " . $id . " ont ï¿½tï¿½ mises ï¿½ jour.
             </div>
             ";
     } else {
@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Erreur!</strong> Une erreur s'est produite lors de la tentative de modification du fournisseur " . $id . ". Veuillez contacter l'administrateur.
+                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de modification du fournisseur " . $id . ". Veuillez contacter l'administrateur.
             </div>
             ";
     }
@@ -53,7 +53,7 @@ if (isset($_GET['id'])) {
             <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
             </button>
-            <strong>Erreur!</strong> Une erreur s'est produite. Veuillez contacter l'administrateur.
+            <strong>Erreur!</strong><br/> Une erreur s'est produite. Veuillez contacter l'administrateur.
         </div>
     ";
 }

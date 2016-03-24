@@ -13,6 +13,7 @@ Une application web qui permet de gérer les activités journalières liées aux
  - La gestion des entrées et sorties d'articles
  - La génération d'état statistiques
 
+
  - Formulaires management
  - Document search
  - Suppliers and articles handling

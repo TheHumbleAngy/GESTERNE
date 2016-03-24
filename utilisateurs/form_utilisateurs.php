@@ -13,7 +13,7 @@
     <div class="col-md-7" style="margin-left: 20.83%">
         <div class="panel panel-default">
             <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-                Ajout d'un Utilisateur
+                Formulaire Utilisateur
                 <a href='form_principale.php?page=administration&source=utilisateurs' type='button'
                    class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>

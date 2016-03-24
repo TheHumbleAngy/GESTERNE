@@ -16,7 +16,7 @@
 
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
+                    <div class="panel-heading">
                         Suppression Article
                         <a href='form_principale.php?page=form_actions&source=articles&action=supprimer' type='button'
                            class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -40,7 +40,6 @@
                                         </td>
                                     </tr>
                                 </table>
-
                             </div>
                             <table class="formulaire"
                                    style="margin-left: auto; margin-right: auto; border-spacing: 8px"
