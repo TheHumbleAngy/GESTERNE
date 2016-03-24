@@ -99,7 +99,7 @@ if ($result = $connexion->query($req)) {
                                 <label>
                                     <select name="code_emp" required="required" class="form-control">
                                         <?php
-                                        //L'employe à modifier
+                                        //L'employé à modifier
                                         $req1 = "SELECT code_emp, nom_emp, prenoms_emp FROM employes WHERE code_emp='" . $code_emp . "'";
                                         //Execute la requête
                                         $res1 = mysqli_query($connexion, $req1) or exit(mysqli_error($connexion));
@@ -110,7 +110,7 @@ if ($result = $connexion->query($req)) {
                                         ?>
                                         <option></option>
                                         <?php
-                                        //on affiche tous les employes
+                                        //on affiche tous les employés
                                         $sql = "SELECT code_emp, nom_emp, prenoms_emp FROM employes ORDER BY nom_emp ASC ";
                                         //Execute la requête
                                         $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));

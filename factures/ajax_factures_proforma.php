@@ -11,7 +11,7 @@ require_once '../bd/connection.php';
 if (isset($_POST["proforma"])) {
     $pro = htmlspecialchars($_POST['proforma'], ENT_QUOTES);
 
-    /* on r�ccup�re le d�partement de l'employ� demandeur � partir des tables proformas, demandes_proformas, demandes, employes
+    /* on r�ccup�re le d�partement de l'employ� demandeur � partir des tables proformas, demandes_proformas, demandes, employés
     en fonction de la proforma s�lectionn�e*/
 
         $sql = "SELECT libelle, qte_dfp, pu_dfp, remise_dfp, fournisseurs.code_four, fournisseurs.nom_four

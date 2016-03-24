@@ -56,7 +56,7 @@ if (isset($_POST['opt'])) {
                             <th class="entete" style="text-align: center">Nom et Prenoms</th>
                             <th class="entete" style="text-align: center">Fonction</th>
                             <th class="entete" style="text-align: center">Departement</th>
-                            <th class="entete" style="text-align: center">Email</th>
+                            <th class="entete" style="text-align: center">E-mail</th>
                             <th class="entete" style="text-align: center">Contact</th>
                             <th class="entete" style="text-align: center; width: 18%">Actions</th>
                         </tr>
@@ -83,7 +83,7 @@ if (isset($_POST['opt'])) {
                                         </a>
                                     </div>
 
-                                    <!-- Modal Mise ‡ jour des infos -->
+                                    <!-- Modal Mise ÔøΩ jour des infos -->
                                     <div class="modal fade"
                                          id="modalModifier<?php echo stripslashes($data['code_emp']); ?>"
                                          tabindex="-1" role="dialog" aria-hidden="true">
@@ -204,7 +204,7 @@ if (isset($_POST['opt'])) {
                                                 </div>
                                                 <div class="modal-body">
                                                     Voulez-vous supprimer
-                                                    l'employe <?php echo stripslashes($data['code_emp']); ?> ?
+                                                    l'employ√© <?php echo stripslashes($data['code_emp']); ?>" de la base ?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button class="btn btn-default" data-dismiss="modal">Non

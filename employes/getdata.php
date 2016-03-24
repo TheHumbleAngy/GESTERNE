@@ -10,7 +10,7 @@
 <!--suppress ALL -->
 <div class="panel panel-default">
     <div class="panel-heading">
-        Employés
+        Liste des Employés
         <a href='form_principale.php?page=administration&source=employes' type='button' class='close'
            data-dismiss='alert' aria-label='Close' style='position: inherit'>
             <span aria-hidden='true'>&times;</span>
@@ -53,11 +53,11 @@
                                     </a>
                                 </div>
 
-                                <!-- Modal Mise � jour des infos -->
+                                <!-- Modal Mise à jour des infos -->
                                 <div class="modal fade"
                                      id="modalModifier<?php echo stripslashes($list['code_emp']); ?>"
                                      tabindex="-1" role="dialog" aria-hidden="true">
-                                    <div class="modal-dialog">
+                                    <div class="modal-dialog update">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal"
@@ -65,45 +65,45 @@
                                                         aria-hidden="true">&times;</span></button>
                                                 <h4 class="modal-title"
                                                     id="modalModifier<?php echo stripslashes($list['code_emp']); ?>">
-                                                    Modifications</h4>
+                                                    Modifications [<?php echo stripslashes($list['code_emp']); ?>]</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <div>
-                                                    <div class="ligne">
-                                                        <div class="cellule">Titre :</div>
-                                                        <div class="cellule titre">
+                                                <table class="formulaire"
+                                                       style="width: 90%; border-collapse: separate; border-spacing: 8px; margin-left: auto; margin-right: auto"
+                                                       border="0">
+                                                    <tr>
+                                                        <td class="champlabel">*Titre :</td>
+                                                        <td>
                                                             <label>
                                                                 <input type="text" class="form-control" readonly
                                                                        id="titre_emp<?php echo $list['code_emp']; ?>"
                                                                        value="<?php echo $list['titre_emp']; ?>">
                                                             </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ligne">
-                                                        <div class="cellule">Nom :</div>
-                                                        <div class="cellule titre">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="champlabel">*Nom :</td>
+                                                        <td>
                                                             <label>
                                                                 <input type="text" class="form-control"
                                                                        onblur="this.value = this.value.toUpperCase();"
                                                                        id="nom_emp<?php echo $list['code_emp']; ?>"
                                                                        value="<?php echo $list['nom_emp']; ?>">
                                                             </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ligne">
-                                                        <div class="cellule">Prenoms :</div>
-                                                        <div class="cellule titre">
+                                                        </td>
+                                                        <td class="champlabel">Prénoms :</td>
+                                                        <td>
                                                             <label>
                                                                 <input type="text" class="form-control" size="30"
                                                                        onblur="this.value = this.value.toUpperCase();"
                                                                        id="pren_emp<?php echo $list['code_emp']; ?>"
                                                                        value="<?php echo $list['prenoms_emp']; ?>">
                                                             </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ligne">
-                                                        <div class="cellule">Fonction :</div>
-                                                        <div class="cellule titre">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="champlabel">Fonction :</td>
+                                                        <td>
                                                             <label>
                                                                 <label>
                                                                     <input type="text" class="form-control" size="25"
@@ -112,39 +112,48 @@
                                                                            value="<?php echo $list['fonction_emp']; ?>">
                                                                 </label>
                                                             </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ligne">
-                                                        <div class="cellule">Departement :</div>
-                                                        <div class="cellule titre">
+                                                        </td>
+                                                        <td class="champlabel">*Département :</td>
+                                                        <td>
                                                             <label>
-                                                                <input type="text" class="form-control" size="30"
-                                                                       id="dpt_emp<?php echo $list['code_emp']; ?>"
-                                                                       value="<?php echo $list['departement_emp']; ?>">
+                                                                <select name="departement_emp" required class="form-control">
+                                                                    <option disabled></option>
+                                                                    <?php
+                                                                        $req = "SELECT DISTINCT departement_emp FROM employes ORDER BY departement_emp ASC ";
+                                                                        $result = mysqli_query($connexion, $req);
+                                                                        while ($data_grp = mysqli_fetch_array($result)) {
+                                                                            if ($list['departement_emp'] == $data_grp['departement_emp']) {
+                                                                                echo '<option value="' . $data_grp['departement_emp'] . '" selected >' . $data_grp['departement_emp'] . '</option>';
+                                                                            } else {
+                                                                                echo '<option value="' . $data_grp['departement_emp'] . '" >' . $data_grp['departement_emp'] . '</option>';
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
                                                             </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ligne">
-                                                        <div class="cellule">E-mail :</div>
-                                                        <div class="cellule titre">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="champlabel">*E-mail :</td>
+                                                        <td>
                                                             <label>
                                                                 <input type="email" class="form-control" size="25"
                                                                        id="email_emp<?php echo $list['code_emp']; ?>"
                                                                        value="<?php echo $list['email_emp']; ?>">
                                                             </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ligne">
-                                                        <div class="cellule">Contact :</div>
-                                                        <div class="cellule titre">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="champlabel">*Contact :</td>
+                                                        <td>
                                                             <label>
                                                                 <input type="tel" class="form-control"
                                                                        id="tel_emp<?php echo $list['code_emp']; ?>"
                                                                        value="<?php echo $list['tel_emp']; ?>">
                                                             </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -162,7 +171,7 @@
                                      id="modalSupprimer<?php echo stripslashes($list['code_emp']); ?>"
                                      tabindex="-1"
                                      role="dialog">
-                                    <div class="modal-dialog" role="document">
+                                    <div class="modal-dialog delete" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal"
@@ -174,8 +183,8 @@
                                                     Confirmation</h4>
                                             </div>
                                             <div class="modal-body">
-                                                Voulez-vous supprimer
-                                                l'employe <?php echo stripslashes($list['code_emp']); ?> ?
+                                                <p>Voulez-vous supprimer
+                                                    l'employé "<?php echo stripslashes($list['nom_emp']) . " " . stripslashes($list['prenoms_emp']); ?>" de la base ?</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-default" data-dismiss="modal">Non

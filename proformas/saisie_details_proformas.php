@@ -341,11 +341,11 @@ if (sizeof($_POST) > 0) {
                     /*$sql = "SELECT facture_proforma.dateetablissement_fp, facture_proforma.ref_fp,
                     detail_factpro.libelle, detail_factpro.qte_dfp, detail_factpro.pu_dfp,
                     detail_factpro.remise_dfp, detail_factpro.id_dfp
-                    FROM facture_proforma, detail_factpro, employe
+                    FROM facture_proforma, detail_factpro, employé
                     WHERE facture_proforma.ref_fp = detail_factpro.ref_fp
                     AND facture_proforma.code_dbs = demande_bien_service.code_dbs
-                    AND demande_bien_service.code_emp = employe.code_emp
-                    AND employe.email_emp = '" . $_SESSION['user_id'] ."'
+                    AND demande_bien_service.code_emp = employé.code_emp
+                    AND employé.email_emp = '" . $_SESSION['user_id'] ."'
                     ORDER BY facture_proforma.dateetablissement_fp DESC";*/
 
                     if ($valeur = $connexion->query($sql)) {

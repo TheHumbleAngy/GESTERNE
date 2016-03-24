@@ -110,7 +110,7 @@
                                             <option value="prenoms">Prenoms</option>
                                             <option value="fonction">Fonction</option>
                                             <option value="departement">Departement</option>
-                                            <option value="email">Email</option>
+                                            <option value="email">E-mail</option>
                                             <option value="tel">Telephone</option>
                                         </select>
                                     </label>
@@ -293,7 +293,7 @@
                                             <option value="nom">Raison Sociale</option>
                                             <option value="adresse">Adresse</option>
                                             <option value="activite">Activite</option>
-                                            <option value="email">Email</option>
+                                            <option value="email">E-mail</option>
                                             <option value="tel">Telephone</option>
                                             <option value="fax">Fax</option>
                                         </select>
@@ -525,7 +525,7 @@
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Suppression d'un Article</span>
+                    Suppr. Article
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -582,7 +582,7 @@
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Modification d'un Article</span>
+                    Modif. Article
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -785,7 +785,7 @@
                         <table class="formulaire" border="0" style="margin-left: auto; margin-right: auto">
                             <tr>
                                 <td class="champlabel">
-                                    Veuillez selectionner l'employe :
+                                    Veuillez selectionner l'employé :
                                 </td>
                                 <td>
                                     <label>

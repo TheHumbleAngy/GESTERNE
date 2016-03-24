@@ -116,7 +116,7 @@ if ($valeur = $connexion->query($sql)) {
         <th>Nom et Prénoms</th>
         <th>Contact</th>
         <th>Fax</th>
-        <th>Email</th>
+        <th>E-mail</th>
     </tr>
 </thead>
 EDO;

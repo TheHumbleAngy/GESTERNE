@@ -65,7 +65,7 @@ function login($email, $password, $connexion)
                 $_SESSION['mdp'] = $password;
                 $_SESSION['login_string'] = true;
 
-                //On met à jour la propriété etat_connecte de la table employes
+                //On met à jour la propriété etat_connecte de la table employés
                 $req = "UPDATE employes SET etat_connecte = 1 WHERE email_emp = '" . $email . "'";
                 $resultat = $connexion->query($req);
                 if (!$resultat)

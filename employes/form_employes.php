@@ -61,6 +61,7 @@
                                 <label>
                                     <select name="departement_emp" required class="form-control">
                                         <option disabled selected></option>
+                                        <option value="ADMINISTRATION">ADMINISTRATION</option>
                                         <option value="FINANCE ET COMPTABILITE">FINANCE ET COMPTABILITE</option>
                                         <option value="INFORMATIQUE">INFORMATIQUE</option>
                                         <option value="MOYENS GENEREAUX">MOYENS GENEREAUX</option>
@@ -70,7 +71,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="champlabel">*Email :</td>
+                            <td class="champlabel">*E-mail :</td>
                             <td>
                                 <label>
                                     <input type="email" name="email_emp" id="email_emp" size="30" required class="form-control"/>

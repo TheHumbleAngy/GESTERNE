@@ -82,7 +82,7 @@ if (isset($_POST['code'])) {
                                 </td>
                             </tr>
                             <tr>
-                                <td class="champlabel">Email :</td>
+                                <td class="champlabel">E-mail :</td>
                                 <td>
                                     <label>
                                         <input type="email" name="email_emp" size="30" required class="form-control" readonly

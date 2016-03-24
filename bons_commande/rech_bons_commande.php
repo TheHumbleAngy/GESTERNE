@@ -76,7 +76,7 @@ if (isset($_POST['opt'])) {
                                                         </div>
                                                         <div class="modal-body">
                                                             Voulez-vous supprimer
-                                                            le bon de commande <?php echo stripslashes($data['num_bc']); ?> ?
+                                                            le bon de commande <?php echo stripslashes($data['num_bc']); ?>" de la base ?
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button class="btn btn-default" data-dismiss="modal">Non</button>

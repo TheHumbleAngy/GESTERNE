@@ -52,7 +52,7 @@
                                                    readonly class="form-control"/>
                                         </label>
                                     </td>
-                                    <!--<td rowspan="3" class="champlabel" style="text-align: left"><?php /*echo '<img width="125" height="200" src="Images_employes/' . $data['img_emp'] . ' " alt="Photo de Profil" />'; */ ?></td>-->
+                                    <!--<td rowspan="3" class="champlabel" style="text-align: left"><?php /*echo '<img width="125" height="200" src="Images_employés/' . $data['img_emp'] . ' " alt="Photo de Profil" />'; */ ?></td>-->
                                 </tr>
                                 <tr>
                                     <td class="champlabel">Nom et Prénoms :</td>
@@ -85,7 +85,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="champlabel">Email :</td>
+                                    <td class="champlabel">E-mail :</td>
                                     <td>
                                         <label>
                                             <input type="text" name="email_empl" value="<?php echo $email_empl; ?>"

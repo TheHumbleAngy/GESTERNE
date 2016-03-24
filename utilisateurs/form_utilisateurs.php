@@ -92,7 +92,7 @@
                                 <label>
                                     <select class="form-control" name="emp" required>
                                         <option disabled selected></option>
-                                        <?php //la liste des employes � qui un droit a d�j� �t� attriu�
+                                        <?php //la liste des employés � qui un droit a d�j� �t� attriu�
                                             $sql = "SELECT code_emp, nom_emp, prenoms_emp FROM employes WHERE code_emp IN (SELECT code_emp FROM droits) ORDER BY nom_emp ASC ";
                                             $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
                                             while ($data = mysqli_fetch_array($res)) {

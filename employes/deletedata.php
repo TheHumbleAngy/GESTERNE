@@ -11,8 +11,6 @@ if (isset($_POST['id'])) {
 
     $id = $_POST['id'];
 
-//    $req = "DELETE FROM employes WHERE code_emp = '" . $id . "'";
-
     include_once 'class_employes.php';
 
     $employe = new employes();
@@ -23,7 +21,7 @@ if (isset($_POST['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Succ�s!</strong><br/> L'employ� " . $id . " a �t� supprim�.
+                <strong>Succès!</strong><br/> L'employé " . $id . " a été supprimé de la base.
             </div>
             ";
     } else {
@@ -32,7 +30,9 @@ if (isset($_POST['id'])) {
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de suppression de l'employ� " . $id . ". Veuillez contacter l'administrateur.
+                <strong>Erreur!</strong><br/><br/>
+                L'employé " . $id . " est lié à certains formulaires et ne peut donc pas être supprimé de la base.<br/>
+                Veuillez donc contacter un administrateur.
             </div>
             ";
     }
@@ -42,7 +42,7 @@ if (isset($_POST['id'])) {
             <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
             </button>
-            <strong>Erreur!</strong><br/> Une erreur s'est produite. Veuillez contacter l'administrateur.
+            <strong>Erreur!</strong><br/> Une erreur s'est produite. Veuillez contacter un administrateur.
         </div>
     ";
 }

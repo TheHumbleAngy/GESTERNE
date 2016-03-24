@@ -12,7 +12,7 @@ require_once '../bd/connection.php';
 if (isset($_POST["proforma"])) {
     $pro = htmlspecialchars($_POST['proforma'], ENT_QUOTES);
 
-    /* on r�ccup�re le d�partement de l'employ� demandeur � partir des tables proformas, demandes_proformas, demandes, employes
+    /* on r�ccup�re le d�partement de l'employ� demandeur � partir des tables proformas, demandes_proformas, demandes, employés
     en fonction de la proforma s�lectionn�e*/
 
     $sql1 = "SELECT four.code_four, four.nom_four
@@ -21,7 +21,7 @@ if (isset($_POST["proforma"])) {
             WHERE pro.ref_fp = '" . $pro . "'";
 
     /*$sql2 = "SELECT departement_emp
-            FROM employes AS emp INNER JOIN demandes AS dmd
+            FROM employés AS emp INNER JOIN demandes AS dmd
             ON emp.code_emp = dmd.code_emp
             INNER JOIN demandes_proformas AS dp
             ON dmd.code_dbs = dp.code_dbs

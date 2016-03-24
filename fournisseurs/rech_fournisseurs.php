@@ -64,7 +64,7 @@ if (isset($_POST['opt'])) {
                         <tr>
                             <td><?php echo stripslashes($list['code_four']); ?></td>
                             <td><?php echo stripslashes($list['nom_four']); ?></td>
-                            <td><?php echo "Tel: " . stripslashes($list['telephonepro_four']) . "<br>Fax: " . stripslashes($list['fax_four']) . "<br>Email: " . stripslashes($list['email_four']); ?></td>
+                            <td><?php echo "Tel: " . stripslashes($list['telephonepro_four']) . "<br>Fax: " . stripslashes($list['fax_four']) . "<br>E-mail: " . stripslashes($list['email_four']); ?></td>
                             <!--                                            <td>-->
                             <?php //echo stripslashes($list['fax_four']); ?><!--</td>-->
                             <!--                                            <td>-->
@@ -204,7 +204,7 @@ if (isset($_POST['opt'])) {
                                             </div>
                                             <div class="modal-body">
                                                 Voulez-vous supprimer
-                                                le fournisseur <?php echo stripslashes($list['nom_four']); ?> ?
+                                                le fournisseur <?php echo stripslashes($list['nom_four']); ?>" de la base ?
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-default" data-dismiss="modal">Non</button>

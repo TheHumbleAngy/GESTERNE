@@ -24,7 +24,8 @@
                             <td class="champlabel">Raison Sociale :</td>
                             <td>
                                 <label>
-                                    <input type="text" name="nom_four" id="nom_four" size="20" required class="form-control"
+                                    <input type="text" name="nom_four" id="nom_four" size="20" required
+                                           class="form-control"
                                            onblur="this.value = this.value.toUpperCase();"/>
                                 </label>
                             </td>

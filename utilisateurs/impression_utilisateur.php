@@ -124,7 +124,7 @@ if ($valeur = $connexion->query($sql)) {
   <tr> <td allign="left">Nom et Prénoms:</td> <td allign="right">$nom_emp</td></tr><br/>
   <tr><td allign="left">Fonction:</td> <td allign="right">$fonction_emp</td></tr><br/>
     <tr><td allign="left">Contact:</td><td allign="right">$tel_emp</td></tr><br/>
-    <tr><td allign="left">Email:</td><td allign="right">$email_emp</td></tr><br/>
+    <tr><td allign="left">E-mail:</td><td allign="right">$email_emp</td></tr><br/>
     <tr><td allign="left">Direction:</td><td allign="right">$direction_emp</td></tr><br/>
     <tr><td allign="left">Departement:</td><td allign="right">$departement_emp</td></tr><br/>
     <tr><td allign="left">Service:</td><td allign="right">$service_emp</td></tr><br/>

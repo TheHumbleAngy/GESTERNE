@@ -601,6 +601,14 @@ input[type="number"].form-control {
     padding-top: 4px;
 }
 
-/*.form-control:not([type=textarea]) {
-    height: 29px !important;
-}*/
+@media (min-width: 768px) {
+    .modal-dialog.update {
+        width: 700px;
+        margin: 30px auto;
+    }
+
+    .modal-dialog.delete {
+        width: 450px;
+        margin: 30px auto;
+    }
+}

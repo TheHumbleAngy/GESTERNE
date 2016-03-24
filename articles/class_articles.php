@@ -108,7 +108,7 @@
     {
 //    public $code_mvt;   //code du mouvement
         public $date_mvt;   //date du mouvement en stock
-        public $code_emp;   //code de l'employe
+        public $code_emp;   //code de l'employé
         public $type_mvt;   //type du mouvement
     }
 

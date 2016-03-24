@@ -14,12 +14,11 @@
         while ($data = mysqli_fetch_array($res)) :?>
 
             <!--suppress ALL -->
-
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <span class="icons8-clipboard"> Modification d'un Article</span>
+                            Formulaire Article
                             <a href='form_principale.php?page=form_actions&source=articles&action=modifier'
                                type='button'
                                class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -31,8 +30,9 @@
                                 <table border="0">
                                     <tr>
                                         <td>
-                                            <p style="color: grey; font-size: small">Les champs précédés de "*" sont impératifs.
-                                                Veuillez donc les renseigner.</p>
+                                            <p style="color: grey; font-size: small"><strong>Modification des infos.</strong><br/>
+                                                Les champs precedes de "*" sont imperatifs,
+                                                veuillez donc les renseigner.</p>
                                         </td>
                                         <td style="padding-left: 10px; vertical-align: top">
                                             <img src="img/Icons8/About_1.png" height="30" width="30">

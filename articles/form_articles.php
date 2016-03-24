@@ -17,8 +17,8 @@
         <div id="info"></div>
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-                    Ajouter un Article
+                <div class="panel-heading">
+                    Formulaire Article
                     <a href='form_principale.php?page=accueil' type='button' class='close' data-dismiss='alert'
                        aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
