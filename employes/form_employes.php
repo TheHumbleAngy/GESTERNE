@@ -25,7 +25,7 @@
                             <td>
                                 <label>
                                     <select name="titre_emp" class="form-control" required>
-                                        <option selected></option>
+                                        <option disabled selected></option>
                                         <option value="M.">M.</option>
                                         <option value="Mme.">Mme.</option>
                                         <option value="Mlle.">Mlle.</option>
