@@ -24,7 +24,7 @@
                             <td class="champlabel">*Titre :</td>
                             <td>
                                 <label>
-                                    <select name="titre_emp" class="form-control" required>
+                                    <select name="titre_emp" id="titre_emp" class="form-control" required>
                                         <option disabled selected></option>
                                         <option value="M.">M.</option>
                                         <option value="Mme.">Mme.</option>
@@ -37,14 +37,14 @@
                             <td class="champlabel">*Nom :</td>
                             <td>
                                 <label>
-                                    <input type="text" name="nom_emp" required class="form-control"
+                                    <input type="text" name="nom_emp" id="nom_emp" required class="form-control"
                                            onblur="this.value = this.value.toUpperCase();"/>
                                 </label>
                             </td>
                             <td class="champlabel">Prénoms :</td>
                             <td>
                                 <label>
-                                    <input type="text" name="prenoms_emp" size="40" class="form-control"
+                                    <input type="text" name="prenoms_emp" id="prenoms_emp" size="40" class="form-control"
                                            onblur="this.value = this.value.toUpperCase();"/>
                                 </label>
                             </td>
@@ -53,14 +53,14 @@
                             <td class="champlabel">Fonction :</td>
                             <td>
                                 <label>
-                                    <input type="text" name="fonction_emp" class="form-control"
+                                    <input type="text" name="fonction_emp" id="fonction_emp" class="form-control"
                                            onblur="this.value = this.value.toUpperCase();"/>
                                 </label>
                             </td>
                             <td class="champlabel">*Département :</td>
                             <td>
                                 <label>
-                                    <select name="departement_emp" required class="form-control">
+                                    <select name="departement_emp" id="departement_emp" required class="form-control">
                                         <option disabled selected></option>
                                         <option value="ADMINISTRATION">ADMINISTRATION</option>
                                         <option value="FINANCE ET COMPTABILITE">FINANCE ET COMPTABILITE</option>
@@ -83,7 +83,7 @@
                             <td class="champlabel">*Contact :</td>
                             <td>
                                 <label>
-                                    <input type="tel" name="tel_emp" required class="form-control"/>
+                                    <input type="tel" name="tel_emp" id="tel_emp" required class="form-control"/>
                                 </label>
                             </td>
                         </tr>
@@ -91,10 +91,12 @@
                     <br/>
 
                     <div style="text-align: center;">
-                        <button class="btn btn-info" type="submit" name="valider" style="width: 150px">
+                        <button class="btn btn-info" type="button" name="valider" style="width: 150px" onclick="ajout()">
                             Valider
                         </button>
                     </div>
+
+                    <div id="info"></div>
                 </form>
 
                 <div class="container">
@@ -143,6 +145,52 @@
                 this.value = "";
             }
         });
+
+        function validation() {
+            var i = 0;
+            $(':input[required]').each(function() {
+                if (this.value == '')
+                    i++;
+            });
+            return i;
+        }
+
+        function initialisation() {
+            $(':input').each(function() {
+                this.value = '';
+            });
+        }
+
+        function ajout() {
+            if (validation() != 0) {
+                alert('Veuillez renseigner tous les champs précédés de * s\'il vous plaît.');
+            } else {
+                //            var id = code;
+                var titre_emp = $('#titre_emp').val();
+                var nom_emp = $('#nom_emp').val();
+                var prenoms_emp = $('#prenoms_emp').val();
+                var fonction_emp = $('#fonction_emp').val();
+                var departement_emp = $('#departement_emp').val();
+                var email = $('#email_emp').val();
+                var tel = $('#tel_emp').val();
+
+                var infos = "titre_emp=" + titre_emp + "&nom_emp=" + nom_emp + "&prenoms_emp=" + prenoms_emp + "&fonction_emp=" + fonction_emp + "&departement_emp=" + departement_emp + "&email_emp=" + email + "&tel_emp=" + tel;
+                var operation = "ajout"; console.log(infos);
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'employes/updatedata.php?operation=' + operation,
+                    data: infos,
+                    success: function (data) {
+                        $('#info').html(data);
+                        initialisation();
+                        setTimeout(function(){
+                            $(".alert-success").slideToggle("slow");
+                        }, 2500);
+                    }
+                });
+            }
+        }
     </script>
 
 <?php

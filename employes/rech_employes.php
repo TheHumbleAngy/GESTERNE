@@ -126,7 +126,7 @@ if (isset($_POST['opt'])) {
                                                                 <td>
                                                                     <label>
                                                                         <input type="text" class="form-control"
-                                                                               id="pren_emp<?php echo $data['code_emp']; ?>"
+                                                                               id="prenoms_emp<?php echo $data['code_emp']; ?>"
                                                                                value="<?php echo $data['prenoms_emp']; ?>">
                                                                     </label>
                                                                 </td>
@@ -136,7 +136,7 @@ if (isset($_POST['opt'])) {
                                                                 <td>
                                                                     <label>
                                                                         <input type="text" class="form-control"
-                                                                               id="fct_emp<?php echo $data['code_emp']; ?>"
+                                                                               id="fonction_emp<?php echo $data['code_emp']; ?>"
                                                                                value="<?php echo $data['fonction_emp']; ?>">
                                                                     </label>
                                                                 </td>
@@ -146,7 +146,7 @@ if (isset($_POST['opt'])) {
                                                                 <td>
                                                                     <label>
                                                                         <input type="text" class="form-control"
-                                                                               id="dpt_emp<?php echo $data['code_emp']; ?>"
+                                                                               id="departement_emp<?php echo $data['code_emp']; ?>"
                                                                                value="<?php echo $data['departement_emp']; ?>">
                                                                     </label>
                                                                 </td>

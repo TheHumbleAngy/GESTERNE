@@ -28,13 +28,13 @@
     function majInfos(code) {
         var id = code;
         var nom_emp = $('#nom_emp' + code).val();
-        var pren_emp = $('#pren_emp' + code).val();
-        var fct_emp = $('#fct_emp' + code).val();
-        var dpt_emp = $('#dpt_emp' + code).val();
+        var prenoms_emp = $('#prenoms_emp' + code).val();
+        var fonction_emp = $('#fonction_emp' + code).val();
+        var departement_emp = $('#departement_emp' + code).val();
         var email = $('#email_emp' + code).val();
         var tel = $('#tel_emp' + code).val();
 
-        var infos = "nom_emp=" + nom_emp + "&pren_emp=" + pren_emp + "&fct_emp=" + fct_emp + "&dpt_emp=" + dpt_emp + "&email_emp=" + email + "&tel_emp=" + tel;
+        var infos = "nom_emp=" + nom_emp + "&prenoms_emp=" + prenoms_emp + "&fonction_emp=" + fonction_emp + "&departement_emp=" + departement_emp + "&email_emp=" + email + "&tel_emp=" + tel;
 
         $.ajax({
             type: 'POST',

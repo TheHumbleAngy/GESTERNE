@@ -107,7 +107,7 @@
                                                             <label>
                                                                 <input type="text" class="form-control" size="30"
                                                                        onblur="this.value = this.value.toUpperCase();"
-                                                                       id="pren_emp<?php echo $list['code_emp']; ?>"
+                                                                       id="prenoms_emp<?php echo $list['code_emp']; ?>"
                                                                        value="<?php echo $list['prenoms_emp']; ?>">
                                                             </label>
                                                         </td>
@@ -119,7 +119,7 @@
                                                                 <label>
                                                                     <input type="text" class="form-control" size="25"
                                                                            onblur="this.value = this.value.toUpperCase();"
-                                                                           id="fct_emp<?php echo $list['code_emp']; ?>"
+                                                                           id="fonction_emp<?php echo $list['code_emp']; ?>"
                                                                            value="<?php echo $list['fonction_emp']; ?>">
                                                                 </label>
                                                             </label>
@@ -127,7 +127,7 @@
                                                         <td class="champlabel">*Département :</td>
                                                         <td>
                                                             <label>
-                                                                <select name="departement_emp" id="dpt_emp<?php echo $list['code_emp']; ?>" required class="form-control">
+                                                                <select name="departement_emp" id="departement_emp<?php echo $list['code_emp']; ?>" required class="form-control">
                                                                     <option disabled></option>
                                                                     <?php
                                                                         $req = "SELECT DISTINCT departement_emp FROM employes ORDER BY departement_emp ASC ";
@@ -220,7 +220,7 @@
 
 <script>
     var articles = ["a", "b"],
-        dpt = $('input[id*="dpt_emp"]');
+        dpt = $('input[id*="departement_emp"]');
 
     console.log(articles);
 
