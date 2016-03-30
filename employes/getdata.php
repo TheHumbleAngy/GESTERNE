@@ -75,9 +75,20 @@
                                                         <td class="champlabel">*Titre :</td>
                                                         <td>
                                                             <label>
-                                                                <input type="text" class="form-control" readonly
-                                                                       id="titre_emp<?php echo $list['code_emp']; ?>"
-                                                                       value="<?php echo $list['titre_emp']; ?>">
+                                                                <select name="titre_emp" id="titre_emp<?php echo $list['code_emp']; ?>" class="form-control" required>
+                                                                    <option disabled></option>
+                                                                    <?php
+                                                                        $req = "SELECT DISTINCT titre_emp FROM employes ORDER BY titre_emp ASC ";
+                                                                        $result = mysqli_query($connexion, $req);
+                                                                        while ($data_grp = mysqli_fetch_array($result)) {
+                                                                            if ($list['titre_emp'] == $data_grp['titre_emp']) {
+                                                                                echo '<option value="' . $data_grp['titre_emp'] . '" selected >' . $data_grp['titre_emp'] . '</option>';
+                                                                            } else {
+                                                                                echo '<option value="' . $data_grp['titre_emp'] . '" >' . $data_grp['titre_emp'] . '</option>';
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
                                                             </label>
                                                         </td>
                                                     </tr>
@@ -116,7 +127,7 @@
                                                         <td class="champlabel">*Département :</td>
                                                         <td>
                                                             <label>
-                                                                <select name="departement_emp" required class="form-control">
+                                                                <select name="departement_emp" id="dpt_emp<?php echo $list['code_emp']; ?>" required class="form-control">
                                                                     <option disabled></option>
                                                                     <?php
                                                                         $req = "SELECT DISTINCT departement_emp FROM employes ORDER BY departement_emp ASC ";
