@@ -24,7 +24,7 @@
                 <th class="entete" style="text-align: center">Nom et Prenoms</th>
                 <th class="entete" style="text-align: center">Fonction</th>
                 <th class="entete" style="text-align: center">Departement</th>
-                <th class="entete" style="text-align: center">Contacts</th>
+                <th class="entete" style="text-align: center">Contacts Infos.</th>
                 <th class="entete" style="text-align: center; width: 13%">Actions</th>
             </tr>
             </thead>
@@ -75,9 +75,20 @@
                                                         <td class="champlabel">*Titre :</td>
                                                         <td>
                                                             <label>
-                                                                <input type="text" class="form-control" readonly
-                                                                       id="titre_emp<?php echo $list['code_emp']; ?>"
-                                                                       value="<?php echo $list['titre_emp']; ?>">
+                                                                <select name="titre_emp" id="titre_emp<?php echo $list['code_emp']; ?>" class="form-control" required>
+                                                                    <option disabled></option>
+                                                                    <?php
+                                                                        $req = "SELECT DISTINCT titre_emp FROM employes ORDER BY titre_emp ASC ";
+                                                                        $result = mysqli_query($connexion, $req);
+                                                                        while ($data_grp = mysqli_fetch_array($result)) {
+                                                                            if ($list['titre_emp'] == $data_grp['titre_emp']) {
+                                                                                echo '<option value="' . $data_grp['titre_emp'] . '" selected >' . $data_grp['titre_emp'] . '</option>';
+                                                                            } else {
+                                                                                echo '<option value="' . $data_grp['titre_emp'] . '" >' . $data_grp['titre_emp'] . '</option>';
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
                                                             </label>
                                                         </td>
                                                     </tr>
@@ -96,7 +107,7 @@
                                                             <label>
                                                                 <input type="text" class="form-control" size="30"
                                                                        onblur="this.value = this.value.toUpperCase();"
-                                                                       id="pren_emp<?php echo $list['code_emp']; ?>"
+                                                                       id="prenoms_emp<?php echo $list['code_emp']; ?>"
                                                                        value="<?php echo $list['prenoms_emp']; ?>">
                                                             </label>
                                                         </td>
@@ -108,7 +119,7 @@
                                                                 <label>
                                                                     <input type="text" class="form-control" size="25"
                                                                            onblur="this.value = this.value.toUpperCase();"
-                                                                           id="fct_emp<?php echo $list['code_emp']; ?>"
+                                                                           id="fonction_emp<?php echo $list['code_emp']; ?>"
                                                                            value="<?php echo $list['fonction_emp']; ?>">
                                                                 </label>
                                                             </label>
@@ -116,7 +127,7 @@
                                                         <td class="champlabel">*Département :</td>
                                                         <td>
                                                             <label>
-                                                                <select name="departement_emp" required class="form-control">
+                                                                <select name="departement_emp" id="departement_emp<?php echo $list['code_emp']; ?>" required class="form-control">
                                                                     <option disabled></option>
                                                                     <?php
                                                                         $req = "SELECT DISTINCT departement_emp FROM employes ORDER BY departement_emp ASC ";
@@ -206,51 +217,3 @@
         </table>
     </div>
 </div>
-
-<script>
-    var articles = ["a", "b"],
-        dpt = $('input[id*="dpt_emp"]');
-
-    console.log(articles);
-
-    $(document).ready(function () {
-        dpt.autocomplete({
-            source: ["FINANCE-COMPTABILITE", "INFORMATIQUE"]
-        });
-
-        $.ajax({
-            url: "articles/libelles_articles.php",
-            dataType: "json",
-            type: "GET",
-            success: function (data) {
-                for (var i = 0; i < data.length; i += 1) {
-                    articles[i] = data[i].designation_art;
-                }
-                console.log(articles);
-                elt.autocomplete({
-                    source: articles
-                });
-            }
-        })
-    });
-
-    /*$('#autocomplete').autocomplete({
-     source: articles,
-     minLength: 1
-     });*/
-
-    function smt() {
-
-        /*$.ajax({
-         url: "articles/libelles_articles.php",
-         dataType: "json",
-         type: "GET",
-         success: function(data) {
-         for (var i = 0; i < data.length; i += 1) {
-         articles[i] = data[i].designation_art;
-         }
-         }
-         });*/
-    }
-
-</script>

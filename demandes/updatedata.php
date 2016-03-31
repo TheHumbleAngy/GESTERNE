@@ -11,9 +11,9 @@ if (isset($_GET['id'])) {
 
     $id = $_GET['id'];
     $nom = $_POST['nom_emp'];
-    $pren = $_POST['pren_emp'];
-    $fct = $_POST['fct_emp'];
-    $dpt = $_POST['dpt_emp'];
+    $pren = $_POST['prenoms_emp'];
+    $fct = $_POST['fonction_emp'];
+    $dpt = $_POST['departement_emp'];
     $email = $_POST['email_emp'];
     $tel = $_POST['tel_emp'];
 

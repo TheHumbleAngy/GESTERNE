@@ -11,7 +11,7 @@
     $fonction_empl = "";
     $email_empl = "";
     $contact_empl = "";
-    $dpt_empl = "";
+    $departement_empl = "";
 
     if ($resultat = $connexion->query($req)) {
 
@@ -23,7 +23,7 @@
             $fonction_empl = stripslashes($data['fonction_emp']);
             $email_empl = stripslashes($data['email_emp']);
             $contact_empl = stripslashes($data['tel_emp']);
-            $dpt_empl = stripslashes($data['departement_emp']);
+            $departement_empl = stripslashes($data['departement_emp']);
         }
     }
 ?>
@@ -78,7 +78,7 @@
                                     <td class="champlabel">Département :</td>
                                     <td>
                                         <label>
-                                            <input type="tel" name="type_empl" value="<?php echo $dpt_empl; ?>"
+                                            <input type="tel" name="type_empl" value="<?php echo $departement_empl; ?>"
                                                    size="20"
                                                    readonly class="form-control"/>
                                         </label>
