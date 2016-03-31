@@ -37,7 +37,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <form action="form_principale.php?page=employes/maj_employes" method="POST">
+                        <form action="form_principale.php?page=employes/updatedata" method="POST">
                             <input type="hidden" name="code_emp" value="<?php echo $data['code_emp']; ?>">
                             <input type="hidden" name="action" value="maj">
                             <table class="formulaire"
@@ -133,7 +133,7 @@
                             <br/>
 
                             <div style="text-align: center;">
-                                <button class="btn btn-info" type="submit" name="valider" style="width: 150px">
+                                <button class="btn btn-info" type="submit" style="width: 150px">
                                     Valider
                                 </button>
                             </div>

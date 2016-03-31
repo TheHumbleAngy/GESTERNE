@@ -24,7 +24,7 @@
                 <th class="entete" style="text-align: center">Nom et Prenoms</th>
                 <th class="entete" style="text-align: center">Fonction</th>
                 <th class="entete" style="text-align: center">Departement</th>
-                <th class="entete" style="text-align: center">Contacts</th>
+                <th class="entete" style="text-align: center">Contacts Infos.</th>
                 <th class="entete" style="text-align: center; width: 13%">Actions</th>
             </tr>
             </thead>
@@ -217,51 +217,3 @@
         </table>
     </div>
 </div>
-
-<script>
-    var articles = ["a", "b"],
-        dpt = $('input[id*="departement_emp"]');
-
-    console.log(articles);
-
-    $(document).ready(function () {
-        dpt.autocomplete({
-            source: ["FINANCE-COMPTABILITE", "INFORMATIQUE"]
-        });
-
-        $.ajax({
-            url: "articles/libelles_articles.php",
-            dataType: "json",
-            type: "GET",
-            success: function (data) {
-                for (var i = 0; i < data.length; i += 1) {
-                    articles[i] = data[i].designation_art;
-                }
-                console.log(articles);
-                elt.autocomplete({
-                    source: articles
-                });
-            }
-        })
-    });
-
-    /*$('#autocomplete').autocomplete({
-     source: articles,
-     minLength: 1
-     });*/
-
-    function smt() {
-
-        /*$.ajax({
-         url: "articles/libelles_articles.php",
-         dataType: "json",
-         type: "GET",
-         success: function(data) {
-         for (var i = 0; i < data.length; i += 1) {
-         articles[i] = data[i].designation_art;
-         }
-         }
-         });*/
-    }
-
-</script>

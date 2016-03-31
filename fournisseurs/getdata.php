@@ -22,7 +22,7 @@
                 <thead>
                 <tr>
                     <th class="entete" style="text-align: center; width: 10%">Raison Sociale</th>
-                    <th class="entete" style="text-align: center; width: 10%">Contacts</th>
+                    <th class="entete" style="text-align: center; width: 10%">Contacts Infos.</th>
                     <th class="entete" style="text-align: center; width: 10%">Adresse</th>
                     <th class="entete" style="text-align: center; width: 10%">Activite</th>
                     <th class="entete" style="text-align: center; width: 10%">Notes</th>

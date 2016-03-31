@@ -36,7 +36,7 @@
 
         $.ajax({
             type: 'POST',
-            url: 'employes/updatedata.php?id=' + id,
+            url: 'employes/updatedata.php?id=' + id + '&operation=maj',
             data: infos,
             success: function (data) {
                 $('#info').html(data);
@@ -52,7 +52,7 @@
     function suppressionInfos(code) {
         $.ajax({
             type: 'POST',
-            url: 'employes/deletedata.php',
+            url: 'employes/updatedata.php?operation=suppr',
             data: {
                 id: code
             },

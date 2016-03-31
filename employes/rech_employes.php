@@ -83,7 +83,7 @@ if (isset($_POST['opt'])) {
                                         </a>
                                     </div>
 
-                                    <!-- Modal Mise � jour des infos -->
+                                    <!-- Modal Mise à jour des infos -->
                                     <div class="modal fade"
                                          id="modalModifier<?php echo stripslashes($data['code_emp']); ?>"
                                          tabindex="-1" role="dialog" aria-hidden="true">
