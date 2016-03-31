@@ -17,11 +17,11 @@
                 </a>
             </div>
             <div class="panel-body">
-                <form method="post">
+                <form method="post" id="myform">
                     <table class="formulaire" style="width: 100%; border-collapse: separate; border-spacing: 8px"
                            border="0">
                         <tr>
-                            <td class="champlabel">Raison Sociale :</td>
+                            <td class="champlabel">*Raison Sociale :</td>
                             <td>
                                 <label>
                                     <input type="text" name="nom_four" id="nom_four" size="20" required
@@ -34,14 +34,14 @@
                             <td class="champlabel">E-mail :</td>
                             <td>
                                 <label>
-                                    <input type="email" name="email_four" size="30" required class="form-control"/>
+                                    <input type="email" name="email_four" id="email_four" size="30" class="form-control"/>
                                 </label>
                             </td>
                             <td></td>
-                            <td class="champlabel">Contact Pro. :</td>
+                            <td class="champlabel">*Contact Pro. :</td>
                             <td>
                                 <label>
-                                    <input type="tel" name="telephonepro_four" size="25" required class="form-control"/>
+                                    <input type="tel" name="telephonepro_four" id="telephonepro_four" size="25" required class="form-control"/>
                                 </label>
                             </td>
                         </tr>
@@ -49,13 +49,13 @@
                             <td class="champlabel">Activité :</td>
                             <td>
                                 <label>
-                                    <input type="text" name="activite_four" size="30" required class="form-control"/>
+                                    <input type="text" name="activite_four" id="activite_four" size="30" required class="form-control"/>
                                 </label>
                             </td>
                             <td></td>
                             <td class="champlabel">Fax :</td>
                             <td><label>
-                                    <input type="tel" name="fax_four" size="25" class="form-control"/>
+                                    <input type="tel" name="fax_four" id="fax_four" size="25" class="form-control"/>
                                 </label>
                             </td>
                         </tr>
@@ -63,7 +63,7 @@
                             <td class="champlabel">Adresse :</td>
                             <td>
                                 <label>
-                                        <textarea name="adresse_four" rows="4" cols="25" style="resize: none" required
+                                        <textarea name="adresse_four" id="adresse_four" rows="4" cols="25" style="resize: none" required
                                                   class="form-control"></textarea>
                                 </label>
                             </td>
@@ -71,7 +71,7 @@
                             <td class="champlabel">Notes :</td>
                             <td>
                                 <label>
-                                        <textarea name="notes_four" rows="4" cols="25" style="resize: none"
+                                        <textarea name="notes_four" id="notes_four" rows="4" cols="25" style="resize: none"
                                                   class="form-control"></textarea>
                                 </label>
                             </td>
@@ -83,7 +83,7 @@
                     <br>
 
                     <div style="text-align: center;">
-                        <button class="btn btn-info" type="submit" name="valider" style="width: 150px">
+                        <button class="btn btn-info" type="button" name="valider" onclick="ajout()" style="width: 150px">
                             Valider
                         </button>
                     </div>
@@ -116,7 +116,7 @@
     <script>
         var fournisseurs = ["a", "b"];
 
-        $(document).ready(function () {
+        function nomsFournisseurs() {
             $.ajax({
                 url: "fournisseurs/nom_fournisseurs.php",
                 dataType: "json",
@@ -127,7 +127,9 @@
                     }
                 }
             })
-        });
+        }
+
+        $(document).ready(nomsFournisseurs());
 
         $('#nom_four').bind('blur', function () {
             if (fournisseurs.indexOf(this.value) > -1) {
@@ -135,19 +137,45 @@
                 this.value = "";
             }
         });
-    </script>
 
-<?php
-    if (sizeof($_POST) > 0) {
-        include_once 'class_fournisseurs.php';
-
-        $fournisseur = new fournisseurs();
-        if ($fournisseur->recuperation()) {
-            if (!($fournisseur->enregistrement())) {
-                echo "Une erreur s'est produite lors de la tentative d'enregistrement des informations";
-            }
-        } else {
-            echo "Une erreur s'est produite lors de la tentative de récupération des informations entrées";
+        function validation() {
+            var i = 0;
+            $(':input[required]').each(function () {
+                if (this.value == '')
+                    i++;
+            });
+            return i;
         }
-    }
-?>
+
+        function ajout() {
+            if (validation() != 0) {
+                alert('Veuillez renseigner tous les champs précédés de * s\'il vous plaît.');
+            } else {
+                var nom_four = $('#nom_four').val();
+                var email_four = $('#email_four').val();
+                var telephonepro_four = $('#telephonepro_four').val();
+                var activite_four = $('#activite_four').val();
+                var fax_four = $('#fax_four').val();
+                var adresse_four = $('#adresse_four').val();
+                var notes_four = $('#notes_four').val();
+
+                var infos = "nom_four=" + nom_four + "&email_four=" + email_four + "&telephonepro_four=" + telephonepro_four + "&activite_four=" + activite_four + "&fax_four=" + fax_four + "&adresse_four=" + adresse_four + "&notes_four=" + notes_four;
+                var operation = "ajout";
+//            console.log(infos);
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'fournisseurs/updatedata.php?operation=' + operation,
+                    data: infos,
+                    success: function (data) {
+                        $('#info').html(data);
+                        $('#myform').trigger('reset');
+                        setTimeout(function () {
+                            $(".alert-success").slideToggle("slow");
+                        }, 1000);
+                        nomsFournisseurs();
+                    }
+                });
+            }
+        }
+    </script>

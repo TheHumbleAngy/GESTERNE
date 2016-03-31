@@ -63,7 +63,7 @@
             if ($connexion->connect_error)
                 die($connexion->connect_error);
 
-            //On vérifie s'il y a un en registrement dans la base de données
+            //On vÃ©rifie s'il y a un en registrement dans la base de donnÃ©es
             $req = "SELECT code_four FROM fournisseurs ORDER BY code_four DESC LIMIT 1";
             $resultat = $connexion->query($req);
 
@@ -82,7 +82,7 @@
                 //incrementation du nombre
                 $code_four += 1;
             } else {
-                //s'il n'existe pas d'enregistrements dans la base de données
+                //s'il n'existe pas d'enregistrements dans la base de donnÃ©es
                 $code_four = 1;
             }
             $b = "FOUR";
@@ -97,13 +97,10 @@
             $sql = "INSERT INTO fournisseurs (code_four, nom_four, email_four, telephonepro_four, fax_four, adresse_four, notes_four, activite_four)
                     VALUES ('$this->code_four', '$this->nom_four', '$this->email_four', '$this->telephonepro_four', '$this->fax_four', '$this->adresse_four', '$this->notes_four', '$this->activite_four')";
 
-            //exécution de la requête sql
-//            $req = mysqli_query($connexion, $sql) or die(mysqli_error($connexion));
             if ($result = mysqli_query($connexion, $sql)) {
                 return TRUE;
             } else
                 return FALSE;
-//            mysqli_close($connexion);
         }
 
         function modification($code)
@@ -114,21 +111,18 @@
                 die($connexion->connect_error);
 
             $sql = "UPDATE fournisseurs SET
-            nom_four ='" . $this->nom_four . "',
-            email_four ='" . $this->email_four . "',
-            telephonepro_four ='" . $this->telephonepro_four . "',
-            fax_four ='" . $this->fax_four . "',
-            adresse_four ='" . $this->adresse_four . "',
-            notes_four ='" . $this->notes_four . "',
-            activite_four ='" . $this->activite_four . "'
-            WHERE code_four ='" . $code . "'";
+            nom_four = '" . $this->nom_four . "',
+            email_four = '" . $this->email_four . "',
+            telephonepro_four = '" . $this->telephonepro_four . "',
+            fax_four = '" . $this->fax_four . "',
+            adresse_four = '" . $this->adresse_four . "',
+            notes_four = '" . $this->notes_four . "',
+            activite_four = '" . $this->activite_four . "'
+            WHERE code_four = '" . $code . "'";
 
-//            print_r($sql);
-            //exécution de la requête SQL:
-//            $result = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-            if ($result = mysqli_query($connexion, $sql)) {
+            if ($result = mysqli_query($connexion, $sql))
                 return TRUE;
-            } else
+            else
                 return FALSE;
         }
 
@@ -140,9 +134,9 @@
 
             $sql = "DELETE FROM fournisseurs WHERE code_four = '" . $code . "'";
 
-            if ($result = mysqli_query($connexion, $sql)) {
+            if ($result = mysqli_query($connexion, $sql))
                 return TRUE;
-            } else
+            else
                 return FALSE;
         }
     }

@@ -23,7 +23,7 @@ if (isset($_POST['code'])) {
                     </a>
                 </div>
                 <div class="panel-body">
-                    <form action="form_principale.php?page=fournisseurs/maj_fournisseurs" method="POST">
+                    <form action="form_principale.php?page=fournisseurs/updatedata" method="POST">
                         <input type="hidden" name="code_four" value="<?php echo $data['code_four']; ?>">
                         <input type="hidden" name="action" value="supprimer">
                         <div class="jumbotron info">

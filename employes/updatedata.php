@@ -8,6 +8,7 @@
 
     if (isset($_GET['operation']) && $_GET['operation'] == "ajout") {
         //TODO: Enregistrement d'un nouvel employé
+
         require_once '../bd/connection.php';
         include_once 'class_employes.php';
 
@@ -36,8 +37,10 @@
             }
         }
 
-    } elseif (isset($_GET['id']) && isset($_GET['operation']) && $_GET['operation'] == "maj") {
+    }
+    elseif (isset($_GET['id']) && isset($_GET['operation']) && $_GET['operation'] == "maj") {
         //TODO: MAJ des infos depuis la form liste_employes
+
         $id = $_GET['id'];
         require_once '../bd/connection.php';
         include_once 'class_employes.php';
@@ -75,8 +78,10 @@
             ";
         }
 
-    } elseif (isset($_POST['id']) && isset($_GET['operation']) && $_GET['operation'] == "suppr") {
+    }
+    elseif (isset($_POST['id']) && isset($_GET['operation']) && $_GET['operation'] == "suppr") {
         //TODO: Suppression des infos depuis la form liste_employes
+
         $id = $_POST['id'];
         require_once '../bd/connection.php';
         include_once 'class_employes.php';
@@ -105,7 +110,8 @@
             ";
         }
 
-    } elseif (isset($_POST['code_emp']) || isset($_POST['action'])) {
+    }
+    elseif (isset($_POST['code_emp']) || isset($_POST['action'])) {
         //TODO: MAJ et suppression des infos depuis les forms modif_employes et suppr_employes
         $code = $_POST['code_emp'];
         require_once 'bd/connection.php';
