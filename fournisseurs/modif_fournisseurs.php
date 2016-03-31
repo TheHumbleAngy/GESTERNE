@@ -37,7 +37,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <form action="form_principale.php?page=fournisseurs/maj_fournisseurs" method="post">
+                        <form action="form_principale.php?page=fournisseurs/updatedata" method="post">
                             <input type="hidden" name="code_four" value="<?php echo $data['code_four']; ?>">
                             <input type="hidden" name="action" value="maj">
                             <table class="formulaire"

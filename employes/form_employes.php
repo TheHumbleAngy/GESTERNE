@@ -127,7 +127,7 @@
 <script>
     var email = ["a", "b"];
 
-    $(document).ready(function () {
+    function emailEmployes() {
         $.ajax({
             url: "employes/email_employes.php",
             dataType: "json",
@@ -138,7 +138,9 @@
                 }
             }
         })
-    });
+    }
+
+    $(document).ready(emailEmployes());
 
     $('#email_emp').bind('blur', function () {
         if (email.indexOf(this.value) > -1) {
@@ -182,6 +184,7 @@
                     setTimeout(function () {
                         $(".alert-success").slideToggle("slow");
                     }, 2500);
+                    emailEmployes();
                 }
             });
         }

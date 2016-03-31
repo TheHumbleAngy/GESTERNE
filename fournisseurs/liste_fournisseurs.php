@@ -6,12 +6,9 @@
      * Time: 8:13 PM
      */
 ?>
-<head>
-    <meta charset="UTF-8">
-</head>
 <body onload="afficherInfos()">
-<div id="info"></div>
-<div id="feedback"></div>
+    <div id="info"></div>
+    <div id="feedback" style="margin-left: 1.5%; margin-right: 1.5%"></div>
 </body>
 
 <script>
@@ -39,7 +36,7 @@
 
         $.ajax({
             type: 'POST',
-            url: 'fournisseurs/updatedata.php?id=' + id,
+            url: 'fournisseurs/updatedata.php?id=' + id + '&operation=maj',
             data: infos,
             success: function (data) {
                 $('#info').html(data);
@@ -55,7 +52,7 @@
     function suppressionInfos(code) {
         $.ajax({
             type: 'POST',
-            url: 'fournisseurs/deletedata.php',
+            url: 'fournisseurs/updatedata.php?operation=suppr',
             data: {
                 id: code
             },
