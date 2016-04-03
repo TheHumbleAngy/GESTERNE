@@ -1,6 +1,11 @@
 <?php
-require_once 'fonctions.php';
-error_reporting(0);
+    require_once 'fonctions.php';
+    error_reporting(0);
+    session_start();
+
+    if (isset($_SESSION['user_id'])) {
+        header('Location: form_principale.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -37,23 +42,23 @@ error_reporting(0);
         </div>
         <div class="box_content" style="overflow: auto">
             <?php
-            if (isset($_GET['error'])) {
-                if ($_GET['error'] == 1) {
-                    echo '<div class="alert alert-danger alert-dismissible" role="alert">
+                if (isset($_GET['error'])) {
+                    if ($_GET['error'] == 1) {
+                        echo '<div class="alert alert-danger alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="position: inherit">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                                 Erreur de connection! Veuillez verifier les informations entrées.
                               </div>';
-                } else {
-                    echo '<div class="alert alert-info alert-dismissible" role="alert">
+                    } else {
+                        echo '<div class="alert alert-info alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="position: inherit">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                                 <strong>Oups!</strong><br/> Vous êtes déjà connecté à partir d\'un autre navigateur! Veuillez vous en déconnecter avant de continuer.
                               </div>';
+                    }
                 }
-            }
             ?>
             <form action="processing.php" method="post" id="myForm">
                 <table border="0" style="border-collapse: separate; border-spacing: 8px">
@@ -89,14 +94,9 @@ error_reporting(0);
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#myForm').reset();
     });
-    function myFunction() {
-        alert("Hello");
-
-//        return "Hello";
-    }
 </script>
 
 </body>
