@@ -5,15 +5,14 @@
      * Date: 27/11/2015
      * Time: 12:44
      */
-    if (isset($_POST['code'])) {
-        $code = $_POST['code'];
+
+    if (isset($_POST['code_art'])) {
+        $code = $_POST['code_art'];
 
         $sql = "SELECT * FROM articles WHERE code_art = '" . $code . "'";
         $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
         while ($data = mysqli_fetch_array($res)) :?>
-
             <!--suppress ALL -->
-
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -24,7 +23,7 @@
                         </a>
                     </div>
                     <div class="panel-body">
-                        <form action="form_principale.php?page=articles/maj_articles" method="POST">
+                        <form action="form_principale.php?page=articles/updatedata" method="POST">
                             <input type="hidden" name="code_art" value="<?php echo $data['code_art']; ?>">
                             <input type="hidden" name="action" value="supprimer">
 

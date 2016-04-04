@@ -30,7 +30,7 @@
     {
         function recuperation()
         {
-            $this->code_art = htmlspecialchars($_POST['code_art'], ENT_QUOTES);
+            //$this->code_art = htmlspecialchars($_POST['code_art'], ENT_QUOTES);
             $this->stock_art = htmlspecialchars($_POST['stock_art'], ENT_QUOTES);
             $this->designation_art = htmlspecialchars($_POST['designation_art'], ENT_QUOTES);
             $this->date_art = date("Y/m/d");
@@ -56,6 +56,38 @@
             $this->designation_art = mysqli_real_escape_string($connexion, $this->designation_art);
             $this->designation_art = utf8_decode($this->designation_art);
 
+            $req = "SELECT code_art FROM articles ORDER BY code_art DESC LIMIT 1";
+            $resultat = $connexion->query($req);
+
+//echo $resultat->num_rows;
+            if ($resultat->num_rows > 0) {
+                $ligne = $resultat->fetch_all(MYSQL_ASSOC);
+
+                //reccuperation du code
+                $code_art = "";
+                foreach ($ligne as $data) {
+                    $code_art = stripslashes($data['code_art']);
+                }
+
+                //extraction des 4 derniers chiffres
+                $code_art = substr($code_art, -4);
+
+                //incrementation du nombre
+                $code_art += 1;
+            } else {
+                //s'il n'existe pas d'enregistrements dans la base de donn�es
+                $code_art = 1;
+            }
+
+            $b = "ART";
+            $dat = date("Y");
+            $dat = substr($dat, -2);
+            $format = '%04d';
+            $code = $dat . "" . $b . "" . sprintf($format, $code_art);
+
+//on affecte au code le resultat
+            $this->code_art = $code;
+
             $sql = "INSERT INTO articles (code_art, code_grp, designation_art, date_art, description_art, niveau_reappro_art, niveau_cible_art, stock_art)
                      VALUES ('$this->code_art', '$this->code_grp', '$this->designation_art', '$this->date_art', '$this->description_art', '$this->niveau_reappro_art', '$this->niveau_cible_art', '$this->stock_art')";
 
@@ -80,7 +112,7 @@
                 description_art = '" . $this->description_art . "',
                 niveau_reappro_art = '" . $this->niveau_reappro_art . "',
                 niveau_cible_art = '" . $this->niveau_cible_art . "'
-                WHERE code_art = '" . $code . "'"; //print_r($sql);
+                WHERE code_art = '" . $code . "'";
 
             if ($result = mysqli_query($connexion, $sql))
                 return TRUE;
@@ -129,10 +161,10 @@
             if ($connexion->connect_error)
                 die($connexion->connect_error);
 
-            $this->code_emp = $_SESSION['user_id']; //print_r($this->code_emp);
+            $this->code_emp = $_SESSION['user_id'];
 
             //Enregistrement du mouvement d'entree en stock
-            $req = "SELECT num_entr FROM entrees_stock ORDER BY num_entr DESC LIMIT 1"; //print_r($req);
+            $req = "SELECT num_entr FROM entrees_stock ORDER BY num_entr DESC LIMIT 1";
             $res = $connexion->query($req);
 
             if ($res->num_rows > 0) {
@@ -164,7 +196,7 @@
             $num_entr = $resultat;
 
             $sql = "INSERT INTO entrees_stock (num_entr, date_entr, code_emp)
-                VALUES ('$num_entr', '$this->date_mvt', '$this->code_emp')"; //print_r($sql); echo '<br><br>';
+                VALUES ('$num_entr', '$this->date_mvt', '$this->code_emp')";
 
             if ($result = mysqli_query($connexion, $sql)) {
 

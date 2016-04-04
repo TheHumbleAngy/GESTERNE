@@ -552,7 +552,7 @@
                                 <td>Article :</td>
                                 <td>
                                     <label>
-                                        <select name="code" required class="form-control">
+                                        <select name="code_art" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
                                                 $sql = "SELECT * FROM articles ORDER BY designation_art ASC ";
@@ -610,7 +610,7 @@
                                 <td>Article :</td>
                                 <td>
                                     <label>
-                                        <select name="code" required class="form-control">
+                                        <select name="code_art" required class="form-control">
                                             <option disabled selected></option>
                                             <?php
                                                 $sql = "SELECT code_art, designation_art FROM articles ORDER BY designation_art ASC ";

@@ -35,6 +35,15 @@
                 </div>
                 ";
             }
+        } else {
+            echo "
+            <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de récupération des informations. Veuillez contacter l'administrateur.
+            </div>
+            ";
         }
 
     }
@@ -73,7 +82,7 @@
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de récupération des informations. Veuillez contacter l'administrateur.
+                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de récupération des informations. Veuillez contacter l'administrateur.
             </div>
             ";
         }
@@ -113,6 +122,7 @@
     }
     elseif (isset($_POST['code_emp']) || isset($_POST['action'])) {
         //TODO: MAJ et suppression des infos depuis les forms modif_employes et suppr_employes
+
         $code = $_POST['code_emp'];
         require_once 'bd/connection.php';
         include_once 'class_employes.php';

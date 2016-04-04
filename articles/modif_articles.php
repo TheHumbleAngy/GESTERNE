@@ -6,15 +6,13 @@
      * Time: 17:12
      */
 
-    if (isset($_POST['code'])) {
-        $code = $_POST['code'];
+    if (isset($_POST['code_art'])) {
+        $code = $_POST['code_art'];
 
         $sql = "SELECT * FROM articles WHERE code_art = '" . $code . "'";
         $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
         while ($data = mysqli_fetch_array($res)) :?>
-
             <!--suppress ALL -->
-            <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -30,7 +28,8 @@
                                 <table border="0">
                                     <tr>
                                         <td>
-                                            <p style="color: grey; font-size: small"><strong>Modification des infos.</strong><br/>
+                                            <p style="color: grey; font-size: small"><strong>Modification des
+                                                    infos.</strong><br/>
                                                 Les champs precedes de "*" sont imperatifs,
                                                 veuillez donc les renseigner.</p>
                                         </td>
@@ -40,7 +39,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <form method="post" action="form_principale.php?page=articles/maj_articles">
+                            <form method="post" action="form_principale.php?page=articles/updatedata">
                                 <input type="hidden" name="code_art" value="<?php echo $data['code_art']; ?>">
                                 <input type="hidden" name="action" value="maj">
                                 <table class="formulaire"
@@ -136,7 +135,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
         <?php endwhile;
     }

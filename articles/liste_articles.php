@@ -35,7 +35,7 @@
 
         $.ajax({
             type: 'POST',
-            url: 'articles/updatedata.php?id=' + id,
+            url: 'articles/updatedata.php?id=' + id + '&operation=maj',
             data: infos,
             success: function (data) {
                 $('#info').html(data);
