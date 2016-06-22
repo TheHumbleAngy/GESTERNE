@@ -1,12 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ange KOUAKOU
- * Date: 12-Aug-15
- * Time: 10:14 AM
- */
+    /**
+     * Created by PhpStorm.
+     * User: Ange KOUAKOU
+     * Date: 12-Aug-15
+     * Time: 10:14 AM
+     */
 ?>
-
+<!--suppress ALL -->
 <meta charset="utf-8">
 <script>
     $.ajax({
@@ -20,7 +20,7 @@
 
 <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-default">
-        <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
+        <div class="panel-heading">
             Facture
             <a href='form_principale.php?page=accueil' type='button'
                class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -87,11 +87,11 @@
                                         <select class="form-control proforma" name="etatavecfacpro_facture">
                                             <option disabled selected></option>
                                             <?php
-                                            $sql = "SELECT ref_fp FROM proformas ORDER BY ref_fp DESC ";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['ref_fp'] . '">' . $data['ref_fp'] . '</option>';
-                                            }
+                                                $sql = "SELECT ref_fp FROM proformas ORDER BY ref_fp DESC ";
+                                                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                                                while ($data = mysqli_fetch_array($res)) {
+                                                    echo '<option value="' . $data['ref_fp'] . '">' . $data['ref_fp'] . '</option>';
+                                                }
                                             ?>
                                         </select>
                                     </label>
@@ -113,8 +113,8 @@
 
 <script>
     $(document).ready(function () {
-        $('#date_e').datepicker({ dateFormat: 'dd-mm-yy' });
-        $('#date_r').datepicker({ dateFormat: 'dd-mm-yy' });
+        $('#date_e').datepicker({dateFormat: 'yy-mm-dd'});
+        $('#date_r').datepicker({dateFormat: 'yy-mm-dd'});
 
         $("select.proforma").change(function () {
             var pro = $(".proforma option:selected").val();
@@ -135,110 +135,114 @@
 
 <?php
 
-if (sizeof($_POST) > 0) {
+    if (sizeof($_POST) > 0) {
 
-    //Saisie de la facture dans la table "factures"
-    $num_fact = htmlspecialchars($_POST['num_fact'], ENT_QUOTES);
-    $ref_fact = htmlspecialchars($_POST['ref_fact'], ENT_QUOTES);
-    $code_four = htmlspecialchars($_POST['code_four'], ENT_QUOTES);
+        //Saisie de la facture dans la table "factures"
+        $num_fact = htmlspecialchars($_POST['num_fact'], ENT_QUOTES);
+        $ref_fact = htmlspecialchars($_POST['ref_fact'], ENT_QUOTES);
+        $code_four = htmlspecialchars($_POST['code_four'], ENT_QUOTES);
 //    $num_bc = htmlspecialchars($_POST['num_bc'], ENT_QUOTES);
-    $dateetablissement_fact = htmlspecialchars($_POST['dateetablissement_fact'], ENT_QUOTES);
-    $datereception_fact = htmlspecialchars($_POST['datereception_fact'], ENT_QUOTES);
+        $dateetablissement_fact = htmlspecialchars($_POST['dateetablissement_fact'], ENT_QUOTES);
+        $datereception_fact = htmlspecialchars($_POST['datereception_fact'], ENT_QUOTES);
 //    $etatavecfacpro_facture = htmlspecialchars($_POST['etatavecfacpro_facture'], ENT_QUOTES);
-    $remarques_facture = htmlspecialchars($_POST['remarques_facture'], ENT_QUOTES);
+        $remarques_facture = $_POST['remarques_facture'];
+        $remarques_facture = mysqli_real_escape_string($connexion, $remarques_facture);
+        $remarques_facture = htmlspecialchars($remarques_facture, ENT_QUOTES);
 
 //on insert dans la table
 
-    $req = "INSERT INTO factures (num_fact,
+        $req = "INSERT INTO factures (num_fact,
                             code_four,
                             ref_fact,
                             dateetablissement_fact,
                             datereception_fact,
                             remarques_facture)
-             VALUES         ('$num_fact',
+                VALUES      ('$num_fact',
                             '$code_four',
                             '$ref_fact',
                             '$dateetablissement_fact',
                             '$datereception_fact',
                             '$remarques_facture')";
-    //exécution de la requête
-    print_r($req);
-    if ($result = mysqli_query($connexion, $req)) {
-//    $result = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
-//    mysqli_close($connexion);
+        //exécution de la requête
+//        print_r($req);
+//        $result = mysqli_query($connexion, $req);
+        if ($result = mysqli_query($connexion, $req)) {
 
-        //Saisie de chaque article de la facture dans la table "details_facture"
-        $n = $_POST['nbr'];
-        for ($i = 0; $i < $n; $i++) {
+            //Saisie de chaque article de la facture dans la table "details_facture"
+            $n = $_POST['nbr'];
+            $test = TRUE;
+            for ($i = 0; $i < $n; $i++) {
 
-            $req = "SELECT code_df FROM details_facture ORDER BY code_df DESC LIMIT 1";
-            $resultat = $connexion->query($req);
+                $req = "SELECT code_df FROM details_facture ORDER BY code_df DESC LIMIT 1";
+                $resultat = $connexion->query($req);
 
-            if ($resultat->num_rows > 0) {
-                $ligne = $resultat->fetch_all(MYSQL_ASSOC);
+                if ($resultat->num_rows > 0) {
+                    $ligne = $resultat->fetch_all(MYSQL_ASSOC);
 
-                //reccuperation du code
-                $code_df = "";
-                foreach ($ligne as $data) {
-                    $code_df = stripslashes($data['code_df']);
+                    //reccuperation du code
+                    $code_df = "";
+                    foreach ($ligne as $data) {
+                        $code_df = stripslashes($data['code_df']);
+                    }
+
+                    //extraction des 4 derniers chiffres
+                    $code_df = substr($code_df, -4);
+
+                    //incrementation du nombre
+                    $code_df += 1;
+
+                    $b = "DF";
+                    $dat = date("Y");
+                    $dat = substr($dat, -2);
+                    $format = '%04d';
+                    $resultat = $dat . "" . $b . "" . sprintf($format, $code_df);
+
+                    //echo $resultat;
+                } else {
+                    //s'il n'existe pas d'enregistrements dans la base de données
+                    $code_df = 1;
+                    $b = "DF";
+                    $dat = date("Y");
+                    $dat = substr($dat, -2);
+                    $format = '%04d';
+                    $resultat = $dat . "" . $b . "" . sprintf($format, $code_df);
                 }
+                //on affecte au code le resultat
+                $code_df = $resultat;
 
-                //extraction des 4 derniers chiffres
-                $code_df = substr($code_df, -4);
+                $libelle_df = ($_POST['libelle'][$i]);
+                $qte_df = ($_POST['qte'][$i]);
+                $pu_df = ($_POST['pu'][$i]);
+                $rem = ($_POST['rem'][$i]);
 
-                //incrementation du nombre
-                $code_df += 1;
+                $libelle_df = htmlspecialchars($libelle_df, ENT_QUOTES);
+                $qte_df = htmlspecialchars($qte_df, ENT_QUOTES);
+                $pu_df = htmlspecialchars($pu_df, ENT_QUOTES);
+                $rem = htmlspecialchars($rem, ENT_QUOTES);
 
-                $b = "DF";
-                $dat = date("Y");
-                $dat = substr($dat, -2);
-                $format = '%04d';
-                $resultat = $dat . "" . $b . "" . sprintf($format, $code_df);
-
-                //echo $resultat;
-            } else {
-                //s'il n'existe pas d'enregistrements dans la base de données
-                $code_df = 1;
-                $b = "DF";
-                $dat = date("Y");
-                $dat = substr($dat, -2);
-                $format = '%04d';
-                $resultat = $dat . "" . $b . "" . sprintf($format, $code_df);
-            }
-            //on affecte au code le resultat
-            $code_df = $resultat;
-
-            $libelle_df = ($_POST['libelle'][$i]);
-            $qte_df = ($_POST['qte'][$i]);
-            $pu_df = ($_POST['pu'][$i]);
-            $rem = ($_POST['rem'][$i]);
-
-            $libelle_df = htmlspecialchars($libelle_df, ENT_QUOTES);
-            $qte_df = htmlspecialchars($qte_df, ENT_QUOTES);
-            $pu_df = htmlspecialchars($pu_df, ENT_QUOTES);
-            $rem = htmlspecialchars($rem, ENT_QUOTES);
-
-            $REQ = "INSERT INTO details_facture (code_df, num_fact, libelle_df, qte_df, pu_df, remise_df)
+                $REQ = "INSERT INTO details_facture (code_df, num_fact, libelle_df, qte_df, pu_df, remise_df)
 	            VALUES ('$code_df', '$num_fact', '$libelle_df', '$qte_df', '$pu_df', '$rem')";
 
-            /*print_r($REQ);
-            echo '<br/>';*/
-            //exécution de la requête REQ:
-            if ($requete = mysqli_query($connexion, $REQ) or die(mysql_error($connexion))) {
-//                $_SESSION['temp'] = htmlspecialchars($_POST['code_emp'], ENT_QUOTES);
-                //header('Location: form_principale.php?page=articles/details_demandes/saisie_details_demandes_biens_ou_services');
+                //exécution de la requête REQ:
+                if (!mysqli_query($connexion, $REQ)) {
+                    $test = FALSE;
+                    break;
+                }
             }
-        }
-        echo "
-            <div class='alert alert-success alert-dismissible' role='alert' style='width: 98%; margin-right: auto; margin-left: auto'>
-                <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
-                <strong>Succes!</strong><br/> La facture a bien ete enregistree. La facture a bien été enregistree sous le numéro $num_fact
-            </div>
-            ";
-    } else {
-        echo "
+            if ($test) {
+                header('Location: form_principale.php?page=factures/form_factures');
+            } else {
+                echo "
+                    <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                            <span aria-hidden='true'>&times;</span>
+                        </button>
+                        <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative d'enregistrement des détails de la facture. Veuillez contacter l'administrateur.
+                    </div>
+                    ";
+            }
+        } else {
+            echo "
             <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
@@ -246,7 +250,7 @@ if (sizeof($_POST) > 0) {
                 <strong>Une erreur s'est produite lors de la tentative d'enregistrement de la facture. Veuillez contacter l'administrateur.</strong>
             </div>
             ";
+        }
+        mysqli_close($connexion);
     }
-    mysqli_close($connexion);
-}
 ?>  

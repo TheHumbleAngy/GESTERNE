@@ -37,19 +37,23 @@
         // Page footer
         function Footer()
         {
-            // Position at 10px from bottom
-            $this->SetY(-10);
-            // Position at 138px from left, that is approximately the center bottom of the page
-            $this->SetX(138);
             // Arial italic 8
             $this->SetFont('Arial', 'I', 8);
-            // Page number
+            // Position at 10px from bottom
+            $this->SetY(-10);
+            $this->Cell(0, 0, "GESTERNE", 0);
+            // Position at 138px from left, that is approximately the center bottom of the page
+            $this->SetX(138);
 
-            /*$this->Image('logo1.png');
+            // Page number
+            /*
+            $this->Image('logo1.png');
             $this->SetLeftMargin(84);
             $this->Cell(22, 0, $this->Image('logo1.png') . '', 0, 0, 'C');
             $this->Ln(1);*/
             $this->Cell(10, 0, $this->PageNo(), 0, 0, 'R');
+            $this->SetX(263);
+            $this->Cell(0, 0, "Moyens Generaux", 0);
         }
 
         function SetWidths($w)

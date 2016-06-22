@@ -11,7 +11,7 @@
 </head>
 <body onload="afficherInfos()">
     <div id="info"></div>
-    <div id="feedback"></div>
+    <div id="feedback" style="margin-left: 1.5%; margin-right: 1.5%"></div>
 </body>
 
 <script>
@@ -26,35 +26,13 @@
     }
 
     function majInfos(code) {
-        var id = code;
-        var nom_emp = $('#nom_emp' + code).val();
-        var prenoms_emp = $('#prenoms_emp' + code).val();
-        var fonction_emp = $('#fonction_emp' + code).val();
-        var departement_emp = $('#departement_emp' + code).val();
-        var email = $('#email_emp' + code).val();
-        var tel = $('#tel_emp' + code).val();
-
-        var infos = "nom_emp=" + nom_emp + "&prenoms_emp=" + prenoms_emp + "&fonction_emp=" + fonction_emp + "&departement_emp=" + departement_emp + "&email_emp=" + email + "&tel_emp=" + tel;
-
-        $.ajax({
-            type: 'POST',
-            url: 'employes/updatedata.php?id=' + id,
-            data: infos,
-            success: function (data) {
-                $('#info').html(data);
-                afficherInfos();
-                $("div.modal-backdrop.fade.in").remove();
-                setTimeout(function(){
-                    $(".alert-success").slideToggle("slow");
-                }, 2500);
-            }
-        });
+        //Pour le moment, la modification d'une demande n'est pas permise
     }
 
     function suppressionInfos(code) {
         $.ajax({
             type: 'POST',
-            url: 'demandes/deletedata.php',
+            url: 'demandes/updatedata.php?operation=suppr',
             data: {
                 id: code
             },

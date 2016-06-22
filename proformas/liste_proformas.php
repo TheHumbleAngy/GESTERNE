@@ -6,31 +6,31 @@
  * Time: 12:00
  */
 ?>
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-            <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-                Factures Proformas
-                <a href='form_principale.php?page=accueil' type='button'
-                   class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
-                    <span aria-hidden='true'>&times;</span>
-                </a>
-            </div>
-            <div class="panel-body" style="overflow: auto">
-                <table class="table table-hover table-bordered ">
-                    <thead>
-                    <tr>
-                        <th class="entete" style="text-align: center">Numero</th>
-                        <th class="entete" style="text-align: center">Date d'Etablissement</th>
-                        <th class="entete" style="text-align: center">Date de Reception</th>
-                        <th class="entete" style="text-align: center">Notes</th>
-                        <?php //if (($_SESSION['type_utilisateur'] == 'administrateur') || ($_SESSION['type_utilisateur'] == 'moyens_genereaux')): ?>
-                        <!--                        <td class="entete" style="text-align: center">Actions</td>-->
-                        <?php //endif ?>
-                    </tr>
-                    </thead>
+<!--suppress ALL -->
+<div style="margin-left: 1.5%; margin-right: 1.5%">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="font-size: 14px; font-weight: bolder">
+            Factures Proformas
+            <a href='form_principale.php?page=accueil' type='button'
+               class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                <span aria-hidden='true'>&times;</span>
+            </a>
+        </div>
+        <div class="panel-body" style="overflow: auto">
+            <table class="table table-hover table-bordered ">
+                <thead>
+                <tr>
+                    <th class="entete" style="text-align: center">Numero</th>
+                    <th class="entete" style="text-align: center">Date d'Etablissement</th>
+                    <th class="entete" style="text-align: center">Date de Reception</th>
+                    <th class="entete" style="text-align: center">Notes</th>
+                    <?php //if (($_SESSION['type_utilisateur'] == 'administrateur') || ($_SESSION['type_utilisateur'] == 'moyens_genereaux')): ?>
+                    <!--                        <td class="entete" style="text-align: center">Actions</td>-->
+                    <?php //endif ?>
+                </tr>
+                </thead>
 
-                    <?php
+                <?php
                     $sql = "SELECT * FROM proformas ORDER BY dateetablissement_fp DESC";
                     if ($valeur = $connexion->query($sql)) {
                         $ligne = $valeur->fetch_all(MYSQL_ASSOC);
@@ -39,15 +39,15 @@
                             <tr>
                                 <td style="text-align: center">
                                     <?php
-                                    //Recuperation des articles figurants sur la proforma
-                                    $req = "SELECT libelle FROM details_proforma WHERE ref_fp = '" . stripslashes($list['ref_fp']) . "'";
-                                    if ($resultat = $connexion->query($req)) {
-                                        $rows = $resultat->fetch_all(MYSQL_ASSOC);
-                                        $str = "";
-                                        foreach ($rows as $row) {
-                                            $str = $str . stripslashes($row['libelle']) . "\r\n";
+                                        //Recuperation des articles figurants sur la proforma
+                                        $req = "SELECT libelle FROM details_proforma WHERE ref_fp = '" . stripslashes($list['ref_fp']) . "'";
+                                        if ($resultat = $connexion->query($req)) {
+                                            $rows = $resultat->fetch_all(MYSQL_ASSOC);
+                                            $str = "";
+                                            foreach ($rows as $row) {
+                                                $str = $str . stripslashes($row['libelle']) . "\r\n";
+                                            }
                                         }
-                                    }
                                     ?>
                                     <a class="btn btn-default"
                                        href="form_principale.php?page=proformas/form_proformas&action=consultation&id=<?php echo stripslashes($list['ref_fp']); ?>"
@@ -84,9 +84,8 @@
                             <?php
                         }
                     }
-                    ?>
-                </table>
-            </div>
+                ?>
+            </table>
         </div>
     </div>
 </div>

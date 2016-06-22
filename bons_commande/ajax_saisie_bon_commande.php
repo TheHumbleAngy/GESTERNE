@@ -1,12 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ange KOUAKOU
- * Date: 31-Aug-15
- * Time: 3:49 PM
- */
-require_once '../bd/connection.php';
-session_start();
+    /**
+     * Created by PhpStorm.
+     * User: Ange KOUAKOU
+     * Date: 31-Aug-15
+     * Time: 3:49 PM
+     */
+    require_once '../bd/connection.php';
+    session_start();
 ?>
 <table class="formulaire" style="width: 100%" border="0">
     <tr>
@@ -14,14 +14,14 @@ session_start();
         <td>
             <label>
                 <?php
-                $sql = "SELECT code_emp, nom_emp, prenoms_emp FROM employes WHERE email_emp= '" . $_SESSION['email'] . "'"; //print_r($sql);
-                if ($resultat = $connexion->query($sql)) {
-                    $ligne = $resultat->fetch_all(MYSQL_ASSOC);
-                    foreach ($ligne as $data) {
-                        $code_emp = stripslashes($data['code_emp']);
-                        $nom_prenoms_emp = stripslashes($data['prenoms_emp']) . ' ' . stripslashes($data['nom_emp']);
+                    $sql = "SELECT code_emp, nom_emp, prenoms_emp FROM employes WHERE email_emp= '" . $_SESSION['email'] . "'"; //print_r($sql);
+                    if ($resultat = $connexion->query($sql)) {
+                        $ligne = $resultat->fetch_all(MYSQL_ASSOC);
+                        foreach ($ligne as $data) {
+                            $code_emp = stripslashes($data['code_emp']);
+                            $nom_prenoms_emp = stripslashes($data['prenoms_emp']) . ' ' . stripslashes($data['nom_emp']);
+                        }
                     }
-                }
                 ?>
                 <input type="text" name="nom_emp" class="form-control"
                        value="<?php echo $nom_prenoms_emp; ?>" readonly>
@@ -34,11 +34,11 @@ session_start();
                 <select name="code_four" class="form-control" id="four" required>
                     <option disabled selected>Raison Sociale</option>
                     <?php
-                    $sql = "SELECT code_four, nom_four FROM fournisseurs ORDER BY nom_four ASC ";
-                    $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                    while ($data = mysqli_fetch_array($res)) {
-                        echo '<option value="' . $data['code_four'] . '" >' . $data['nom_four'] . '</option>';
-                    }
+                        $sql = "SELECT code_four, nom_four FROM fournisseurs ORDER BY nom_four ASC ";
+                        $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                        while ($data = mysqli_fetch_array($res)) {
+                            echo '<option value="' . $data['code_four'] . '" >' . $data['nom_four'] . '</option>';
+                        }
                     ?>
                 </select>
             </label>
@@ -80,12 +80,12 @@ session_start();
         });
     });
 
-    nbr_art.bind('blur', function() {
+    nbr_art.bind('blur', function () {
         $.ajax({
             url: "articles/libelles_articles.php",
             dataType: "json",
             type: "GET",
-            success: function(data) {
+            success: function (data) {
                 for (var i = 0; i < data.length; i += 1) {
                     articles[i] = data[i].designation_art;
                 }

@@ -11,8 +11,8 @@ require_once '../bd/connection.php';
 if (isset($_POST["proforma"])) {
     $pro = htmlspecialchars($_POST['proforma'], ENT_QUOTES);
 
-    /* on r�ccup�re le d�partement de l'employ� demandeur � partir des tables proformas, demandes_proformas, demandes, employés
-    en fonction de la proforma s�lectionn�e*/
+    /* on réccupère le département de l'employé demandeur à partir des tables proformas, demandes_proformas, demandes, employés
+    en fonction de la proforma sélectionnée*/
 
         $sql = "SELECT libelle, qte_dfp, pu_dfp, remise_dfp, fournisseurs.code_four, fournisseurs.nom_four
                 FROM details_proforma INNER JOIN proformas
@@ -28,37 +28,36 @@ if (isset($_POST["proforma"])) {
             $lignes = $result->fetch_all(MYSQL_ASSOC);
 //        print_r($lignes);
             echo '
-    <div style="text-align: center; margin-bottom: 2%">
-            <button class="btn btn-info" type="submit" name="valider" style="width: 150px">
-                Valider
-            </button>
-        </div>
-    <div class="col-md-12">
-        <table style="border-collapse: separate; border-spacing: 8px" border="0">
-            <tr>
-                <td class="champlabel">Fournisseur :</td>
-                <td>
-                    <label class="nomargin_tb">
-                        <input type="text" class="form-control fournisseur" name="nom_four" readonly value="' . stripslashes($lignes[0]['nom_four']) . '" style="font-weight: normal">
-                        <input type="hidden" name="code_four" value="'. stripslashes($lignes[0]['code_four']) .'">
-                    </label>
-                </td>
-            </tr>
-        </table>
-        <div class="panel panel-default">
-            <table border="0" class="table table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th class="entete" style="text-align: center; width: 50%">Désignation</th>
-                        <th class="entete" style="text-align: center; width: 5%">Quantité</th>
-                        <th class="entete" style="text-align: center; width: 15%">Prix Unitaire</th>
-                        <th class="entete" style="text-align: center; width: 5%">Remise</th>
-                        <th class="entete" style="text-align: center; width: 20%">Prix TTC</th>
-                    </tr>
-                </thead>';
+<div style="text-align: center; margin-bottom: 2%">
+    <button class="btn btn-info" type="submit" name="valider" style="width: 150px">
+        Valider
+    </button>
+</div>
+<div class="col-md-12">
+    <table style="border-collapse: separate; border-spacing: 8px" border="0">
+        <tr>
+            <td class="champlabel">Fournisseur :</td>
+            <td>
+                <label class="nomargin_tb">
+                    <input type="text" class="form-control fournisseur" name="nom_four" readonly value="' . stripslashes($lignes[0]['nom_four']) . '" style="font-weight: normal">
+                    <input type="hidden" name="code_four" value="'. stripslashes($lignes[0]['code_four']) .'">
+                </label>
+            </td>
+        </tr>
+    </table>
+    <div class="panel panel-default">
+        <table border="0" class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th class="entete" style="text-align: center; width: 50%">Désignation</th>
+                    <th class="entete" style="text-align: center; width: 5%">Quantité</th>
+                    <th class="entete" style="text-align: center; width: 15%">Prix Unitaire</th>
+                    <th class="entete" style="text-align: center; width: 5%">Remise</th>
+                    <th class="entete" style="text-align: center; width: 20%">Prix TTC</th>
+                </tr>
+            </thead>';
 
             $total = 0;
-
             $i = 0;
             foreach ($lignes as $list) {
                 echo '<tr>';
@@ -92,14 +91,19 @@ if (isset($_POST["proforma"])) {
                         <th class="entete" style="text-align: right">' . number_format($total, 0, ',', ' ') . '</th>
                     </tr>
                   </thead>
-
             </table>
         </div>
     </div>
     <input type="hidden" name="nbr" value="' . $i . '">';
         }
         else {
-            echo "<p>Cette proforma ne contient aucun article</p>";
+            echo '
+            <div class="col-md-12" style="margin-top: 10px">
+                <div class="jumbotron" style="width: 70%; padding: 30px 30px 20px 30px; background-color: rgba(1, 139, 178, 0.1); margin-left: auto; margin-right: auto">
+                    <p style="font-size: small">Désolé, cette proforma ne contient aucun article.</p>
+                </div>
+            </div>
+            ';
         }
     }
 }

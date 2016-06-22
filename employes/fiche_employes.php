@@ -8,7 +8,7 @@
 
     require_once "../fpdf/fpdf.php";
     require_once "../bd/connection.php";
-    header('Content-Type: text/html; charset=utf-8');
+    header('Content-Type: text/html; charset=iso-8859-1');
 
     class PDF_MC_Table extends FPDF
     {
@@ -37,12 +37,13 @@
         // Page footer
         function Footer()
         {
-            // Position at 10px from bottom
-            $this->SetY(-10);
-            // Position at 138px from left, that is approximately the center bottom of the page
-            $this->SetX(138);
             // Arial italic 8
             $this->SetFont('Arial', 'I', 8);
+            // Position at 10px from bottom
+            $this->SetY(-10);
+            $this->Cell(0, 0, "GESTERNE", 0);
+            // Position at 138px from left, that is approximately the center bottom of the page
+            $this->SetX(138);
             // Page number
 
             /*$this->Image('logo1.png');
@@ -50,6 +51,8 @@
             $this->Cell(22, 0, $this->Image('logo1.png') . '', 0, 0, 'C');
             $this->Ln(1);*/
             $this->Cell(10, 0, $this->PageNo(), 0, 0, 'R');
+            $this->SetX(263);
+            $this->Cell(0, 0, "Moyens Generaux", 0);
         }
 
         function SetWidths($w)

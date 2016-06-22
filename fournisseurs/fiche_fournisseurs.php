@@ -27,10 +27,10 @@
             $this->SetFillColor(228, 228, 228);
             $this->Rect(10, 25, 277, 8, 'DF');
             $this->Cell(25, 8, "NUMERO", 1);
-            $this->Cell(70, 8, "RAISON SOCIALE", 1);
-            $this->Cell(82, 8, "CONTACT", 1);
-            $this->Cell(60, 8, "ADRESSE", 1);
-            $this->Cell(40, 8, "ACTIVITE", 1);
+            $this->Cell(60, 8, "RAISON SOCIALE", 1);
+            $this->Cell(72, 8, "CONTACT", 1);
+            $this->Cell(70, 8, "ADRESSE", 1);
+            $this->Cell(50, 8, "ACTIVITE", 1);
 //            $this->Cell(30, 8, "NOTES", 1);
             $this->Ln(8);
         }
@@ -38,12 +38,14 @@
         // Page footer
         function Footer()
         {
-            // Position at 10px from bottom
-            $this->SetY(-10);
-            // Position at 138px from left, that is approximately the center bottom of the page
-            $this->SetX(138);
             // Arial italic 8
             $this->SetFont('Arial', 'I', 8);
+            // Position at 10px from bottom
+            $this->SetY(-10);
+            $this->Cell(0, 0, "GESTERNE", 0);
+            // Position at 138px from left, that is approximately the center bottom of the page
+            $this->SetX(138);
+
             // Page number
             /*
             $this->Image('logo1.png');
@@ -51,6 +53,8 @@
             $this->Cell(22, 0, $this->Image('logo1.png') . '', 0, 0, 'C');
             $this->Ln(1);*/
             $this->Cell(10, 0, $this->PageNo(), 0, 0, 'R');
+            $this->SetX(263);
+            $this->Cell(0, 0, "Moyens Generaux", 0);
         }
 
         function SetWidths($w)
@@ -165,7 +169,7 @@
     $pdf->AddPage();
     $pdf->SetTitle("Gesterne | Liste des Fournisseurs", TRUE);
     $pdf->SetFont('Arial', '', 10);
-    $pdf->SetWidths(array(25, 70, 82, 60, 40));
+    $pdf->SetWidths(array(25, 60, 72, 70, 50));
 
     //DETAILS DE LA DEMANDE
     $sql = "SELECT code_four, nom_four, telephonepro_four, fax_four, email_four, adresse_four, activite_four FROM fournisseurs ORDER BY nom_four";

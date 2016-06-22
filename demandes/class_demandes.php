@@ -18,7 +18,7 @@ abstract class class_demandes
 
     abstract protected function recuperation($code);
 
-    abstract protected function modification($code);
+    /*abstract protected function modification($code);*/
 
     abstract protected function suppression($code);
 }
@@ -73,14 +73,24 @@ class demandes extends class_demandes
             return FALSE;
     }
 
-    function modification($code)
+    /*function modification($code)
     {
 
-    }
+    }*/
 
     function suppression($code)
     {
+        $connexion = new mysqli('localhost', 'angy', 'ncare', 'gestion');
 
+        if ($connexion->connect_error)
+            die($connexion->connect_error);
+
+        $sql = "DELETE FROM demandes WHERE code_dbs = '" . $code . "'";
+
+        if ($result = mysqli_query($connexion, $sql))
+            return TRUE;
+        else
+            return FALSE;
     }
 }
 
@@ -144,7 +154,7 @@ class details_demandes extends demandes
             //incrementation du nombre
             $code_dd += 1;
         } else {
-            //s'il n'existe pas d'enregistrements dans la base de données
+            //s'il n'existe pas d'enregistrements dans la base de donnÃ©es
             $code_dd = 1;
         }
 
@@ -160,7 +170,7 @@ class details_demandes extends demandes
 	                    VALUES ('$this->code_dd', '$this->nature_dd', '$this->code_dbs', '$this->libelle_dd', '$this->qte_dd', '$this->observations_dd')";
 //        print_r($sql);
 
-        //exécution de la requête REQ:
+        //exÃ©cution de la requÃ¨te REQ:
         if ($result = mysqli_query($connexion, $sql)) {
             return TRUE;
         } else

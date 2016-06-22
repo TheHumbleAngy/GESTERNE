@@ -35,13 +35,17 @@
                 <link type="text/css" href="css_js/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet">
                 <link type="text/css" href="css_js/windows-10-icons-1.0.0/windows-10-icons-1.0.0/font/styles.min.css"
                       rel="stylesheet">
+                <link type="text/css" href="css_js/slick.css" rel="stylesheet">
+                <link type="text/css" href="css_js/slick-theme.css" rel="stylesheet">
+                <!--<link type="text/css" href="css_js/unslider.css" rel="stylesheet">-->
 
                 <script src="css_js/bootstrap-3.3.4-dist/js/jquery-1.11.3.js"></script>
                 <script src="css_js/bootstrap-3.3.4-dist/js/bootstrap.js"></script>
                 <script src="css_js/bootstrap-table-master/src/bootstrap-table.js"></script>
                 <script src="css_js/menu_vertical.js"></script>
                 <script src="css_js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-<!--                <script src="css_js/bootstrap3-editable/js/bootstrap-editable.js"></script>-->
+                <script src="css_js/slick.js"></script>
+                <!--<script src="css_js/unslider.js"></script>-->
 
                 <link rel="shortcut icon" href="img/icone_ncare.ico"/>
 
@@ -79,7 +83,7 @@
                             <ul class="nav main">
                                 <li class="ic-form-style">
                                     <a>
-                                        <span>Fichiers</span>
+                                        <span>Formulaires</span>
                                     </a>
                                     <ul>
                                         <li>
@@ -106,10 +110,10 @@
                                         <li><a href="form_principale.php?page=demandes/liste_demandes">Demandes</a></li>
                                         <li><a href="form_principale.php?page=proformas/liste_proformas">Proformas</a>
                                         </li>
-                                        <li><a href="form_principale.php?page=bons_de_livraison/liste_bordereaux">Bons
-                                                de
-                                                Livraison</a></li>
                                         <li><a href="form_principale.php?page=factures/liste_factures">Factures</a></li>
+                                        <!--<li><a href="form_principale.php?page=bons_de_livraison/liste_bordereaux">Bons
+                                                de
+                                                Livraison</a></li>-->
                                     </ul>
                                 </li>
                                 <li class="ic-imprimer">

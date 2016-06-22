@@ -11,7 +11,7 @@
 
 <div class="col-md-11"  style="margin-left: 4.33%">
     <div class="panel panel-default">
-        <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
+        <div class="panel-heading">
             Bon de Livraison
             <a href='form_principale.php?page=accueil' type='button'
                class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -22,7 +22,7 @@
             <form action="form_principale.php?page=bons_livraison/saisie_bons_livraison" method="POST">
                 <div class="row">
                     <div class="col-md-10">
-                        <table class="formulaire" border="0">
+                        <table class="formulaire" style="width= 100%" border="0">
                             <tr>
                                 <td class="champlabel">Numéro :</td>
                                 <td>
@@ -36,7 +36,7 @@
                                 <td class="champlabel">Date d'établissement :</td>
                                 <td>
                                     <label>
-                                        <input type="date" name="dateetablissement_bl"
+                                        <input type="text" name="dateetablissement_bl"
                                                id="dateetablissement_bl" readonly
                                                title="Veuillez cliquer ici pour sélectionner une date"
                                                class="form-control"/>
@@ -45,10 +45,10 @@
                                 <td class="champlabel">Date de Réception :</td>
                                 <td>
                                     <label>
-                                        <input type="date" name="datereception_bl"
+                                        <input type="text" name="datereception_bl"
                                                id="datereception_bl" readonly
                                                title="Veuillez cliquer ici pour sélectionner une date"
-                                               required class="form-control"/>
+                                               class="form-control"/>
                                     </label>
                                 </td>
                             </tr>
@@ -56,7 +56,7 @@
                                 <td class="champlabel">*Fournisseur :</td>
                                 <td>
                                     <label>
-                                        <select name="code_four" required class="form-control" id="four">
+                                        <select name="code_four" class="form-control" id="four">
                                             <option selected disabled>Raison sociale</option>
                                             <?php
                                             $sql = "SELECT code_four, nom_four FROM fournisseurs ORDER BY nom_four ASC ";
@@ -68,19 +68,12 @@
                                         </select>
                                     </label>
                                 </td>
-                                <td class="champlabel">Réceptionniste :</td>
+                                <td class="champlabel">Livreur :</td>
                                 <td>
                                     <label>
-                                        <select name="code_emp" required class="form-control">
-                                            <option disabled selected>Employé</option>
-                                            <?php
-                                            $sql = "SELECT code_emp, nom_emp, prenoms_emp FROM employes ORDER BY nom_emp ASC ";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['code_emp'] . '" >' . $data['prenoms_emp'] . ' ' . $data['nom_emp'] . '</option>';
-                                            }
-                                            ?>
-                                        </select>
+                                        <input type="text" name="nom_livreur" class="form-control" size="40"
+                                               onblur="this.value = this.value.toUpperCase();"
+                                               required/>
                                     </label>
                                 </td>
                             </tr>
@@ -88,14 +81,22 @@
                                 <td class="champlabel" title="Numéro du bon de commande">Bon de Commande :</td>
                                 <td>
                                     <label>
-                                        <select name="num_bc" required class="form-control bons_commande" id="bc">
+                                        <select name="num_bc" class="form-control" id="bon_commande">
                                             <option selected disabled>Numéro</option>
+                                        </select>
+                                    </label>
+                                </td>
+                                <td class="champlabel">Réceptionniste :</td>
+                                <td>
+                                    <label>
+                                        <select name="code_emp" required class="form-control">
+                                            <option disabled selected>Employé</option>
                                             <?php
-                                            $sql = "SELECT num_bc FROM bons_commande ORDER BY num_bc ASC ";
-                                            $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
-                                            while ($data = mysqli_fetch_array($res)) {
-                                                echo '<option value="' . $data['num_bc'] . '" >' . $data['num_bc'] . '</option>';
-                                            }
+                                                $sql = "SELECT code_emp, nom_emp, prenoms_emp FROM employes WHERE departement_emp IN ('ADMINISTRATION', 'MOYENS GENERAUX') AND nom_emp <> 'ABBEY' ORDER BY nom_emp ASC";
+                                                $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
+                                                while ($data = mysqli_fetch_array($res)) {
+                                                    echo '<option value="' . $data['code_emp'] . '" >' . $data['prenoms_emp'] . ' ' . $data['nom_emp'] . '</option>';
+                                                }
                                             ?>
                                         </select>
                                     </label>
@@ -105,7 +106,7 @@
                                 <td class="champlabel">Commentaires :</td>
                                 <td>
                                     <label>
-                                    <textarea name="commentaires_bl" rows="2" cols="20" class="form-control"
+                                    <textarea name="commentaires_bl" rows=3 cols="20" class="form-control"
                                               style="resize: none"></textarea>
                                     </label>
                                 </td>
@@ -125,12 +126,12 @@
 </div>
 
 <script>
-    $('#datereception_bl').datepicker({ dateFormat: 'dd-mm-yy' });
-    $('#dateetablissement_bl').datepicker({ dateFormat: 'dd-mm-yy' });
+    $('#datereception_bl').datepicker({ dateFormat: 'yy-mm-dd' });
+    $('#dateetablissement_bl').datepicker({ dateFormat: 'yy-mm-dd' });
     /* Ce script permet de remplir le combobox de la liste des bons de commande en fonction du fournisseur sélectionné */
     $(document).ready(function () {
         $("#four").change(function () {
-            var four = $("#four").val();
+            var four = $("#four").val(); //console.log(four);
             $.ajax({
                 type: "POST",
                 data: {
@@ -140,7 +141,7 @@
                 success: function (resultat) {
                     //On éclate notre string résultat en un tableau 1D où chaque céllule du tableau est fonction du ";"
                     var option = resultat.split(';');
-                    var select = $('.bons_commande');
+                    var select = $('#bon_commande');
 
                     //console.log(option.length);
                     select.empty();
@@ -154,10 +155,8 @@
         });
 
         /* Ce script permet d'afficher la liste des articles du bon de commande sélectionné */
-        $("select.bons_commande").change(function () {
-            var bon = $(".bons_commande option:selected").val();
-//            var conteneur = $('#valideur');
-            //console.log(prof);
+        $("#bon_commande").change(function () {
+            var bon = $("#bon_commande").val(); console.log(bon);
             $.ajax({
                 type: "POST",
                 url: "bons_livraison/ajax_articles_bons_livraison.php",

@@ -46,7 +46,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="champlabel">Activité :</td>
+                            <td class="champlabel">*Activité :</td>
                             <td>
                                 <label>
                                     <input type="text" name="activite_four" id="activite_four" size="30" required class="form-control"/>
@@ -60,7 +60,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="champlabel">Adresse :</td>
+                            <td class="champlabel">*Adresse :</td>
                             <td>
                                 <label>
                                         <textarea name="adresse_four" id="adresse_four" rows="4" cols="25" style="resize: none" required

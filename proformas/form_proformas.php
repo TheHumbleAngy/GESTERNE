@@ -17,6 +17,7 @@
         $ligne = $valeur->fetch_all(MYSQL_ASSOC);
         foreach ($ligne as $data) {
             ?>
+            <!--suppress ALL -->
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
@@ -184,7 +185,7 @@
 
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
-            <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
+            <div class="panel-heading">
                 Facture Proforma
                 <a href='form_principale.php?page=accueil' type='button'
                    class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -384,31 +385,11 @@
                                 '$datereception_fp',
                                 '$notes_fp')";
 
-        /*$_SESSION['temp1'] = htmlspecialchars($_POST['ref_fp'], ENT_QUOTES);*/
-
-        if ($requete = mysqli_query($connexion, $requete) or die(mysql_error($connexion))) {
-
-            //recuperation de la/des demandes pour les enregistrer dans la table demandes_proformas
-            /*$infos = $_POST['code_dbs'];
-            $code_dbs = explode(',', $infos);
-            $m = sizeof($code_dbs);
-
-            for ($i = 0; $i < $m; $i++) {
-                $requete = "INSERT INTO demandes_proformas(code_dbs, ref_fp) VALUES ('" . $code_dbs[$i] . "', '" . $ref_fp . "')";
-                $resultat = $connexion->query($requete);
-            }*/
+        if ($requete = mysqli_query($connexion, $requete)) {
 
             $n = $_POST['nbr'];
             for ($i = 0; $i < $n; $i++) {
-                //echo "Test";
-                //print_r($n);
-                //echo '<br/>';
 
-                /*foreach ($_POST['libelle[]'] as $libelle_dd) {
-                    echo $libelle_dd;
-                }*/
-                //echo '<br/>';
-                //print_r($_POST['libelle']);
                 $req = "SELECT id_dfp FROM details_proforma ORDER BY id_dfp DESC LIMIT 1";
                 $resultat = $connexion->query($req);
 
@@ -450,25 +431,15 @@
                 $qte = ($_POST['qte'][$i]);
                 $pu = ($_POST['pu'][$i]);
                 $rem = ($_POST['rem'][$i]);
-//            $total_ht = ($_POST['total_ht'][$i]);
-//            $total_ttc = ($_POST['total_ttc'][$i]);
 
                 $libelle = mysqli_real_escape_string($connexion, $libelle);
                 $qte = htmlspecialchars($qte, ENT_QUOTES);
                 $pu = htmlspecialchars($pu, ENT_QUOTES);
-//            $total_ht = htmlspecialchars($total_ht, ENT_QUOTES);
-//            $total_ttc = htmlspecialchars($total_ttc, ENT_QUOTES);
 
                 $REQ = "INSERT INTO details_proforma (id_dfp, ref_fp, libelle, qte_dfp, pu_dfp, remise_dfp)
 	            VALUES ('$id_dfp', '$ref_fp', '$libelle', '$qte', '$pu', '$rem')";
 
-                /*print_r($REQ);
-                echo '<br/>';*/
-                //exécution de la requête REQ:
-                if ($requete = mysqli_query($connexion, $REQ) or die(mysql_error($connexion))) {
-                    //$_SESSION['temp'] = htmlspecialchars($_POST['code_emp'], ENT_QUOTES);
-                    //header('Location: form_principale.php?page=articles/details_demandes/saisie_details_demandes_biens_ou_services');
-                }
+                $requete = mysqli_query($connexion, $REQ) or die(mysql_error($connexion));
             }
 
             echo "
@@ -479,13 +450,14 @@
                 <strong>Succes!</strong><br/> La proforma a bien ete saisie.
             </div>
             ";
-        } else {
+        }
+        else {
             echo "
             <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-                <strong>Une erreur s'est produite lors de la tentative d'enregistrement de la proforma. Veuillez contacter l'administrateur.</strong>
+                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative d'enregistrement de la demande. Veuillez contacter l'administrateur.
             </div>
             ";
         }

@@ -16,10 +16,10 @@
             foreach ($ligne as $data) {
                 ?>
                 <!--suppress ALL -->
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Demande > Consultation
+                            Formulaire Demande
                             <a href='form_principale.php?page=accueil' type='button'
                                class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                                 <span aria-hidden='true'>&times;</span>
@@ -144,13 +144,12 @@
             </script>
         </head>
         <body>
-        <div id="feedback"></div>
         <br/>
 
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Demande
+                    Formulaire Demande
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -195,8 +194,8 @@
                                 <td class="champlabel" rowspan="2">Objet :</td>
                                 <td rowspan="2">
                                     <label>
-                                <textarea id="objets_dbs" name="objets_dbs" rows="3" class="form-control"
-                                          style="resize: none"></textarea>
+                                        <textarea id="objets_dbs" name="objets_dbs" rows="3" class="form-control"
+                                                  style="resize: none"></textarea>
                                     </label>
                                 </td>
                             </tr>
@@ -281,26 +280,53 @@
 
             if ($demande->recuperation($_SESSION['user_id'])) {
                 if ($demande->enregistrement()) {
-                    //si le code de l'enregistrement de la demande est OK, on execute alors ce qui suit:
                     $details_demande = new details_demandes();
 
-                    $nbr = $_POST['nbr']; //echo $nbr;
+                    $nbr = $_POST['nbr'];
 
                     for ($i = 0; $i < $nbr; $i++) {
-//            echo $i;
                         if ($details_demande->recuperation_details($demande->code_dbs, $i)) {
-//                $details_demande->afficher_details();
-                            if (!($details_demande->enregistrement()))
-                                echo "Une erreur s'est produite lors de la tentative d'enregistrement des informations";
+                            if ($details_demande->enregistrement())
+                                header('Location: form_principale.php?page=demandes/form_demandes&action=ajout');
+                            else
+                                echo "
+                                <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
+                                    <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                                        <span aria-hidden='true'>&times;</span>
+                                    </button>
+                                    <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative d'enregistrement des détails de la demande. Veuillez contacter l'administrateur.
+                                </div>
+                                ";
                         } else {
-                            echo "Une erreur s'est produite lors de la tentative de récupération des informations entrées";
+                            echo "
+                            <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                                    <span aria-hidden='true'>&times;</span>
+                                </button>
+                                <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de récupération des informations. Veuillez contacter l'administrateur.
+                            </div>
+                            ";
                             break;
                         }
                     }
                 } else
-                    echo "Une erreur s'est produite lors de la tentative d'enregistrement de la demande";
+                    echo "
+                    <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                            <span aria-hidden='true'>&times;</span>
+                        </button>
+                        <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative d'enregistrement de la demande. Veuillez contacter l'administrateur.
+                    </div>
+                    ";
             } else
-                echo "Une erreur s'est produite lors de la tentative de récupération des informations de la demande";
+                echo "
+                <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                    <strong>Erreur!</strong><br/> Une erreur s'est produite lors de la tentative de récupération de la demande. Veuillez contacter l'administrateur.
+                </div>
+                ";
         }
         ?>
 
