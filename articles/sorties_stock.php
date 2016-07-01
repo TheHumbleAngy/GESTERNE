@@ -37,7 +37,7 @@
                         <select name="libelle[]" required class="form-control">
                             <option disabled selected>--- Sélectionner un article ---</option>';
 
-            $sql = "SELECT designation_art FROM articles ORDER BY designation_art ASC ";
+            $sql = "SELECT designation_art, stock_art FROM articles WHERE stock_art > 0 ORDER BY designation_art ASC ";
             $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
             while ($data = mysqli_fetch_array($res)) {
                 echo '<option value="' . $data['designation_art'] . '" >' . $data['designation_art'] . '</option>';

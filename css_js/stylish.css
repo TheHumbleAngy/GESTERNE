@@ -41,23 +41,23 @@
 }
 
 .sb {
-    border: 1px solid #01ADDD;
+    border: 1px solid #0e76bc;
     /*margin-top: 50%;*/
 }
 
 .sb .box_title {
-    background: #01ADDD;
+    background: #0e76bc;
     color: #fff;
     font-size: 14px;
     font-weight: normal;
 }
 
 .sb_blue {
-    border: 2px solid #01ADDD
+    border: 2px solid #0e76bc
 }
 
 .sb_blue .box_title {
-    background: #01ADDD;
+    background: #0e76bc;
     color: #fff
 }
 
@@ -109,7 +109,7 @@ strong, table > thead, ul.section.menu > li > a {
     font-size: 40px;
     color:rgb(1,173,221);*/
     text-align: center;
-    color: #01ADDD;
+    color: #0e76bc;
 }
 
 /*.titre_appli{
@@ -201,7 +201,7 @@ input[type="tel"], input[type="color"] {
 
 th.entete {
     /*font-weight: bold;*/
-    color: #01addd;
+    color: #0e76bc;
     /*font-size: 18px;*/
     /*font-family: "Segoe UI";*/
 }
@@ -211,7 +211,7 @@ th.entete {
 }
 
 .sous_menu_accueil {
-    border: 1px solid #01ADDD;
+    border: 1px solid #0e76bc;
     border-radius: 4px;
 }
 
@@ -228,7 +228,7 @@ th.entete {
     vertical-align: middle;
     cursor: pointer;
     background-color: #f6fcfe;
-    border: 1px solid #018bb2;
+    border: 2px solid #018bb2;
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -248,8 +248,8 @@ th.entete {
 .btn-minimenu:hover,
 .btn-minimenu:active,
 .btn-minimenu:focus {
-    color: #01addd;
-    /*background-color: #01addd;*/
+    color: #0e76bc;
+    /*background-color: #0e76bc;*/
 }
 
 a.a-minimenu {
@@ -326,7 +326,7 @@ a.a-minimenu {
     text-align: center;
 }
 
-/* menu_left
+/* menu vertical
 -----------------------------*/
 .box.sidemenu {
     background-color: #D1DEE4;
@@ -412,6 +412,10 @@ ul.menu li a:active {
     background: #ccc;
 }
 
+div.sidemenu > ul.section > li > a {
+    font-size: small;
+}
+
 /* submenus
 ----------------------------------------------- */
 ul.menu ul {
@@ -450,7 +454,7 @@ body.arriere_plan > div.container {
 }
 
 .row.basdepage {
-    background-color: #029DC8;
+    background-color: #0e76bc;
     height: 70px;
     /*height: 10%;*/
 }
@@ -511,7 +515,7 @@ table.table tr td {
 }
 
 .entourage {
-    border: solid #01addd;
+    border: solid #0e76bc;
 }
 
 .carousel-caption {
@@ -527,7 +531,7 @@ table.table tr td {
 }
 
 .carousel-caption a:hover, a:focus {
-    /*color: #01addd;*/
+    /*color: #0e76bc;*/
     text-decoration: none;
     font-weight: bolder;
     /*font-size: larger;*/
@@ -614,7 +618,8 @@ input[type="number"].form-control {
 }
 
 .my-slider {
-    width: 60%;
+    /*width: 60%;*/
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }

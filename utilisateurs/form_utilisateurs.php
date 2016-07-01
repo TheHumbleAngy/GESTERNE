@@ -23,7 +23,7 @@
                 <form method="post" action="">
                     <table class="formulaire" style="width: 100%; margin-left: auto; margin-right: auto;" border="0">
                         <tr>
-                            <td class="champlabel">Employe:</td>
+                            <td class="champlabel">Employé:</td>
                             <td>
                                 <label>
                                     <select class="form-control employe" name="emp" required>
@@ -43,7 +43,7 @@
                             <td></td>
                             <td></td>
                             <td rowspan="2" style="padding-right: 0">
-                                <img src="img/Icons8/add_user-100.png" height="80" width="80">
+                                <img src="img/icons_1775b9/add_user-100.png" height="80" width="80">
                             </td>
                         </tr>
                         <tr>
@@ -87,7 +87,7 @@
                 <form method="post" action="">
                     <table style="border-collapse: separate; border-spacing: 10px" border="0">
                         <tr>
-                            <td class="champlabel">Employe:</td>
+                            <td class="champlabel">Employé:</td>
                             <td>
                                 <label>
                                     <select class="form-control" name="emp" required>
@@ -107,7 +107,7 @@
                             <td></td>
                             <td></td>
                             <td rowspan="2" style="padding-right: 0">
-                                <img src="img/Icons8/edit_user.png" height="80" width="80">
+                                <img src="img/icons_1775b9/edit_user.png" height="80" width="80">
                             </td>
                         </tr>
                         <tr>
@@ -195,8 +195,8 @@
                 <table border="0" width="100%">
                     <tr>
                         <td style="text-align: center">
-                            <img src="img/Icons8/under_construction_100.png">
-                            <h3 style="color: #01ADDD">En construction...</h3>
+                            <img src="img/icons_1775b9/under_construction_100.png">
+                            <h3 style="color: #0e76bc">En construction...</h3>
                         </td>
                     </tr>
                 </table>

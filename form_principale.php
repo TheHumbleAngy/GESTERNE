@@ -68,7 +68,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-md-offset-6" style="color: #01addd; text-align: right; top: -5px">
+                            <div class="col-md-3 col-md-offset-6" style="color: #0e76bc; text-align: right; top: -5px">
                                 <p style="padding-top: 40px; margin: 0"><?php echo utf8_encode(ucwords(strftime("%A %d %B %Y"))); ?></p>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                 <!-- Menu horizontal -->
                 <div class="row menuhorizontal" style="">
                     <div class="col-md-12 nopadding">
-                        <div style="max-width: 100%; height: 44px; background-color: #01addd; position: relative;">
+                        <div style="max-width: 100%; height: 44px; background-color: #0e76bc; position: relative;">
                             <ul class="nav main">
                                 <li class="ic-form-style">
                                     <a>
@@ -103,17 +103,12 @@
                                         <span>Listes</span>
                                     </a>
                                     <ul>
-                                        <li><a href="form_principale.php?page=employes/liste_employes">Employés</a></li>
-                                        <li>
-                                            <a href="form_principale.php?page=fournisseurs/liste_fournisseurs">Fournisseurs</a>
-                                        </li>
                                         <li><a href="form_principale.php?page=demandes/liste_demandes">Demandes</a></li>
-                                        <li><a href="form_principale.php?page=proformas/liste_proformas">Proformas</a>
-                                        </li>
+                                        <li><a href="form_principale.php?page=proformas/liste_proformas">Proformas</a></li>
+                                        <li><a href="#">Bons de Commande</a></li>
                                         <li><a href="form_principale.php?page=factures/liste_factures">Factures</a></li>
-                                        <!--<li><a href="form_principale.php?page=bons_de_livraison/liste_bordereaux">Bons
-                                                de
-                                                Livraison</a></li>-->
+                                        <li><a href="#">Bons de Livraison</a></li>
+
                                     </ul>
                                 </li>
                                 <li class="ic-imprimer">
@@ -197,7 +192,7 @@
             <!-- Corps de page -->
             <div class="row corpsdepage" style="overflow: auto; position: relative; top: 110px; ">
                 <!-- Menu vertical -->
-                <div class="col-md-2 nopadding" style="border-right: 1px solid #01addd; position: fixed; top: 115px">
+                <div class="col-md-2 nopadding" style="border-right: 1px solid #0e76bc; position: fixed; top: 115px">
                     <div class="box sidemenu">
                         <ul class="section menu">
                             <li>
@@ -242,12 +237,19 @@
                                 <a>Mouvements de Stock</a>
                                 <ul>
                                     <li>
-                                        <a href="form_principale.php?page=articles/mouvements_stock&action=entree">Entrées
-                                            d'Articles</a>
+                                        <a href="form_principale.php?page=articles/mouvements_stock&action=entree">
+                                            Entrées d'Articles
+                                        </a>
                                     </li>
                                     <li>
-                                        <a href="form_principale.php?page=articles/mouvements_stock&action=sortie">Sorties
-                                            d'Articles</a>
+                                        <a href="form_principale.php?page=articles/mouvements_stock&action=sortie">
+                                            Sorties d'Articles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form_principale.php?page=articles/recap">
+                                            Récap. Entrées/Sorties
+                                        </a>
                                     </li>
                                 </ul>
                             </li>

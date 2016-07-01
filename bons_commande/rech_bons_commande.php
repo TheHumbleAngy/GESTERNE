@@ -40,7 +40,7 @@ if (isset($_POST['opt'])) {
                                 <thead>
                                 <tr>
                                     <td class="entete" style="text-align: center">Numero</td>
-                                    <td class="entete" style="text-align: center">Employe</td>
+                                    <td class="entete" style="text-align: center">Employé</td>
                                     <td class="entete" style="text-align: center">Fournisseur</td>
                                     <td class="entete" style="text-align: center">Date</td>
                                     <td class="entete" style="text-align: center; width: 18%">Actions</td>

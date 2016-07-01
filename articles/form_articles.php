@@ -1,4 +1,4 @@
-<?php
+*<?php
     /*require_once '../../bd/connection.php';
     require_once '../../fonctions.php';*/
 ?>
@@ -6,6 +6,7 @@
 <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-default">
         <div class="panel-heading">
+            <img src="img/icons_1775b9/box_filled.png" width="20" height="20">
             Formulaire Article
             <a href='form_principale.php?page=accueil' type='button' class='close' data-dismiss='alert'
                aria-label='Close' style='position: inherit'>
@@ -93,7 +94,7 @@
             <div class="container">
                 <table id="table"
                        data-toggle="table"
-                       data-url="articles/infos_articles.php"
+                       data-url="articles/infos_articles.php?opt=saisie"
                        data-height="288"
                        data-pagination="true"
                        data-page-size="4"

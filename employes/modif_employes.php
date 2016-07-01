@@ -16,6 +16,7 @@
             <div class="col-md-9" style="margin-left: 12.66%">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        <img src="img/icons_1775b9/edit_user.png" width="20" height="20">
                         Formulaire Employé
                         <a href='form_principale.php?page=form_actions&source=employes&action=modifier' type='button'
                            class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -32,7 +33,7 @@
                                             veuillez donc les renseigner.</p>
                                     </td>
                                     <td style="padding-left: 10px; vertical-align: top">
-                                        <img src="img/Icons8/About_1.png" height="30" width="30">
+                                        <img src="img/icons_1775b9/about.png" height="40" width="40">
                                     </td>
                                 </tr>
                             </table>
@@ -73,7 +74,7 @@
                                                    value="<?php echo $data['nom_emp']; ?>"/>
                                         </label>
                                     </td>
-                                    <td class="champlabel">Prenoms :</td>
+                                    <td class="champlabel">Prénoms :</td>
                                     <td>
                                         <label>
                                             <input type="text" name="prenoms_emp" size="40" class="form-control"
@@ -91,7 +92,7 @@
                                                    value="<?php echo $data['fonction_emp']; ?>"/>
                                         </label>
                                     </td>
-                                    <td class="champlabel">*Departement :</td>
+                                    <td class="champlabel">*Département :</td>
                                     <td>
                                         <label>
                                             <select name="departement_emp" required class="form-control">

@@ -10,6 +10,7 @@
 <!--suppress ALL -->
 <div class="panel panel-default">
     <div class="panel-heading">
+        <img src="img/icons_1775b9/permanent_job.png" width="20" height="20">
         Liste des Employés
         <a href='form_principale.php?page=administration&source=employes' type='button' class='close'
            data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -21,10 +22,10 @@
             <thead>
             <tr>
                 <th class="entete" style="text-align: center">Matricule</th>
-                <th class="entete" style="text-align: center">Nom et Prenoms</th>
+                <th class="entete" style="text-align: center">Nom et Prénoms</th>
                 <th class="entete" style="text-align: center">Fonction</th>
-                <th class="entete" style="text-align: center">Departement</th>
-                <th class="entete" style="text-align: center">Contacts Infos.</th>
+                <th class="entete" style="text-align: center">Département</th>
+                <th class="entete" style="text-align: center">Contacts</th>
                 <th class="entete" style="text-align: center; width: 13%">Actions</th>
             </tr>
             </thead>
@@ -36,7 +37,7 @@
                         ?>
                         <tr>
                             <td><?php echo stripslashes($list['code_emp']); ?></td>
-                            <td><?php echo stripslashes($list['titre_emp']) . " " . stripslashes($list['nom_emp']) . " " . stripslashes($list['prenoms_emp']); ?></td>
+                            <td><strong><?php echo stripslashes($list['titre_emp']) . " " . stripslashes($list['nom_emp']) . " " . stripslashes($list['prenoms_emp']); ?></strong></td>
                             <td><?php echo stripslashes($list['fonction_emp']); ?></td>
                             <td><?php echo ucfirst(stripslashes($list['departement_emp'])); ?></td>
                             <td><?php echo "E-mail: " . stripslashes($list['email_emp']) . "<br>Tel: " . stripslashes($list['tel_emp']); ?></td>

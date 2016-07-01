@@ -38,12 +38,12 @@ if (isset($_POST['opt'])) {
     $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
     if ($res->num_rows > 0) { ?>
         <!--suppress ALL -->
-
         <div style="margin-left: 1.5%; margin-right: 1.5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Employes
-                    <a href='form_principale.php?page=administration&source=employes' type='button' class='close'
+                    <img src="img/icons_1775b9/permanent_job.png" width="20" height="20">
+                    Liste Employés - Résultats de recherche pour "<?php echo ucfirst($option); ?>" contenant "<?php echo $element; ?>"
+                    <a href='form_principale.php?page=form_actions&source=employes&action=rechercher' type='button' class='close'
                        data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
                     </a>
@@ -53,12 +53,12 @@ if (isset($_POST['opt'])) {
                         <thead>
                         <tr>
                             <th class="entete">Matricule</th>
-                            <th class="entete" style="text-align: center">Nom et Prenoms</th>
+                            <th class="entete" style="text-align: center">Nom et Prénoms</th>
                             <th class="entete" style="text-align: center">Fonction</th>
-                            <th class="entete" style="text-align: center">Departement</th>
+                            <th class="entete" style="text-align: center">Département</th>
                             <th class="entete" style="text-align: center">E-mail</th>
-                            <th class="entete" style="text-align: center">Contact</th>
-                            <th class="entete" style="text-align: center; width: 18%">Actions</th>
+                            <th class="entete" style="text-align: center; width: 9%">Contact</th>
+                            <th class="entete" style="text-align: center; width: 12%">Actions</th>
                         </tr>
                         </thead>
                         <?php while ($data = mysqli_fetch_array($res)) { ?>
@@ -122,7 +122,7 @@ if (isset($_POST['opt'])) {
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Prenoms:</td>
+                                                                <td>Prénoms:</td>
                                                                 <td>
                                                                     <label>
                                                                         <input type="text" class="form-control"
@@ -142,7 +142,7 @@ if (isset($_POST['opt'])) {
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Departement:</td>
+                                                                <td>Département:</td>
                                                                 <td>
                                                                     <label>
                                                                         <input type="text" class="form-control"
@@ -227,13 +227,13 @@ if (isset($_POST['opt'])) {
         </div>
     <?php } else {
         echo "
-        <div style='width: 400px; margin-right: auto; margin-left: auto; padding-top: 10px'>
-            <div class='alert alert-danger alert-dismissible' role='alert' style='width: 60%; margin-right: auto; margin-left: auto'>
+        <div style='width: 400px; margin-right: auto; margin-left: auto; padding-top: 20px'>
+            <div class='alert alert-danger alert-dismissible' role='alert' >
                 <a href='form_principale.php?page=form_actions&source=employes&action=rechercher' type='button' class='close'
                        data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
                     </a>
-                La recherche n'a renvoye aucun resultat.
+                <p style='font-size: small'>La recherche n'a renvoyé aucun résultat.</p>
             </div>
         </div>
         ";

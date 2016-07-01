@@ -45,7 +45,7 @@
                                         <td rowspan="3" style="padding-right: 0">
                                             <a href="demandes/fiche_demandes.php?id=<?php echo stripslashes($data['code_dbs']); ?>"
                                                target="_blank" title="Imprimer">
-                                                <img src="img/Icons8/demande-100.png">
+                                                <img src="img/icons_1775b9/agreement_1.png">
                                             </a>
                                         </td>
                                     </tr>
@@ -169,7 +169,7 @@
                                 <td></td>
                                 <td></td>
                                 <td rowspan="3" style="padding-right: 0">
-                                    <img src="img/Icons8/demande-100.png">
+                                    <img src="img/icons_1775b9/agreement_1.png">
                                 </td>
                             </tr>
                             <tr>

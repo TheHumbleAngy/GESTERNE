@@ -30,7 +30,7 @@
         <img src="img/logo2.jpg" width="80"/>
     </div>
     <div class="titre">
-        <h2 style="color: #01addd">
+        <h2 style="color: #0e76bc">
             Gestion Automatisée de Biens & Services
         </h2>
     </div>

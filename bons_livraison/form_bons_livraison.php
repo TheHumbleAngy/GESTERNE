@@ -114,7 +114,7 @@
                         </table>
                     </div>
                     <div class="col-md-2">
-                        <img src="img/Icons8/bondelivraison-100.png">
+                        <img src="img/icons_1775b9/shipped.png">
                     </div>
                     <br/>
 

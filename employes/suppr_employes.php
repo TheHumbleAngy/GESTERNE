@@ -16,6 +16,7 @@ if (isset($_POST['code'])) {
         <div class="col-md-9" style="margin-left: 12.66%">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <img src="img/icons_1775b9/remove_user.png" width="20" height="20">
                     Suppression Employé
                     <a href='form_principale.php?page=form_actions&source=employes&action=supprimer' type='button' class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
                         <span aria-hidden='true'>&times;</span>
@@ -32,7 +33,7 @@ if (isset($_POST['code'])) {
                                         <p style="color: #f81616; font-size: small">Voulez-vous vraiment supprimer l'employé <strong><?php echo $data['code_emp']; ?></strong>?</p>
                                     </td>
                                     <td style="padding-left: 10px; vertical-align: top">
-                                        <img src="img/Icons8/roadblock_52.png" height="40" width="40" style="margin-bottom: 15px">
+                                        <img src="img/icons_1775b9/roadblock_52.png" height="40" width="40" style="margin-bottom: 15px">
                                     </td>
                                 </tr>
                             </table>
@@ -57,7 +58,7 @@ if (isset($_POST['code'])) {
                                                value="<?php echo $data['nom_emp']; ?>"/>
                                     </label>
                                 </td>
-                                <td class="champlabel">Prenoms :</td>
+                                <td class="champlabel">Prénoms :</td>
                                 <td>
                                     <label>
                                         <input type="text" name="prenoms_emp" size="40" class="form-control" readonly
@@ -73,7 +74,7 @@ if (isset($_POST['code'])) {
                                                value="<?php echo $data['fonction_emp']; ?>"/>
                                     </label>
                                 </td>
-                                <td class="champlabel">Departement :</td>
+                                <td class="champlabel">Département :</td>
                                 <td>
                                     <label>
                                         <input type="text" name="departement_emp" required class="form-control" readonly

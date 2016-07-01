@@ -19,30 +19,53 @@
                     </div>
                     <div class="panel-body">
                         <div class="jumbotron"
-                             style="width: 70%; padding: 30px 30px 20px 30px; background-color: rgba(1, 139, 178, 0.1); margin-left: auto; margin-right: auto">
-                            <h3 style="margin-top: 0">Saisie des Entrées</h3>
+                             style="width: 70%; height: 120px;
+                                    padding: 20px 30px 20px 30px;
+                                    background-color: rgba(1, 139, 178, 0.1);
+                                    margin-left: auto;
+                                    margin-right: auto">
+                            <h4 style="margin-top: 0">Saisie des Entrées</h4>
 
-                            <p style="font-size: small">Pour saisir une entrée d'articles, veuillez entrer le nombre
-                                d'articles
-                                à saisir. Dans les differents champs "Désignation", une liste de propositions
-                                s'affichera au fur et
-                                à mésure que vous tapez une lettre. Vous pouvez donc sélectionner un article à partir de
-                                cette
-                                liste. En face se trouve le champ de saisie du nombre de chaque entrée d'articles et un
-                                autre
-                                (facultatif) pour mentionner un commentaire.</p>
+                            <div style="height: 70%; overflow: auto">
+                                <p style="font-size: small">Pour saisir une entrée d'articles, veuillez entrer le nombre
+                                    d'articles
+                                    à saisir. Dans les differents champs "Désignation", sélectionnez un article à partir
+                                    de
+                                    la liste déroulante; vous avez entre parenthèses, le stock en temps réel de chaque
+                                    article. En face se trouve le champ de saisie du nombre de chaque entrée d'articles
+                                    et un
+                                    autre
+                                    (facultatif) pour mentionner un commentaire.</p>
+                            </div>
                         </div>
 
                         <form method="post">
                             <table class="formulaire" border="0">
                                 <tr>
-                                    <td class="champlabel">Nombre d'articles :</td>
-                                    <td>
+                                    <td class="champlabel" style="vertical-align: bottom; padding-bottom: 5px">Nombre d'articles :</td>
+                                    <td style="vertical-align: bottom">
                                         <label>
                                             <input type="number" min="1" class="form-control" id="nbr_articles"
                                                    name="nbr"
                                                    required/>
                                         </label>
+                                    </td>
+                                    <td>
+                                        <table id="table"
+                                               data-toggle="table"
+                                               data-url="articles/infos_articles.php?opt=mvt"
+                                               data-height="288"
+                                               data-pagination="true"
+                                               data-page-size="4"
+                                               data-show-refresh="true"
+                                               data-search="true">
+                                            <thead>
+                                            <tr>
+                                                <th data-field="designation_art" data-sortable="true">Désignation</th>
+                                                <th data-field="stock_art" data-sortable="true">Stock Actuel</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
@@ -74,23 +97,6 @@
                 });
             });
 
-            //Ce script permet de générer la liste sélectionnable des articles dans les différents textbox
-            /*nbr_art.bind('blur', function () {
-                $.ajax({
-                    url: "articles/libelles_articles.php",
-                    dataType: "json",
-                    type: "GET",
-                    success: function (data) {
-                        for (var i = 0; i < data.length; i += 1) {
-                            articles[i] = data[i].designation_art;
-                        }
-//                console.log(articles);
-                        $('input[name*="libelle"]').autocomplete({
-                            source: articles
-                        });
-                    }
-                })
-            });*/
         </script>
 
         <?php
@@ -123,30 +129,50 @@
                     </div>
                     <div class="panel-body">
                         <div class="jumbotron"
-                             style="width: 70%; padding: 30px 30px 20px 30px; background-color: rgba(1, 139, 178, 0.1); margin-left: auto; margin-right: auto">
-                            <h3 style="margin-top: 0">Saisie des Sorties</h3>
+                             style="width: 70%; height: 120px;
+                                    padding: 20px 30px 20px 30px;
+                                    background-color: rgba(1, 139, 178, 0.1);
+                                    margin-left: auto;
+                                    margin-right: auto">
+                            <h4 style="margin-top: 0">Saisie des Sorties</h4>
 
-                            <p style="font-size: small">Pour saisir une sortie d'articles, veuillez entrer le nombre
-                                d'articles
-                                à saisir. Dans les differents champs "Désignation", une liste de propositions
-                                s'affichera au fur et
-                                à mesure que vous tapez une lettre. Vous pouvez donc sélectionner un article à partir de
-                                cette
-                                liste. En face se trouve le champ de saisie du nombre de chaque entrée d'articles et un
-                                autre
-                                (facultatif) pour mentionner un commentaire.</p>
+                            <div style="height: 70%; overflow: auto">
+                                <p style="font-size: small">Pour saisir une sortie d'articles, veuillez entrer le nombre
+                                    d'articles à saisir. Dans les differents champs "Désignation", sélectionnez un article à partir de
+                                    la liste déroulante; vous avez entre parenthèses, le stock en temps réel de chaque article. En face se trouve le champ de saisie du nombre de chaque entrée d'articles et un
+                                    autre
+                                    (facultatif) pour mentionner un commentaire.</p>
+                                <p style="font-size: small">*Notez que les articles en rupture de stock ne sont pas disponibles dans la liste déroulante.</p>
+                            </div>
                         </div>
 
                         <form method="post">
                             <table class="formulaire" border="0">
                                 <tr>
-                                    <td class="champlabel">Nombre d'articles :</td>
-                                    <td>
+                                    <td class="champlabel" style="vertical-align: bottom; padding-bottom: 5px">Nombre d'articles :</td>
+                                    <td style="vertical-align: bottom">
                                         <label>
                                             <input type="number" min="1" class="form-control" id="nbr_articles"
                                                    name="nbr"
                                                    required/>
                                         </label>
+                                    </td>
+                                    <td>
+                                        <table id="table"
+                                               data-toggle="table"
+                                               data-url="articles/infos_articles.php?opt=mvt"
+                                               data-height="288"
+                                               data-pagination="true"
+                                               data-page-size="4"
+                                               data-show-refresh="true"
+                                               data-search="true">
+                                            <thead>
+                                            <tr>
+                                                <th data-field="designation_art" data-sortable="true">Désignation</th>
+                                                <th data-field="stock_art" data-sortable="true">Stock Actuel</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>

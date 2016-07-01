@@ -95,7 +95,7 @@
                                     </table>
                                 </div>
                                 <div class="col-md-2">
-                                    <img src="img/Icons8/facture-100.png">
+                                    <img src="img/icons_1775b9/proforma.png">
                                 </div>
                                 <br/>
 
@@ -314,7 +314,7 @@
                             </table>
                         </div>
                         <div class="col-md-2">
-                            <img src="img/Icons8/facture-100.png">
+                            <img src="img/icons_1775b9/proforma.png">
                         </div>
                         <br/>
 

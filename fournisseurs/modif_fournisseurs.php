@@ -15,6 +15,7 @@
             <div class="col-md-9" style="margin-left: 12.66%">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        <img src="img/icons_1775b9/edit_file.png" width="20" height="20">
                         Fournisseur
                         <a href='form_principale.php?page=administration&source=fournisseurs' type='button'
                            class='close'
@@ -27,12 +28,12 @@
                             <table border="0">
                                 <tr>
                                     <td>
-                                        <p style="color: grey; font-size: small">Les champs precedes de "*" sont
+                                        <p style="color: grey; font-size: small">Les champs précédés de "*" sont
                                             imperatifs,
                                             veuillez donc les renseigner.</p>
                                     </td>
                                     <td style="padding-left: 10px; vertical-align: top">
-                                        <img src="img/Icons8/About_1.png" height="30" width="30">
+                                        <img src="img/icons_1775b9/about.png" height="30" width="30">
                                     </td>
                                 </tr>
                             </table>

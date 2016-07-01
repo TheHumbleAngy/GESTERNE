@@ -16,6 +16,7 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">
+                            <img src="img/icons_1775b9/box_filled.png" width="20" height="20">
                             Formulaire Article
                             <a href='form_principale.php?page=form_actions&source=articles&action=modifier'
                                type='button'
@@ -30,11 +31,11 @@
                                         <td>
                                             <p style="color: grey; font-size: small"><strong>Modification des
                                                     infos.</strong><br/>
-                                                Les champs precedes de "*" sont imperatifs,
+                                                Les champs précédés de "*" sont imperatifs,
                                                 veuillez donc les renseigner.</p>
                                         </td>
                                         <td style="padding-left: 10px; vertical-align: top">
-                                            <img src="img/Icons8/About_1.png" height="30" width="30">
+                                            <img src="img/icons_1775b9/about.png" height="30" width="30">
                                         </td>
                                     </tr>
                                 </table>

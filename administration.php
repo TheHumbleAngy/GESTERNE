@@ -11,10 +11,10 @@
 
 <?php if ($source == 'employes') : ?>
     <!--suppress ALL -->
-    <div class="col-md-9" style="padding-top: 5%; margin-left: 12.66%">
+    <div class="col-md-10 col-lg-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <span class="icons8-clipboard"> Administration - Employés</span>
+                <img src="img/icons_1775b9/electronic_id.png" width="20"> Administration - Employés
                 <a href='form_principale.php?page=accueil' type='button' class='close'
                    data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
@@ -27,7 +27,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=employes/form_employes">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/Businessman-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/add_user.png" width="30" height="30">
                                     Ajouter
                                 </div>
                             </a>
@@ -36,7 +36,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=form_actions&source=employes&action=modifier">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/Edit_User-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/edit_user.png" width="30" height="30">
                                     Modifier
                                 </div>
                             </a>
@@ -45,7 +45,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=form_actions&source=employes&action=supprimer">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/Remove_User-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/remove_user.png" width="30" height="30">
                                     Supprimer
                                 </div>
                             </a>
@@ -54,7 +54,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=employes/liste_employes">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/List-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/permanent_job.png" width="30" height="30">
                                     Liste
                                 </div>
                             </a>
@@ -63,7 +63,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=form_actions&source=employes&action=rechercher">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/Find_User-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/find_user.png" width="30" height="30">
                                     Rechercher
                                 </div>
                             </a>
@@ -75,10 +75,11 @@
     </div>
 
 <?php elseif ($source == 'fournisseurs') : ?>
-    <div class="col-md-9" style="padding-top: 5%; margin-left: 12.66%">
+    <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <span class="icons8-clipboard"> Administration - Fournisseurs</span>
+                <img src="img/icons_1775b9/product.png" width="20" height="20">
+                Administration - Fournisseurs
                 <a href='form_principale.php?page=accueil' type='button' class='close'
                    data-dismiss='alert' aria-label='Close' style='position: inherit'>
                     <span aria-hidden='true'>&times;</span>
@@ -91,7 +92,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=fournisseurs/form_fournisseurs">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/fournisseur-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/conference_call.png" width="30" height="30">
                                     Ajouter
                                 </div>
                             </a>
@@ -100,7 +101,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=form_actions&source=fournisseurs&action=modifier">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/Edit_User-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/edit_file.png" width="30" height="30">
                                     Modifier
                                 </div>
                             </a>
@@ -109,7 +110,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=form_actions&source=fournisseurs&action=supprimer">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/Remove_User-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/delete.png" width="30" height="30">
                                     Supprimer
                                 </div>
                             </a>
@@ -118,7 +119,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=fournisseurs/liste_fournisseurs">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/List-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/bon.png" width="30" height="30">
                                     Liste
                                 </div>
                             </a>
@@ -127,7 +128,7 @@
                             <a class="a-minimenu"
                                href="form_principale.php?page=form_actions&source=fournisseurs&action=rechercher">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/Find_User-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/search.png" width="30" height="30">
                                     Rechercher
                                 </div>
                             </a>
@@ -154,7 +155,7 @@
                         <td>
                             <a class="a-minimenu" onclick="ajouter();">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/add_user-100.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/add_user-100.png" width="30" height="30">
                                     Ajouter
                                 </div>
                             </a>
@@ -162,7 +163,7 @@
                         <td>
                             <a class="a-minimenu" onclick="modifier();">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/edit_user.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/edit_user.png" width="30" height="30">
                                     Modifier
                                 </div>
                             </a>
@@ -170,7 +171,7 @@
                         <td>
                             <a class="a-minimenu" onclick="lister();">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/user_groups.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/user_groups.png" width="30" height="30">
                                     Liste
                                 </div>
                             </a>
@@ -178,7 +179,7 @@
                         <td>
                             <a class="a-minimenu" onclick="rechercher();">
                                 <div class="btn-minimenu">
-                                    <img src="img/Icons8/find_user.png" width="30" height="30">
+                                    <img src="img/icons_1775b9/find_user.png" width="30" height="30">
                                     Rechercher
                                 </div>
                             </a>

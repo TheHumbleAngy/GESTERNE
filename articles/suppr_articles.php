@@ -16,6 +16,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        <img src="img/icons_1775b9/box_filled.png" width="20" height="20">
                         Suppression Article
                         <a href='form_principale.php?page=form_actions&source=articles&action=supprimer' type='button'
                            class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -35,7 +36,7 @@
                                                 <strong><?php echo $data['code_art']; ?></strong>. Êtes-vous sûr de vouloir continuer cette action?</p>
                                         </td>
                                         <td style="padding-left: 10px; vertical-align: top">
-                                            <img src="img/Icons8/roadblock_52.png" height="40" width="40">
+                                            <img src="img/icons_1775b9/roadblock_52.png" height="40" width="40">
                                         </td>
                                     </tr>
                                 </table>

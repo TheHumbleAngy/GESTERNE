@@ -40,11 +40,11 @@
             <!--suppress ALL -->
             <div id="info"></div>
             <div id="feedback">
-                <div class="row">
-                    <div class="col-md-12">
+                <div style="margin-left: 1.5%; margin-right: 1.5%">
                         <div class="panel panel-default">
-                            <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-                                Articles
+                            <div class="panel-heading">
+                                <img src="img/icons_1775b9/box_filled.png" width="20" height="20">
+                                Liste Articles - Résultats de recherche pour "<?php echo ucfirst($option); ?>" contenant "<?php echo $element; ?>"
                                 <a href='form_principale.php?page=form_actions&source=articles&action=rechercher'
                                    type='button' class='close' data-dismiss='alert' aria-label='Close'
                                    style='position: inherit'>
@@ -69,7 +69,7 @@
                                     <?php while ($data = mysqli_fetch_array($res)) { ?>
                                         <tr>
                                             <td><?php echo stripslashes($data['code_art']); ?></td>
-                                            <td><?php echo ucfirst(stripslashes($data['designation_art'])); ?></td>
+                                            <td><strong><?php echo ucfirst(stripslashes($data['designation_art'])); ?></strong></td>
                                             <td>
                                                 <?php
                                                     $code = $data['code_grp'];
@@ -82,7 +82,7 @@
                                                 ?>
                                             </td>
                                             <td><?php echo stripslashes($data['description_art']); ?></td>
-                                            <td><?php echo "Stock Actuel : " . stripslashes($data['stock_art']) . "<br>Niveau Réappro. : " . stripslashes($data['niveau_reappro_art']) . "<br>Niveau Ciblé : " . stripslashes($data['niveau_cible_art']); ?></td>
+                                            <td><?php echo "<strong>Stock Actuel : " . stripslashes($data['stock_art']) . "</strong><br>Niveau Réappro. : " . stripslashes($data['niveau_reappro_art']) . "<br>Niveau Ciblé : " . stripslashes($data['niveau_cible_art']); ?></td>
                                             <td>
                                                 <div style="text-align: center">
                                                     <a class="btn btn-default modifier" data-toggle="modal"
@@ -249,7 +249,6 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         <?php } else {

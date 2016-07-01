@@ -6768,11 +6768,11 @@ a.list-group-item-danger.active:focus {
 }
 
 .panel-default {
-    border-color: #01addd;
+    border-color: #0e76bc;
 }
 
 .panel-default > .panel-heading {
-    color: #01addd;
+    color: #0e76bc;
     background-color: #f5f5f5;
     border-color: #ddd;
     font-weight: bolder;

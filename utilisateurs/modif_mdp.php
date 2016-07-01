@@ -61,7 +61,7 @@
                                 </table>
                             </td>
                             <td style="margin-left: 20px">
-                                <img src="img/Icons8/Key-100.png">
+                                <img src="img/icons_1775b9/Key-100.png">
                             </td>
                         </tr>
                     </table>

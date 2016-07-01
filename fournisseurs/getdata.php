@@ -10,6 +10,7 @@
 <!--suppress ALL -->
 <div class="panel panel-default">
     <div class="panel-heading">
+        <img src="img/icons_1775b9/bon.png" width="20" height="20">
         Liste des Fournisseurs
         <a href='form_principale.php?page=administration&source=fournisseurs' type='button'
            class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -21,9 +22,9 @@
             <thead>
             <tr>
                 <th class="entete" style="text-align: center; width: 10%">Raison Sociale</th>
-                <th class="entete" style="text-align: center; width: 10%">Contacts Infos.</th>
+                <th class="entete" style="text-align: center; width: 10%">Contacts</th>
                 <th class="entete" style="text-align: center; width: 10%">Adresse</th>
-                <th class="entete" style="text-align: center; width: 10%">Activite</th>
+                <th class="entete" style="text-align: center; width: 10%">Activité</th>
                 <th class="entete" style="text-align: center; width: 10%">Notes</th>
                 <?php //if (($_SESSION['type_utilisateur'] == 'administrateur') || ($_SESSION['type_utilisateur'] == 'moyens_genereaux')):?>
                 <th class="entete" style="width: 10%; text-align: center">Actions</th>
@@ -37,7 +38,7 @@
                     foreach ($ligne as $list) {
                         ?>
                         <tr>
-                            <td><?php echo stripslashes($list['nom_four']); ?></td>
+                            <td><strong><?php echo stripslashes($list['nom_four']); ?></strong></td>
                             <td><?php echo "Tel: " . stripslashes($list['telephonepro_four']) . "<br>Fax: " . stripslashes($list['fax_four']) . "<br>E-mail: " . stripslashes($list['email_four']); ?></td>
                             <td><?php echo stripslashes($list['adresse_four']); ?></td>
                             <td><?php echo stripslashes($list['activite_four']); ?></td>

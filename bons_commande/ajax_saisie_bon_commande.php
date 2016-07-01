@@ -10,7 +10,7 @@
 ?>
 <table class="formulaire" style="width: 100%" border="0">
     <tr>
-        <td class="champlabel">Employe :</td>
+        <td class="champlabel">Employé :</td>
         <td>
             <label>
                 <?php

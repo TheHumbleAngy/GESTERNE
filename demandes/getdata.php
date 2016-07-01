@@ -10,7 +10,7 @@
 ?>
 <!--suppress ALL -->
 <div class="panel panel-default">
-    <div class="panel-heading" style="font-size: 14px; font-weight: bolder">
+    <div class="panel-heading">
         Demandes
         <a href='form_principale.php?page=accueil' type='button'
            class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -21,7 +21,7 @@
         <table class="table table-hover table-bordered">
             <thead>
             <tr>
-                <th class="entete" style="text-align: center; width: 5%">Numero</th>
+                <th class="entete" style="text-align: center; width: 5%">Numéro</th>
                 <th class="entete" style="text-align: center; width: 5%">Date</th>
                 <th class="entete" style="text-align: center; width: 20%">Demandeur</th>
                 <th class="entete" style="text-align: center; width: 20%">Objet</th>

@@ -15,6 +15,7 @@
 <div class="col-md-12">
     <div class="panel panel-default">
         <div class="panel-heading">
+            <img src="img/icons_1775b9/box_filled.png" width="20" height="20">
             Liste des Articles
             <a href='form_principale.php?page=accueil' type='button'
                class='close' data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -44,7 +45,7 @@
                                 ?>
                                 <tr>
                                     <td><?php echo stripslashes($list['code_art']); ?></td>
-                                    <td><?php echo ucfirst(stripslashes($list['designation_art'])); ?></td>
+                                    <td><strong><?php echo ucfirst(stripslashes($list['designation_art'])); ?></strong></td>
                                     <td>
                                         <?php
                                             $code = $list['code_grp'];
@@ -57,7 +58,7 @@
                                         ?>
                                     </td>
                                     <td><?php echo mysqli_real_escape_string($connexion, stripslashes($list['description_art'])); ?></td>
-                                    <td><?php echo "Stock Actuel : " . stripslashes($list['stock_art']) . "<br>Niveau Réappro. : " . stripslashes($list['niveau_reappro_art']) . "<br>Niveau Ciblé : " . stripslashes($list['niveau_cible_art']); ?></td>
+                                    <td><?php echo "<strong>Stock Actuel : " . stripslashes($list['stock_art']) . "</strong><br>Niveau Réappro. : " . stripslashes($list['niveau_reappro_art']) . "<br>Niveau Ciblé : " . stripslashes($list['niveau_cible_art']); ?></td>
                                     <?php //if (($_SESSION['type_utilisateur'] == 'administrateur') || ($_SESSION['type_utilisateur'] == 'moyens_genereaux')): ?>
                                     <td>
                                         <div style="text-align: center">
@@ -107,7 +108,7 @@
                                                                 <td class="champlabel">Stock :</td>
                                                                 <td>
                                                                     <label>
-                                                                        <input type="number" size="2"
+                                                                        <input type="number" size="2" min="0"
                                                                                id="stock_art<?php echo $list['code_art']; ?>"
                                                                                value="<?php echo $list['stock_art']; ?>"
                                                                                class="form-control"/>

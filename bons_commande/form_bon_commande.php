@@ -66,7 +66,7 @@
                                 </table>
                             </div>
                             <div class="col-md-2" style="margin-bottom: 15px">
-                                <img src="img/Icons8/bondecommande-100.png">
+                                <img src="img/icons_1775b9/bon.png">
                             </div>
 
                             <br/>
@@ -196,7 +196,7 @@
                                 </table>
                             </div>
                             <div class="col-md-2">
-                                <img src="img/Icons8/bondecommande-100.png">
+                                <img src="img/icons_1775b9/bon.png">
                             </div>
                         </div>
 

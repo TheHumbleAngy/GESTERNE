@@ -28,10 +28,10 @@
                             <tr>
                                 <td>
                                     <p style="font-size: small">Veuillez sélectionner l'employé à modifier à l'aide de
-                                        la liste déroulante puis cliquez sur le boutton en face pour procéder.</p>
+                                        la liste déroulante puis cliquez sur le boutton en face pour continuer.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png" height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -39,7 +39,7 @@
                     <form action="form_principale.php?page=employes/modif_employes" method="post">
                         <table class="formulaire" border="0" style="margin-left: auto; margin-right: auto">
                             <tr>
-                                <td>Employe:</td>
+                                <td>Employé:</td>
                                 <td>
                                     <label>
                                         <select name="code" required class="form-control">
@@ -72,7 +72,7 @@
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Recherche > Employes</span>
+                    Recherche > Employés
                     <a href='form_principale.php?page=administration&source=employes' type='button'
                        class='close'
                        data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -85,12 +85,12 @@
                             <tr>
                                 <td>
                                     <p style="font-size: small">Veuillez sélectionner le critère de recherche à l'aide
-                                        de la liste déroulante. Entrez ensuite le texte a rechercher ou tapez quelques
-                                        carateres qui, selon vous, existent dans l'élément a rechercher. Puis, cliquez
-                                        sur le boutton en face pour procéder.</p>
+                                        de la liste déroulante. Entrez ensuite le texte à rechercher ou tapez quelques
+                                        caractères qui, selon vous, existent dans l'élément a rechercher. Enfin, cliquez
+                                        sur le boutton en face pour continuer.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png" height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -99,7 +99,7 @@
                         <table class="formulaire" border="0" style="margin-left: auto; margin-right: auto">
                             <tr>
                                 <td>
-                                    Critere :
+                                    Critère :
                                 </td>
                                 <td>
                                     <label>
@@ -107,16 +107,16 @@
                                             <option disabled selected></option>
                                             <option value="matricule">Matricule</option>
                                             <option value="nom">Nom</option>
-                                            <option value="prenoms">Prenoms</option>
+                                            <option value="prenoms">Prénoms</option>
                                             <option value="fonction">Fonction</option>
-                                            <option value="departement">Departement</option>
+                                            <option value="departement">Département</option>
                                             <option value="email">E-mail</option>
                                             <option value="tel">Telephone</option>
                                         </select>
                                     </label>
                                 </td>
                                 <td style="padding-left: 15px">
-                                    Texte a rechercher :
+                                    Texte à rechercher :
                                 </td>
                                 <td>
                                     <label>
@@ -153,10 +153,10 @@
                             <tr>
                                 <td>
                                     <p style="font-size: small">Veuillez sélectionner l'employé à supprimer à l'aide de
-                                        la liste deroulante puis cliquez sur le boutton en face pour procéder.</p>
+                                        la liste déroulante puis cliquez sur le boutton en face pour continuer.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png" height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -164,7 +164,7 @@
                     <form action="form_principale.php?page=employes/suppr_employes" method="post">
                         <table class="formulaire" border="0" style="margin-left: auto; margin-right: auto">
                             <tr>
-                                <td>Employe :</td>
+                                <td>Employé :</td>
                                 <td>
                                     <label>
                                         <select name="code" required class="form-control">
@@ -211,10 +211,10 @@
                             <tr>
                                 <td>
                                     <p style="font-size: small">Veuillez sélectionner le fournisseur à modifier à l'aide
-                                        de la liste déroulante puis cliquez sur le boutton en face pour procéder.</p>
+                                        de la liste déroulante puis cliquez sur le boutton en face pour continuer.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png"  height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -255,7 +255,7 @@
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Rechercher > Fournisseur</span>
+                    Recherche > Fournisseur
                     <a href='form_principale.php?page=administration&source=fournisseurs' type='button'
                        class='close'
                        data-dismiss='alert' aria-label='Close' style='position: inherit'>
@@ -268,12 +268,12 @@
                             <tr>
                                 <td>
                                     <p style="font-size: small">Veuillez sélectionner le critère de recherche à l'aide
-                                        de la liste déroulante. Entrez ensuite le texte a rechercher ou tapez quelques
-                                        carateres qui, selon vous, existent dans l'élément a rechercher. Puis, cliquez
-                                        sur le boutton en face pour procéder.</p>
+                                        de la liste déroulante. Entrez ensuite le texte à rechercher ou tapez quelques
+                                        caractères qui, selon vous, existent dans l'élément a rechercher. Enfin, cliquez
+                                        sur le boutton en face pour continuer.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png"  height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -283,7 +283,7 @@
                         <table class="formulaire" border="0" style="margin-left: auto; margin-right: auto">
                             <tr>
                                 <td>
-                                    Critere :
+                                    Critère :
                                 </td>
                                 <td>
                                     <label>
@@ -300,7 +300,7 @@
                                     </label>
                                 </td>
                                 <td style="padding-left: 15px">
-                                    Texte a rechercher :
+                                    Texte à rechercher :
                                 </td>
                                 <td>
                                     <label>
@@ -336,12 +336,12 @@
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner le fournisseur a supprimer a
+                                    <p style="font-size: small">Veuillez sélectionner le fournisseur a supprimer à
                                         l'aide de la
-                                        liste deroulante puis cliquez sur le boutton en face pour proceder.</p>
+                                        liste déroulante puis cliquez sur le boutton en face pour procéder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png"  height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -385,7 +385,7 @@
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Rechercher > Demandes</span>
+                    Recherche > Demandes
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close'
                        style='position: inherit'>
@@ -398,12 +398,12 @@
                             <tr>
                                 <td>
                                     <p style="font-size: small">Veuillez selectionner le critere de recherche a l'aide
-                                        de la liste deroulante. Entrez ensuite le texte a rechercher ou tapez quelques
-                                        carateres qui, selon vous, existent dans l'element a rechercher. Puis, cliquez
+                                        de la liste déroulante. Entrez ensuite le texte à rechercher ou tapez quelques
+                                        caractères qui, selon vous, existent dans l'element a rechercher. Enfin, cliquez
                                         sur le boutton en face pour proceder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png"  height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -413,21 +413,21 @@
                         <table class="formulaire" border="0" style="margin-left: auto; margin-right: auto">
                             <tr>
                                 <td>
-                                    Critere :
+                                    Critère :
                                 </td>
                                 <td>
                                     <label>
                                         <select name="opt" required class="form-control">
                                             <option disabled selected></option>
                                             <option value="numero">Numero</option>
-                                            <option value="emp">Employe</option>
+                                            <option value="emp">Employé</option>
                                             <option value="date">Date</option>
                                             <option value="obj">Objet</option>
                                         </select>
                                     </label>
                                 </td>
                                 <td>
-                                    Texte a rechercher :
+                                    Texte à rechercher :
                                 </td>
                                 <td>
                                     <label>
@@ -455,7 +455,7 @@
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Rechercher > Article</span>
+                    Recherche > Articles
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close'
                        style='position: inherit'>
@@ -467,14 +467,14 @@
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner le critere de recherche a l'aide
-                                        de la liste deroulante. Entrez ensuite le texte a rechercher ou tapez quelques
-                                        carateres qui, selon vous, existent dans l'element a rechercher. Puis, cliquez
+                                    <p style="font-size: small">Veuillez sélectionner le critère de recherche à l'aide
+                                        de la liste déroulante. Entrez ensuite le texte à rechercher ou tapez quelques
+                                        caractères qui, selon vous, existent dans l'élement à rechercher. Enfin, cliquez
                                         sur le boutton en face pour proceder.
                                     </p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png"  height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -484,7 +484,7 @@
                         <table class="formulaire" border="0" style="margin-left: auto; margin-right: auto">
                             <tr>
                                 <td>
-                                    Critere :
+                                    Critère :
                                 </td>
                                 <td>
                                     <label>
@@ -499,7 +499,7 @@
                                     </label>
                                 </td>
                                 <td>
-                                    Texte a rechercher :
+                                    Texte à rechercher :
                                 </td>
                                 <td>
                                     <label>
@@ -536,12 +536,12 @@
                         <table border="0">
                             <tr>
                                 <td>
-                                    <p style="font-size: small">Veuillez selectionner l'article a supprimer a l'aide de
+                                    <p style="font-size: small">Veuillez sélectionner l'article à supprimer à l'aide de
                                         la liste
-                                        deroulante puis cliquez sur le boutton en face pour proceder.</p>
+                                        déroulante puis cliquez sur le boutton en face pour procéder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png"  height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -595,11 +595,11 @@
                                 <td>
                                     <p style="font-size: small">Veuillez selectionner l'article a modifier a l'aide de
                                         la liste
-                                        deroulante puis cliquez sur le boutton en face pour proceder a la modification.
+                                        déroulante puis cliquez sur le boutton en face pour proceder a la modification.
                                     </p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png"  height="40" width="40">
                                 </td>
                             </tr>
                         </table>
@@ -642,7 +642,7 @@
         <div class="col-md-7 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Rechercher > Proformas</span>
+                    Recherche > Factures Proformas
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close'
                        style='position: inherit'>
@@ -673,7 +673,7 @@
                             </tr>
                             <tr>
                                 <td class="champlabel">
-                                    Texte a rechercher :
+                                    Texte à rechercher :
                                 </td>
                                 <td>
                                     <label>
@@ -700,7 +700,7 @@
         <div class="col-md-7 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Rechercher > Bons de Commande</span>
+                    Recherche > Bons de Commande
                     <a href='form_principale.php?page=accueil' type='button'
                        class='close' data-dismiss='alert' aria-label='Close'
                        style='position: inherit'>
@@ -722,7 +722,7 @@
                                         <select name="opt" required class="form-control">
                                             <option disabled selected></option>
                                             <option value="numero">Numero</option>
-                                            <option value="employe">Employe</option>
+                                            <option value="employe">Employé</option>
                                             <option value="fournisseur">Fournisseur</option>
                                             <option value="date">Date</option>
                                         </select>
@@ -731,7 +731,7 @@
                             </tr>
                             <tr>
                                 <td class="champlabel">
-                                    Texte a rechercher :
+                                    Texte à rechercher :
                                 </td>
                                 <td>
                                     <label>
@@ -758,7 +758,7 @@
         <div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="icons8-clipboard"> Rechercher</span>
+                    Recherche
                     <a href='form_principale.php?page=administration&source=utilisateurs' type='button'
                        class='close' data-dismiss='alert' aria-label='Close'
                        style='position: inherit'>
@@ -771,12 +771,12 @@
                             <tr>
                                 <td>
                                     <p style="font-size: small">Veuillez selectionner le critere de recherche a l'aide
-                                        de la liste deroulante. Entrez ensuite le texte a rechercher ou tapez quelques
-                                        carateres qui, selon vous, existent dans l'element a rechercher. Puis, cliquez
+                                        de la liste déroulante. Entrez ensuite le texte à rechercher ou tapez quelques
+                                        caractères qui, selon vous, existent dans l'element a rechercher. Enfin, cliquez
                                         sur le boutton en face pour proceder.</p>
                                 </td>
                                 <td style="padding-left: 10px; vertical-align: top">
-                                    <img src="img/Icons8/About_1.png">
+                                    <img src="img/icons_1775b9/about.png"  height="40" width="40">
                                 </td>
                             </tr>
                         </table>

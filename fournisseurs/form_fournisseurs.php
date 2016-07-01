@@ -10,6 +10,7 @@
     <div class="col-md-9" style="margin-left: 12.66%">
         <div class="panel panel-default">
             <div class="panel-heading">
+                <img src="img/icons_1775b9/conference_call.png" width="20" height="20">
                 Formulaire Fournisseur
                 <a href='form_principale.php?page=administration&source=fournisseurs' type='button' class='close'
                    data-dismiss='alert' aria-label='Close' style='position: inherit'>

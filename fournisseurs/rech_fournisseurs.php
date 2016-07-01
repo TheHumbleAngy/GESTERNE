@@ -30,11 +30,12 @@ if (isset($_POST['opt'])) {
     $res = mysqli_query($connexion, $sql) or exit(mysqli_error($connexion));
 
     if ($res->num_rows > 0) { ?>
-    <div class="row">
-        <div class="col-md-12">
+        <!--suppress ALL -->
+    <div style="margin-left: 1.5%; margin-right: 1.5%">
             <div class="panel panel-default">
-                <div class="panel-heading" style="font-size: 12px; font-weight: bolder">
-                    Fournisseurs
+                <div class="panel-heading">
+                    <img src="img/icons_1775b9/search.png" width="20" height="20">
+                    Liste Fournisseurs - Résultats de recherche pour "<?php echo ucfirst($option); ?>" contenant "<?php echo $element; ?>"
                     <a href='form_principale.php?page=form_actions&source=fournisseurs&action=rechercher' type='button' class='close'
                                data-dismiss='alert' aria-label='Close' style='position: inherit'>
                                 <span aria-hidden='true'>&times;</span>
@@ -44,14 +45,14 @@ if (isset($_POST['opt'])) {
                     <table border="0" class="table table-hover table-bordered ">
                         <thead>
                         <tr>
-                            <td class="entete" style="text-align: center; width: 10%">Numero</td>
-                            <td class="entete" style="text-align: center">Raison Sociale</td>
-                            <td class="entete" style="text-align: center">Contacts</td>
-                            <td class="entete" style="text-align: center">Adresse</td>
-                            <td class="entete" style="text-align: center">Activite</td>
-                            <td class="entete" style="text-align: center">Notes</td>
+                            <th class="entete" style="text-align: center; width: 10%">Numéro</th>
+                            <th class="entete" style="text-align: center">Raison Sociale</th>
+                            <th class="entete" style="text-align: center">Contacts</th>
+                            <th class="entete" style="text-align: center">Adresse</th>
+                            <th class="entete" style="text-align: center">Activité</th>
+                            <th class="entete" style="text-align: center">Notes</th>
                             <?php //if (($_SESSION['type_utilisateur'] == 'administrateur') || ($_SESSION['type_utilisateur'] == 'moyens_genereaux')):?>
-                            <td class="entete" style="width: 10%; text-align: center">Actions</td>
+                            <th class="entete" style="text-align: center; width: 12%">Actions</th>
                             <?php //endif?>
                         </tr>
                         </thead>
@@ -63,7 +64,7 @@ if (isset($_POST['opt'])) {
                         ?>
                         <tr>
                             <td><?php echo stripslashes($list['code_four']); ?></td>
-                            <td><?php echo stripslashes($list['nom_four']); ?></td>
+                            <td><strong><?php echo stripslashes($list['nom_four']); ?></strong></td>
                             <td><?php echo "Tel: " . stripslashes($list['telephonepro_four']) . "<br>Fax: " . stripslashes($list['fax_four']) . "<br>E-mail: " . stripslashes($list['email_four']); ?></td>
                             <!--                                            <td>-->
                             <?php //echo stripslashes($list['fax_four']); ?><!--</td>-->
@@ -219,11 +220,11 @@ if (isset($_POST['opt'])) {
                             </td>
                         </tr>
                     <?php
-                    }?>
+                    }
+                            ?>
                     </table>
                 </div>
             </div>
-        </div>
     </div>
         <?php } else echo "La recherche n'a renvoye aucun resultat.";
     } else echo "

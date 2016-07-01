@@ -24,8 +24,8 @@
             <table border="0" width="100%">
                 <tr>
                     <td style="text-align: center">
-                        <img src="img/Icons8/under_construction_100.png">
-                        <h3 style="color: #01ADDD">En construction...</h3>
+                        <img src="img/icons_1775b9/under_construction_100.png">
+                        <h3 style="color: #0e76bc">En construction...</h3>
                     </td>
                 </tr>
             </table>

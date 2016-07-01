@@ -7,14 +7,21 @@
      *
      * Ce script permet de générer la liste des articles à afficher dans l'aperçu de la forme de saisie des articles
      */
-    header("Content-Type: application/json; charset=UTF-8");
-    require_once '../bd/connection.php';
+    if ($_GET['opt']) {
+        header("Content-Type: application/json; charset=UTF-8");
+        require_once '../bd/connection.php';
 
-    $json_articles = "";
-    $sql = "SELECT code_art, designation_art, description_art, stock_art FROM articles";
-    if ($resultat = $connexion->query($sql)) {
-        foreach ($resultat as $list) {
-            $json_articles[] = $list;
+        $json_articles = "";
+
+        if ($_GET['opt'] == "saisie") {
+            $sql = "SELECT code_art, designation_art, description_art, stock_art FROM articles";
+        } elseif ($_GET['opt'] == "mvt") {
+            $sql = "SELECT designation_art, stock_art FROM articles";
         }
-        echo json_encode($json_articles);
+        if ($resultat = $connexion->query($sql)) {
+            foreach ($resultat as $list) {
+                $json_articles[] = $list;
+            }
+            echo json_encode($json_articles);
+        }
     }
