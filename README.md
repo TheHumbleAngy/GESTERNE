@@ -1,3 +1,5 @@
+Kindly refer to https://github.com/TheHumbleAngy/WebApp-GESTERNE for the latest updates 
+
 # About GESTERNE | A propos de GESTERNE
 
 A web app that deals with almost all the daily stuff in the company, especially stock control
